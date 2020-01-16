@@ -1,35 +1,19 @@
-## Hello!
+### &emsp;&emsp;&emsp;&emsp; [ABOUT](./index.md) &emsp; [INTERNSHIPS & PERSONAL PROJECTS](./projectsAndInternships.md) &emsp; ACADEMICS &emsp; [EXTRA-CURRICULARS](./extraCurricular.md)
 
-I am a rising third year Ph.D. student at the College of Engineering of Carnegie Mellon University.
+------- 
+### ACADEMICS
+I am currently a first year Master of Computational Data Science student at Carnegie Mellon Universisty's School of Copmuter Science and will graduate in May 2021.
+My coursework at CMU includes : 
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Before transitioning into a Ph.D. program, I graduated with a master's degree (GPA: 3.7/4.0) from CMU in studying Engineering economics and Data Science as a part of my Advanced Infrastructure Systems concentration within CEE.
 
-```markdown
-Syntax highlighted code block
+Inspired by my Ph.D. advisor I developed a strong liking towards solving societal problems using economic tools, and currently in my Ph.D. program I am leveraging data science techniques  **Python, R, MATLAB, and a little bit of C and C++**
 
-# Header 1
-## Header 2
-### Header 3
+### PUBLICATIONS
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/reshmighosh/reshmighosh.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+  
+<center>
+<img height="60%" width="60%" align="center" src="./images/40ae7f0a-ee44-4a06-9304-a9b10f9bdb5c.JPG"/>
+<p>Receiving the Best Paper Award</p>
+</center>
