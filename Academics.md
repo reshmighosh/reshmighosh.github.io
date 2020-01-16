@@ -12,8 +12,3 @@ Inspired by my Ph.D. advisor I developed a strong liking towards solving societa
 
 ### PUBLICATIONS
 
-  
-<center>
-<img height="60%" width="60%" align="center" src="./images/40ae7f0a-ee44-4a06-9304-a9b10f9bdb5c.JPG"/>
-<p>Receiving the Best Paper Award</p>
-</center>
