@@ -1,4 +1,4 @@
-### &emsp;&emsp;&emsp;&emsp; [ABOUT](./index.md) &emsp; [INTERNSHIPS & PERSONAL PROJECTS](./projectsAndInternships.md) &emsp; ACADEMICS &emsp; [EXTRA-CURRICULARS](./extraCurricular.md)
+
 
 ------- 
 ### ACADEMICS
