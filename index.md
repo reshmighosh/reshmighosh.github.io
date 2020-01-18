@@ -1,5 +1,5 @@
 
-### &emsp;&emsp; ABOUT  &emsp; [ACADEMICS](./academics.md) 
+### &emsp;&emsp; ABOUT  &emsp; [ACADEMICS](./Academics.md) 
 
 -------  
 
