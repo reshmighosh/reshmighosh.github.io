@@ -1,5 +1,5 @@
 
-### &emsp;&emsp;&emsp;&emsp; [ABOUT](./index.md) &emsp; [PROFESSION EXPERIENCE](./profexp.md) &emsp; [ACADEMICS] &emsp; [PROJECTS](./projects.md) &emsp; [EXTRA-CURRICULAR](./extraCurricular.md)
+### &emsp;&emsp;&emsp;&emsp; [ABOUT](./index.md) &emsp; [PROFESSION EXPERIENCE](./profexp.md) &emsp; ACADEMICS &emsp; [PROJECTS](./projects.md) &emsp; [EXTRA-CURRICULAR](./extraCurricular.md)
 
 -------  
 
