@@ -1,4 +1,4 @@
-### &emsp;&emsp;&emsp;&emsp; ABOUT &emsp; [PROFESSIONAL EXPERIENCE & PROJECTS](./profAndProj.md) &emsp; [ACADEMICS](./academics.md) &emsp; [EXTRA-CURRICULAR](./extraCurricular.md)
+
 
 -------  
 
