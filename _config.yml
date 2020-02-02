@@ -1,4 +1,4 @@
-theme: jekyll-theme-cayman
+theme: jekyll-theme-pixyll
 title: Reshmi Ghosh
 description: Hello! Welcome to my webpage
-show_downloads: true
+show_downloads: false
