@@ -24,5 +24,10 @@ I have always been interested in solving societal problems by leveraging my back
 11. Business Intelligence and Data Mining
 12. Python for Developers
 13. Theory and Applications of Policy Analysis
-14. Inroduction to Sustainable Engineering
-15. Environmental Life-Cycle Assessment
+14. Graduate Probability and Statistics
+15. Multi-Criteria Decision Making
+16. Inroduction to Sustainable Engineering
+17. Environmental Life-Cycle Assessment
+18. Data Warehousing
+19. Building Controls and Diagnostics
+
