@@ -17,7 +17,7 @@ Applying my skills to solve societal problems by leveraging my background in dat
 
 1. Practical Data Science
 2. Decision Analytics for Business and Policy (Operations Research Math)
-3. Introduction to Deep Learning
+3. Introduction to Deep Learning (ongoing)
 4. Applied Machine Learning
 5. Applied Data Analysis
 6. Data Analytics for Engineered Systems
