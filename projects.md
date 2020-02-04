@@ -1,7 +1,5 @@
 ### &emsp;&emsp; [ABOUT](./index.md)  &emsp; [ACADEMICS](./Academics.md) &emsp; [EXPERIENCE](./profexp.md) &emsp; PROJECTS &emsp; [LIFE BEYOND PH.D.](./extra-Curricular.md)
 
--------  
-
 ------- 
 ### PROJECTS
 
