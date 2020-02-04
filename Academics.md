@@ -4,11 +4,25 @@
 
 ------- 
 ### ACADEMICS
-I am a rising third-year Ph.D. student at Carnegie Mellon University. My research work lies in the nexus of data science, economics, and public policy. Before transitioning into a Ph.D. program, I graduated with a master's degree (GPA: 3.7/4.0) from CMU.  
+Before transitioning into a Ph.D. program, I graduated with a master's degree in Civil and Environmental Engineering from Carnegie Mellon University(CMU). Inspired by the bright minds of CMU, working on interdisciplinary research, I challenged myself to pursue the master's with a focus in Advanced Infrastructure Systems(AIS), a unqiue unique pathway to learn and use data science to inform decisions for the society.This meant taking up a unique blend of courses related to machine learning and advanced economic analysis. During this degree, I was also awarded two scholarships by CMU (worth $18,000) aiding the degree. 
 
-In my master's program, I undertook a non-traditional route and developed robust foundation in engineering economics and data science as a part of my Advanced Infrastructure Systems concentration within CEE. During this time, I was also awarded two scholarships by CMU (worth $18,000) aiding the degree. 
+Currently in my Ph.D. program I am leveraging data science techniques to analyze financial forecasts of wind energy. I am proficient in **Python**, **R**, **MATLAB**, and familiar with the working of **C**. I also have experience working with python based Machine Learning and Deep Learning libraries  like **NumPy, Pandas, Scikit-Learn, Matplotlib, PyTorch**, etc.
 
-Inspired by my Ph.D. advisor I developed a strong liking towards solving societal problems using economic tools, and currently in my Ph.D. program I am leveraging data science techniques to analyze financial forecasts of wind energy. I am proficient in **Python**, **R**, **MATLAB**, and familiar with the working of **C**. I also have experience working with python based Machine Learning and Deep Learning libraries  like **numpy, pandas, scikit-learn, matplotlib, pytorch**, etc.
+I have always been interested in solving societal problems by leveraging my background in data, economics, and consulting, and these are some of the courses in CMU, which made this endeavor possible:
 
-I have always been interested in solving optimization problems with
 
+1. Practical Data Science
+2. Decision Analytics for Business and Policy (Operations Research Math)
+3. Introduction to Deep Learning
+4. Applied Machine Learning
+5. Applied Data Analysis
+6. Data Analytics for Engineered Systems
+7. Ph.D. Microeconomics
+8. Systems Investment Planning and Pricing
+9. Energy Policy and Economics
+10. Risk Management
+11. Business Intelligence and Data Mining
+12. Python for Developers
+13. Theory and Applications of Policy Analysis
+14. Inroduction to Sustainable Engineering
+15. Environmental Life-Cycle Assessment
