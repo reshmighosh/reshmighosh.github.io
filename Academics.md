@@ -10,7 +10,7 @@ M.S. in Civil and Environmental Engineering (Focus: Data Analytics for Engineere
 
 Inspired by the bright minds of CMU, working on interdisciplinary research, I challenged myself to pursue both my masters' degree with a focus in data-driven analysis, a unqiue unique pathway to learn and use data science to inform decisions for the society.This meant taking up a unique blend of courses related to machine learning and advanced economic analysis. 
 
-Currently in my Ph.D. program I am leveraging data science techniques to stochastically analyze resource adequacy metrics required to measure the effect of large integration of renewable energy sources in the existing grid 
+Currently in my Ph.D. program I am leveraging data science techniques to stochastically analyze resource adequacy metrics required to measure the effect of large-scale integration of renewable energy sources in the existing grid 
 
 I am proficient in **Python**, and **SQL**, I and familiar with the working of **Matlab**, and **C**. I also have experience working with python based Machine Learning and Deep Learning libraries  like **NumPy, Pandas, Scikit-Learn, SciPy, statsmodel, Matplotlib, PyTorch**, etc.
 
