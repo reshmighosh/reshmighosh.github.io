@@ -12,7 +12,7 @@ UPDATES
 2. Graduated with second Master of Science degree from Carnegie Mellon University in Engineering and Public Policy, May 2020.
 3. Selected to present first year doctoral work at American Wind Energy Association (AWEA), May 2019
 4. Finalist at national level Yale Graduate Consulting Case competition, March 2019
-5. Elected to receive Dean's fellowship to support doctoral studies (complete tuition coverage), March 2018
+5. Elected to receive Dean's fellowship to support doctoral studies, March 2018
 6. Received Merit Scholarship from Carnegie Mellon to support master's studies in the academic year 2017-2018, March 2017
 7. Received Civil and Environmental Engineering department scholarship to support master's studies for the academic year 2016-2017. Scholarship resulted in 25% tuition waiver, January 2016
 
