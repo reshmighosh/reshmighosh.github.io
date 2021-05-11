@@ -1,5 +1,5 @@
 
-### &emsp;&emsp; ABOUT  &emsp; [ACADEMICS](./Academics.md) &emsp; [EXPERIENCE](./profexp.md) &emsp; &emsp; [LIFE BEYOND PH.D.](./lifebeyondphd.md)
+### &emsp;&emsp; ABOUT  &emsp; [ACADEMICS](./Academics.md) &emsp; [EXPERIENCE](./profexp.md) &emsp; [PROJECTS](./projects) &emsp; &emsp; [LIFE BEYOND PH.D.](./lifebeyondphd.md)
 
 -------  
 
