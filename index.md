@@ -13,7 +13,7 @@ I'm Reshmi, a final year Ph.D. student at Carnegie Mellon University, set to gra
 1. Presented research poster at [WindEurope Technology Workshop 2020](https://windeurope.org/workshops/tech2020/posters/#ra) (virtual owing to Covid restrictions) on the changing variance of wind speeds due to climatological impacts, *June 2020*.
 2. Graduated with second Master of Science degree from Carnegie Mellon University in Engineering and Public Policy, *May 2020*.
 3. Inducted as a part of research team at [Asset Lab](https://www.assetlab.org/people), University of Michigan, Ann Arbor to use stochastic methods to assess future grid reliability and also leverage advanced machine learning methods to discover patterns in large time series data with Prof. Michael Craig, *April 2020*.
-4. Selected to present first year doctoral work at [American Wind Energy Association (AWEA) Clean Power Expo and Conferece](https://cleanpower.org/expo/), *May 2019*
+4. Selected to present first year doctoral work at the prestigious [American Wind Energy Association (AWEA) Clean Power Expo and Conferece](https://cleanpower.org/expo/), *May 2019*
 5. Finalist at national level Yale Graduate Consulting Case competition, *March 2019*
 6. Elected to receive Dean's fellowship to support doctoral studies, *March 2018*
 7. Awarded doctoral fellowship by [CMU Portugal](https://www.cmuportugal.org/atlantic/) to work on the +Atlantic project - a consortium of 8 cross-functional research and academic institutions from Portugal working towards assessing the technological and economical impacts of developing energy industries in the Atlantic Ocean, *March 2018*.
