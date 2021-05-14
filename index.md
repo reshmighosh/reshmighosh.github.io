@@ -1,5 +1,5 @@
 
-### &emsp;&emsp; ABOUT  &emsp; [ACADEMICS](./Academics.md) &emsp; [EXPERIENCE](./profexp.md) &emsp; [PROJECTS](./projects) &emsp; &emsp; [LIFE BEYOND PH.D.](./lifebeyondphd.md)
+### &emsp;&emsp; ABOUT  &emsp; [ACADEMICS](./Academics.md) &emsp; [EXPERIENCE](./profexp.md) &emsp; [PROJECTS](./projects) &emsp; &emsp; [LIFE BEYOND PH.D.](./lifebeyondphd.md) &emsp; [Resume](blah.com) &emsp; 
 
 -------  
 ![](https://github.com/reshmighosh/reshmighosh.github.io/blob/master/images/1462696_10200387915380867_283294306_o.jpeg){: .align-left}
