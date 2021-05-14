@@ -3,7 +3,7 @@
 
 -------  
 
-![](images/1462696_10200387915380867_283294306_o.jpeg)
+<img align="left" width="100" height="100" src="https://github.com/reshmighosh/reshmighosh.github.io/blob/master/images/1462696_10200387915380867_283294306_o.jpeg">
 
 I'm Reshmi, a final year Ph.D. student at Carnegie Mellon University, set to graduate in 2021. I have always been passionate about machine learning, deep learning, economics, climate change, and renewable energy. I have 5+ years of working with data-driven techniques in python to discover underlying patterns in large datasets. I love leveraging data science techniques to derive key actionable insights about business and societal problems, and translating these insights into business strategies.
 
@@ -16,10 +16,10 @@ I'm Reshmi, a final year Ph.D. student at Carnegie Mellon University, set to gra
 4. Selected to present first year doctoral work at the prestigious [American Wind Energy Association (AWEA) Clean Power Expo and Conferece](https://cleanpower.org/expo/), *May 2019*
 5. Finalist at national level Yale Graduate Consulting Case competition, *March 2019*
 6. Elected to receive Dean's fellowship to support doctoral studies, *March 2018*
-7. Awarded doctoral fellowship by [CMU Portugal](https://www.cmuportugal.org/atlantic/) to work on the +Atlantic project - a consortium of 8 cross-functional research and academic institutions from Portugal working towards assessing the technological and economical impacts of developing energy industries in the Atlantic Ocean, *March 2018*.
+7. Awarded doctoral fellowship by [CMU Portugal](https://www.cmuportugal.org/atlantic/) to work on the +Atlantic project - a consortium of 8 cross-functional research and academic institutions from Portugal working towards assessing the technological and economical impacts of developing energy industries in the Atlantic Ocean, *January 2018*.
 8. Graduated with a Master of Science degree in Civil and Environmental Engineering, and started working as a Research Intern with Prof. H. Scott Matthews on ecnomic analysis and risk analysis for Deep-sea mining and Offshore wind farm infrastruture in the Atlantic region *December 2017*.
-7. Received Merit Scholarship from Carnegie Mellon to support master's studies in the academic year 2017-2018, *March 2017*
-8. Received Civil and Environmental Engineering department scholarship to support master's studies for the academic year 2016-2017. Scholarship resulted in 25% tuition waiver, *January 2016*
+9. Received Merit Scholarship from Carnegie Mellon to support master's studies in the academic year 2017-2018, *March 2017*
+10. Received Civil and Environmental Engineering department scholarship to support master's studies for the academic year 2016-2017. Scholarship resulted in 25% tuition waiver, *January 2016*
 
 
 
