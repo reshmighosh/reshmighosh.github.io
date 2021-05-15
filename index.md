@@ -26,7 +26,7 @@ I'm Reshmi, a final year Ph.D. student at Carnegie Mellon University, set to gra
     </tr>
     <tr>
         <td valign="top"><strong>[April 2020]</strong></td>
-        <td>nducted as a part of research team at <a href="https://www.assetlab.org/people">Asset Lab</a>, University of Michigan, Ann Arbor to use stochastic methods to assess future grid reliability and also leverage advanced machine learning methods to discover patterns in large time series data with Prof. Michael Craig.
+        <td>Inducted as a part of research team at <a href="https://www.assetlab.org/people">Asset Lab</a>, University of Michigan, Ann Arbor to use stochastic methods to assess future grid reliability and also leverage advanced machine learning methods to discover patterns in large time series data with Prof. Michael Craig.
         </td>
     </tr>
     <tr>
