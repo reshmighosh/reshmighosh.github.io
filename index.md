@@ -1,8 +1,8 @@
 
-### &emsp;&emsp; ABOUT  &emsp; [ACADEMICS](./Academics.md) &emsp; [PROJECTS](./projects) &emsp; &emsp; [LIFE BEYOND PH.D.](./lifebeyondphd.md) &emsp; [Resume](./files/index.html) &emsp; 
+### &emsp;&emsp; ABOUT  &emsp; [ACADEMICS](./Academics.md) &emsp; [PROJECTS](./projects) &emsp; &emsp; [LIFE BEYOND PH.D.](./lifebeyondphd.md) &emsp; 
 
 -------  
-[](https://github.com/reshmighosh/reshmighosh.github.io/blob/master/images/1462696_10200387915380867_283294306_o.jpeg){: .align-left}
+![](https://github.com/reshmighosh/reshmighosh.github.io/blob/master/images/1462696_10200387915380867_283294306_o.jpeg = 250x250)
 
 
 
