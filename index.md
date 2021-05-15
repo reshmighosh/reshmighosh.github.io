@@ -39,6 +39,12 @@ I'm Reshmi, a final year Ph.D. student at Carnegie Mellon University, set to gra
         <td>Finalist at national level Yale Graduate Consulting Case competition.
         </td>
     </tr>
+<tr>
+        <td valign="top"><strong>[August 2018]</strong></td>
+        <td>Started serving as the Vice President of <a href = "https://www.cmugradconsulting.com/home"> CMU Graduate Consulting Club</a>
+        </td>
+    </tr>
+
  <tr>
         <td valign="top"><strong>[March 2018]</strong></td>
         <td>Elected to receive Dean's fellowship to support doctoral studies.
@@ -57,6 +63,11 @@ I'm Reshmi, a final year Ph.D. student at Carnegie Mellon University, set to gra
     <tr>
         <td valign="top"><strong>[March 2017]</strong></td>
         <td>Received Merit Scholarship from Carnegie Mellon to support master's studies in the academic year 2017-2018.
+        </td>
+    </tr>
+    <tr>
+        <td valign = "top"><strong>[September 2016]</strong></td>
+        <td>Started serving as CMU Graduate Student Advisory Comittee Representative - a intiative to help bridge the gap between graduate students and the school administration.
         </td>
     </tr>
     <tr>
