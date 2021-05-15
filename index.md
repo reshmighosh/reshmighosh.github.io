@@ -2,7 +2,7 @@
 ### &emsp;&emsp; ABOUT  &emsp; [ACADEMICS](./Academics.md) &emsp; [PROJECTS](./projects) &emsp; &emsp; [LIFE BEYOND PH.D.](./lifebeyondphd.md) &emsp; 
 
 
-<img src="https://github.com/reshmighosh/reshmighosh.github.io/blob/master/images/1462696_10200387915380867_283294306_o.jpeg" width="200">
+<img src="https://github.com/reshmighosh/reshmighosh.github.io/blob/master/images/1462696_10200387915380867_283294306_o.jpeg" width="200" height = "200">
 
 
 I'm Reshmi, a final year Ph.D. student at Carnegie Mellon University, set to graduate in 2021. I have always been passionate about machine learning, deep learning, economics, climate change, and renewable energy. I have 5+ years of working with data-driven techniques in python to discover underlying patterns in large datasets. I love leveraging data science techniques to derive key actionable insights about business and societal problems, and translating these insights into business strategies.
