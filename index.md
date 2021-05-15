@@ -2,10 +2,9 @@
 ### &emsp;&emsp; ABOUT  &emsp; [ACADEMICS](./Academics.md) &emsp; [EXPERIENCE](./profexp.md) &emsp; [PROJECTS](./projects) &emsp; &emsp; [LIFE BEYOND PH.D.](./lifebeyondphd.md) &emsp; [Resume](./files/index.html) &emsp; 
 
 -------  
-![](https://github.com/reshmighosh/reshmighosh.github.io/blob/master/images/1462696_10200387915380867_283294306_o.jpeg){: .align-left}
+[](https://github.com/reshmighosh/reshmighosh.github.io/blob/master/images/1462696_10200387915380867_283294306_o.jpeg){: .align-left}
 
-<iframe src="https://github.com/reshmighosh/reshmighosh.github.io/master/files/ReshmiG_Resume_Review.pdf" width="50% height=80%">
-</iframe>
+
 
 
 I'm Reshmi, a final year Ph.D. student at Carnegie Mellon University, set to graduate in 2021. I have always been passionate about machine learning, deep learning, economics, climate change, and renewable energy. I have 5+ years of working with data-driven techniques in python to discover underlying patterns in large datasets. I love leveraging data science techniques to derive key actionable insights about business and societal problems, and translating these insights into business strategies.
@@ -19,7 +18,7 @@ I'm Reshmi, a final year Ph.D. student at Carnegie Mellon University, set to gra
     <col width="82%">
     <tr>
         <td valign="top"><strong>[June 2020]</strong></td>
-        <td>Presented research poster at <a href = "https://windeurope.org/workshops/tech2020/posters/#ra">WindEurope Technology Workshop 2020</a> (virtual owing to Covid restrictions) on the changing variance of wind speeds due to climatological impacts</td>
+        <td>Presented research poster at <a href = "https://windeurope.org/workshops/tech2020/posters/#ra">WindEurope Technology Workshop 2020, Naples</a> (virtual owing to Covid restrictions) on the changing variance of wind speeds due to climatological impacts</td>
     </tr>
     <tr>
         <td valign="top"><strong>[May 2020]</strong></td>
@@ -47,7 +46,7 @@ I'm Reshmi, a final year Ph.D. student at Carnegie Mellon University, set to gra
     </tr>
     <tr>
         <td valign="top"><strong>[January 2018]</strong></td>
-        <td>Awarded doctoral fellowship by <a href"https://www.cmuportugal.org/atlantic/">CMU Portugal</a>, to work on the +Atlantic project - a consortium of 8 cross-functional research and academic institutions from Portugal working towards assessing the technological and economical impacts of developing energy industries in the Atlantic Ocean, *January 2018.
+        <td>Awarded doctoral fellowship by <a href="https://www.cmuportugal.org/atlantic/">CMU Portugal</a>, to work on the +Atlantic project - a consortium of 8 cross-functional research and academic institutions from Portugal working towards assessing the technological and economical impacts of developing energy industries in the Atlantic Ocean, *January 2018.
         </td>
     </tr>
     <tr>
