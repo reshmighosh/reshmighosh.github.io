@@ -8,17 +8,11 @@ Along with my ongoing Ph.D. program, I have two other masters' degrees from Carn
 M.S. in Engineering and Public Policy (Focus: Data Science techniques for Policy Analysis) and
 M.S. in Civil and Environmental Engineering (Focus: Data Analytics for Engineered Systems)
 
-Inspired by the bright minds of CMU, working on interdisciplinary research, I challenged myself to pursue both my masters' degree with a focus in data-driven analysis, a unqiue unique pathway to learn and use data science to inform decisions for the society.This meant taking up a unique blend of courses related to machine learning and advanced economic analysis. 
+Inspired by the bright minds of CMU, working on interdisciplinary research, I challenged myself to pursue both my masters' degree with a focus in data-driven analysis, a unqiue pathway to learn and use machine learning to inform decisions for businesses and policy making.
 
-Currently in my Ph.D. program I am leveraging data science techniques to stochastically analyze resource adequacy metrics required to measure the effect of large-scale integration of renewable energy sources in the existing grid 
+Currently in my Ph.D. program I am leveraging machine and deep learning techniques to stochastically analyze resource adequacy metrics required to measure the effect of large-scale integration of renewable energy sources in the existing grid.
 
-I am proficient in **Python**, and **SQL**, I and familiar with the working of **Matlab**, and **C**. I also have experience working with python based Machine Learning and Deep Learning libraries  like **NumPy, Pandas, Scikit-Learn, SciPy, statsmodel, Matplotlib, PyTorch**, etc.
-
-I have always strived to maintain a consistent academic record while participating in numerous extra-curriculars. Some of my achievements include:
-- Finalist at Yale University's Consulting Case Competition, 2019
-- Receiving a Dean's fellowship to support my Ph.D. degree, 2018
-- Receiving two academic scholarships (worth $18,000 from CMU to support my master's education, 2016 & 2017
-
+I am proficient in **Python**, **Pytorch**, and **SQL**, I and familiar with the working of **Matlab**, and **C**. I also have experience working with python based Machine Learning and Deep Learning libraries  like **NumPy, Pandas, Scikit-Learn, SciPy, statsmodels, Seaborn, Plotly, Matplotlib, TensorFlow**, etc.
 
 Applying my skills to solve societal problems by leveraging my background in applied statistics, data science, economics, and consulting, this endeavor was only made possible by the courses I undertook at CMU, some of which are:
 
@@ -39,5 +33,14 @@ Applying my skills to solve societal problems by leveraging my background in app
 15. Multi-Criteria Decision Making
 16. Inroduction to Sustainable Engineering
 17. Data Warehousing
-18. Building Controls and Diagnostics
+
+
+**Teaching Experience**
+1. [April 2021] Guest lecturer for practical uses of MATLAB, and linear alegbra for a graduate level class, *College of Engineering, CMU*.
+2. [October 2020] Held recitation class on the theory behind Convolutional Neural Networks, forward pass and backpropogation, and its application to real world image classification problems, *School of Computer Science, CMU*.
+3. [October 2019] Conducted a graduate level class on introductory microeconomics, *College of Engineering, CMU*.
+4. [January 2019] Conducted a undergraduate level class on Applied Statistics methods, and Statistical Inference, *College of Engineering, CMU*.
+5. [October 2018] Conducted a graduate level class on "Best practices for Data Analytics and Visualizations, *College of Engineering, CMU*.
+6. [October 2018] Conducted a graduate level class on Monte Carlo simulation, and use of probabilistic techniques to model risk, *College of Engineering, CMU*.
+
 
