@@ -65,21 +65,6 @@ I'm Reshmi, a final year Ph.D. student at Carnegie Mellon University, set to gra
         <td>Received Civil and Environmental Engineering department scholarship to support master's studies for the academic year 2016-2017. Scholarship resulted in 25% tuition waiver.
         </td>
     </tr>
-    <tr>
-        <td valign="top"><strong>[Jan 2019]</strong></td>
-        <td>Check out the special session on <i>Multimodal Representation Learning for Language Generation and Understanding</i> at ICASSP 2019.
-        </td>
-    </tr>
-    <tr>
-        <td valign="top"><strong>[Dec 2018]</strong></td>
-        <td>Received the <a href="https://research.fb.com/programs/fellowship/">Facebook Fellowship</a>. Thank you Facebook!
-        </td>
-    </tr>
-    <tr>
-        <td valign="top"><strong>[Nov 2018]</strong></td>
-        <td>The <a href="https://github.com/srvk/how2-dataset">How2 dataset</a> of open-domain instructional videos has been released! Check it out for different multimodal modeling tasks!
-        </td>
-    </tr>
 </table>
 
 
