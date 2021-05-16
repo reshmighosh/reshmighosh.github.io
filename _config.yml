@@ -1,5 +1,5 @@
 # Site wide configuration
-theme: minimal
+theme: minima
 title: Reshmi Ghosh
 description: Hello! Welcome to my webpage
 show_downloads: false
