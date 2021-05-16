@@ -2,7 +2,6 @@
 
 -------  
 
-------- 
 ### ACADEMICS
 Along with my ongoing Ph.D. program, I have two other masters' degrees from Carnegie Mellon University:
 M.S. in Engineering and Public Policy (Focus: Data Science techniques for Policy Analysis) and
