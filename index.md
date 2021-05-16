@@ -2,10 +2,6 @@
 ### &emsp;&emsp; ABOUT  &emsp; [ACADEMICS](./Academics.md) &emsp; [PROJECTS](./projects) &emsp; [LIFE BEYOND PH.D.](./lifebeyondphd.md) &emsp;
 
 
-
-<img src="https://github.com/reshmighosh/reshmighosh.github.io/blob/master/images/1462696_10200387915380867_283294306_o.jpeg" style = "vertical-align" width = "350">
--------  
-
 I'm Reshmi, a final year Ph.D. student at Carnegie Mellon University, set to graduate in 2021. I have always been passionate about machine learning, deep learning, economics, climate change, and renewable energy. I have 5+ years of working with data-driven techniques in python to discover underlying patterns in large datasets. I love leveraging data science techniques to derive key actionable insights about business and societal problems, and translating these insights into business strategies.
 
  My doctoral research reflects the blend of of my interest areas in a public policy setting for energy systems. I am analyzing the future reliability of power systems for the United States by developing probabilistic mathematical models using terrabytes of reanalysis datasets to measure the resource adequacy metrics. Additionally, I am also working to reconstruct decades of missing electricity demand data using advanced regression and deep learning based LSTM models (vanilla and with Attention). I am also attempting to use causal inference methods to identify underlying patterns in multi-decadal electricity load data, and understand it's implication on grid system.
