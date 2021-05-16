@@ -1,4 +1,4 @@
-### &emsp;&emsp; [ABOUT](./index.md)  &emsp; ACADEMICS &emsp; &emsp; [PROJECTS](./projects) &emsp; [LIFE BEYOND PH.D.](./extraCurricular.md)
+### &emsp;&emsp; [ABOUT](./index.md)  &emsp; ACADEMICS &emsp; [PROJECTS](./projects) &emsp; [LIFE BEYOND PH.D.](./extraCurricular.md)
 
 -------  
 
