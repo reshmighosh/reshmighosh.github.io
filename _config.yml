@@ -1,5 +1,5 @@
 # Site wide configuration
-remote_theme: minimal-mistakes
+theme: minimal-mistakes
 title: Reshmi Ghosh
 description: Hello! Welcome to my webpage
 show_downloads: false
