@@ -1,5 +1,6 @@
 # Site wide configuration
 theme: jekyll-theme-minimal
 title: Reshmi Ghosh
-description: #Hello! Welcome to my webpage
+description: Hello! Welcome to my webpage
 show_downloads: false
+logo: /images/1462696_10200387915380867_283294306_o.jpeg
