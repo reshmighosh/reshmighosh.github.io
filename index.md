@@ -15,15 +15,15 @@ I'm Reshmi, a final year Ph.D. student at Carnegie Mellon University, set to gra
     <col width="18%">
     <col width="82%">
     <tr>
-        <td valign="top"><strong>[June 2020]</strong></td>
-        <td>Presented research poster at <a href = "https://windeurope.org/workshops/tech2020/posters/#ra">WindEurope Technology Workshop 2020, Naples</a> (virtual owing to Covid restrictions) on statistical analysis to determine changing variance of wind speeds due to climatological impacts (scenario based on RCP6, and RCP 8.5)</td>
+        <td valign="top"><strong>[Jun 2020]</strong></td>
+        <td>Presented research poster at <a href = "https://windeurope.org/workshops/tech2020/posters/#ra">WindEurope Technology Workshop 2020, Naples</a> (virtual owing to Covid restrictions) on statistical analysis to determine changing variance of wind speeds due to climatological impacts (scenario based on RCP 6, and RCP 8.5)</td>
     </tr>
     <tr>
         <td valign="top"><strong>[May 2020]</strong></td>
         <td>Graduated with second Master of Science degree from Carnegie Mellon University in <a href = "https://www.cmu.edu/epp/research/index.html">Engineering and Public Policy </a></td>
     </tr>
     <tr>
-        <td valign="top"><strong>[April 2020]</strong></td>
+        <td valign="top"><strong>[Apr 2020]</strong></td>
         <td>Inducted as a part of research team at <a href="https://www.assetlab.org/people">Asset Lab</a>, University of Michigan, Ann Arbor to use stochastic methods to assess future grid reliability and also leverage advanced machine learning methods to discover patterns in large time series data with Prof. Michael Craig.
         </td>
     </tr>
@@ -33,24 +33,24 @@ I'm Reshmi, a final year Ph.D. student at Carnegie Mellon University, set to gra
         </td>
     </tr>
  <tr>
-        <td valign="top"><strong>[March 2019]</strong></td>
+        <td valign="top"><strong>[Mar 2019]</strong></td>
         <td>Finalist at national level Yale Graduate Consulting Case competition.
         </td>
     </tr>
 <tr>
-        <td valign="top"><strong>[August 2018]</strong></td>
+        <td valign="top"><strong>[Aug 2018]</strong></td>
         <td>Started serving as the Vice President of <a href = "https://www.cmugradconsulting.com/home"> CMU Graduate Consulting Club</a>
         </td>
     </tr>
 
  <tr>
-        <td valign="top"><strong>[March 2018]</strong></td>
+        <td valign="top"><strong>[Mar 2018]</strong></td>
         <td>Elected to receive Dean's fellowship to support doctoral studies.
         </td>
     </tr>
     <tr>
-        <td valign="top"><strong>[January 2018]</strong></td>
-        <td>Awarded doctoral fellowship by <a href="https://www.cmuportugal.org/atlantic/">CMU Portugal</a>, to work on the +Atlantic project - a consortium of 8 cross-functional research and academic institutions from Portugal working towards assessing the technological and economical impacts of developing energy industries in the Atlantic Ocean, *January 2018.
+        <td valign="top"><strong>[Jan 2018]</strong></td>
+        <td>Awarded doctoral fellowship by <a href="https://www.cmuportugal.org/atlantic/">CMU Portugal</a>, to work on the +Atlantic project - a consortium of 8 cross-functional research and academic institutions from Portugal working towards assessing the technological and economical impacts of developing energy industries in the Atlantic Ocean.
         </td>
     </tr>
     <tr>
@@ -59,17 +59,17 @@ I'm Reshmi, a final year Ph.D. student at Carnegie Mellon University, set to gra
         </td>
     </tr>
     <tr>
-        <td valign="top"><strong>[March 2017]</strong></td>
+        <td valign="top"><strong>[Mar 2017]</strong></td>
         <td>Received Merit Scholarship from Carnegie Mellon to support master's studies in the academic year 2017-2018.
         </td>
     </tr>
     <tr>
-        <td valign = "top"><strong>[September 2016]</strong></td>
+        <td valign = "top"><strong>[Sep 2016]</strong></td>
         <td>Started serving as CMU Graduate Student Advisory Comittee Representative - a intiative to help bridge the gap between graduate students and the school administration.
         </td>
     </tr>
     <tr>
-        <td valign="top"><strong>[January 2016]</strong></td>
+        <td valign="top"><strong>[Jan 2016]</strong></td>
         <td>Received Civil and Environmental Engineering department scholarship to support master's studies for the academic year 2016-2017. Scholarship resulted in 25% tuition waiver.
         </td>
     </tr>
