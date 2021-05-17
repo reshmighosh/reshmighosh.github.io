@@ -16,7 +16,7 @@ I'm Reshmi, a final year Ph.D. student at Carnegie Mellon University, set to gra
     <col width="82%">
     <tr>
         <td valign="top"><strong>[June 2020]</strong></td>
-        <td>Presented research poster at <a href = "https://windeurope.org/workshops/tech2020/posters/#ra">WindEurope Technology Workshop 2020, Naples</a> (virtual owing to Covid restrictions) on the changing variance of wind speeds due to climatological impacts</td>
+        <td>Presented research poster at <a href = "https://windeurope.org/workshops/tech2020/posters/#ra">WindEurope Technology Workshop 2020, Naples</a> (virtual owing to Covid restrictions) on statistical analysis to determine changing variance of wind speeds due to climatological impacts (scenario based on RCP6, and RCP 8.5)</td>
     </tr>
     <tr>
         <td valign="top"><strong>[May 2020]</strong></td>
