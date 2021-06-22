@@ -17,7 +17,7 @@ I'm Reshmi, a final year Ph.D. student at Carnegie Mellon University, set to gra
     <col width="82%">
      <tr>
         <td valign="top"><strong>[Jun 2021]</strong></td>
-        <td>Research paper accepted for poster presentation at at <a href = "https://www.climatechange.ai/events/icml2021"> Tackling Climate Change with Machine Learning Workshop</a> ICML, 2021</td>
+        <td>Research paper on using deep learning methods to back-forecast electricity demand accepted for poster presentation at at <a href = "https://www.climatechange.ai/events/icml2021"> Tackling Climate Change with Machine Learning Workshop</a> ICML, 2021</td>
     </tr>
     <tr>
         <td valign="top"><strong>[Jun 2020]</strong></td>
