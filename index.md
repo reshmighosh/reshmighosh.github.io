@@ -78,7 +78,7 @@ I'm Reshmi, a final year Ph.D. student at Carnegie Mellon University, set to gra
         <td>Received Civil and Environmental Engineering department scholarship to support master's studies for the academic year 2016-2017. Scholarship resulted in 25% tuition waiver.
         </td>
     </tr>
-</table>
+
 
 
 
