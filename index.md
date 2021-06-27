@@ -20,10 +20,6 @@ I'm Reshmi, a final year Ph.D. student at Carnegie Mellon University, set to gra
         <td>Research paper on using deep learning methods to back-forecast electricity demand accepted for poster presentation at at <a href = "https://www.climatechange.ai/events/icml2021"> Tackling Climate Change with Machine Learning Workshop</a> ICML, 2021</td>
     </tr>
     <tr>
-        <td valign="top"><strong>[Jan 2021]</strong></td>
-        <td>Invited to be a part of the <a href = "https://www.janestreet.com/join-jane-street/our-programs/symposium/"> Jane Street Ph.D. Symposium</a> and present doctoral research related to large scale time series analysis using advanced machine learning methods </td>
-    </tr>
-    <tr>
         <td valign="top"><strong>[Jun 2020]</strong></td>
         <td>Presented research poster at <a href = "https://windeurope.org/workshops/tech2020/posters/#ra">WindEurope Technology Workshop 2020, Naples</a> (virtual owing to Covid restrictions) on statistical analysis to determine changing variance of wind speeds due to climatological impacts (scenario based on RCP 6, and RCP 8.5)</td>
     </tr>
