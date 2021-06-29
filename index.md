@@ -21,7 +21,7 @@ I'm Reshmi, a final year Ph.D. student at Carnegie Mellon University, set to gra
     </tr>
     <tr>
         <td valign="top"><strong>[Jan 2021]</strong></td>
-        <td>Invited to be a part of the <a href = "https://www.janestreet.com/join-jane-street/our-programs/symposium/"> 2-day long Jane Street Ph.D. Symposium</a> and present doctoral research related to large scale time series analysis using advanced machine learning methods </td>
+        <td>Invited to be a part of the <a href = "https://www.janestreet.com/join-jane-street/our-programs/symposium/"> Jane Street Ph.D. Symposium</a> and present doctoral research related to large scale time series analysis using advanced machine learning methods </td>
     </tr>
     <tr>
         <td valign="top"><strong>[Jun 2020]</strong></td>
