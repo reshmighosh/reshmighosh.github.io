@@ -15,6 +15,10 @@ I'm Reshmi, a final year Ph.D. student at Carnegie Mellon University, set to gra
 <table class='news-table'>
     <col width="18%">
     <col width="82%">
+    <tr>
+        <td valign="top"><strong>[Jun 2021]</strong></td>
+        <td> Selected to mentor students on projects about applied machine and deep learning for infrastructure systems and data-driven public policy development at the <a href = "https://www.climatechange.ai/events/neurips2021"> Climate Change AI Workshop</a> NeurIPS, 2021</td>
+    </tr>
      <tr>
         <td valign="top"><strong>[Jun 2021]</strong></td>
         <td>Research paper on using deep learning methods to back-forecast electricity demand accepted for poster presentation at at <a href = "https://www.climatechange.ai/events/icml2021"> Tackling Climate Change with Machine Learning Workshop</a> ICML, 2021</td>
