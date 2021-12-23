@@ -6,7 +6,7 @@ I'm Reshmi, a final year Ph.D. student at Carnegie Mellon University, set to gra
 
  My doctoral research reflects the blend of of my interest areas in a public policy setting for energy systems. I am analyzing the future reliability of power systems for the United States by **developing probabilistic mathematical models** using terrabytes of reanalysis datasets to measure the resource adequacy metrics. Additionally, I am also working to reconstruct decades of missing electricity demand data using **advanced regression and deep learning based LSTM models (vanilla and with Attention)**. I am also attempting to use causal inference methods to identify underlying patterns in multi-decadal electricity load data, and understand it's implication on grid system.
 
- [Resume](https://drive.google.com/file/d/13mGC-rosRxRxfNA5c4q_InFcNRM-0sio/view?usp=sharing) | [LinkedIn](https://www.linkedin.com/in/reshmi-ghosh/) | [Github](https://github.com/reshmighosh) | [Twitter](https://twitter.com/reshmigh)
+ [Ph.D. Dissertation](https://drive.google.com/file/d/18T7ZjSKAcJFX_mivBmwltvG-X_2t1Ef_/view) | [Resume](https://drive.google.com/file/d/13mGC-rosRxRxfNA5c4q_InFcNRM-0sio/view?usp=sharing) | [LinkedIn](https://www.linkedin.com/in/reshmi-ghosh/) | [Github](https://github.com/reshmighosh) | [Twitter](https://twitter.com/reshmigh)
 
 -------  
 
