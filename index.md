@@ -15,18 +15,40 @@ I'm Reshmi, an Applied Scientist at Microsoft. I recently graduated with a Ph.D.
 <table class='news-table'>
     <col width="18%">
     <col width="82%">
+
      <tr>
         <td valign="top"><strong>[July 2022]</strong></td>
         <td>Research paper on topic segmentation for noisy conversational datasets (from joint effort by University of Massachusetts at Amherst & Microsoft Research) under review at COLING 2022
         </td>
+ </tr>
+   <tr>
+        <td valign="top"><strong>[April 2022]</strong></td>
+    <td> <a href = https://aaclweb.org > AACL 2022 </a> short paper reviewer
+        </td>
+ </tr>
+ <tr>
+        <td valign="top"><strong>[July 2022]</strong></td>
+        <td>Invited Speaker at <a =  https://www.linkedin.com/posts/wimlds-bayarea_machinelearning-wimlds-reinforcementlearning-activity-6950230195811340288-GQm1?utm_source=share&utm_medium=member_desktop> WiMLDS Bay Area </a> to present a talk about Deep Reinforcement Learning & Contextual Bandits
+        </td>
+ </tr>
+   <tr>
+        <td valign="top"><strong>[April 2022]</strong></td>
+   <td>Invited Speaker at <a href = https://odsc.com/boston/ODSC > ODSC East 2022 </a> to present a talk about Quantization methods for large sequential models
+        </td>
+ </tr>
+  <tr>
+        <td valign="top"><strong>[April 2022]</strong></td>
+   <td>Invited Speaker at <a href = https://odsc.com/boston/ODSC > ODSC East 2022 </a> to present a talk about Quantization methods for large sequential models.
+        </td>
+ </tr>
     <tr>
         <td valign="top"><strong>[Oct 2021]</strong></td>
-        <td> Defended Ph.D. thesis on the use of deep learning and stochastic methods to detect anomalous checkpoints in sequential electricity demand profiles. Transitioned to a Ph.D. Applied Scientist role at a rotational program in (MAIDAP) under Microsoft's Office of Applied Research.
+        <td> Defended Ph.D. thesis on the use of deep learning and stochastic methods to detect anomalous checkpoints in sequential electricity demand profiles.
     </td>
     </tr>
     <tr>
         <td valign="top"><strong>[Jun 2021]</strong></td>
-        <td>Selected to be part of the high coveted (0.1% acceptance rate) 2-year Applied ML research rotational prgram: Microsoft AI Development Acceleration Program <a href = "https://www.microsoftnewengland.com/maidap/"> (MAIDAP) </a> post graduating from CMU.
+        <td>Selected to be part of the high coveted (0.1% acceptance rate) 2-year Applied ML research rotational prgram: Microsoft AI Development Acceleration Program <a href = "https://www.microsoftnewengland.com/maidap/"> (MAIDAP) </a> under the Office of Applied Research as an Ph.D. Applied Scientist, post graduating from CMU.
         </td>
     </tr>
     <tr>
@@ -36,7 +58,7 @@ I'm Reshmi, an Applied Scientist at Microsoft. I recently graduated with a Ph.D.
     </tr>
     <tr>
         <td valign="top"><strongS>[Jan 2021]</strong></td>
-        <td>Invited to be a part of the <a href = "https://www.janestreet.com/join-jane-street/our-programs/symposium/"> Jane Street Ph.D. Symposium</a> and present doctoral research related to large scale time series analysis using advanced machine learning methods </td>
+        <td>Invited to be a part of the <a href = "https://www.janestreet.com/join-jane-street/our-programs/symposium/"> Jane Street Ph.D. Symposium </a> and present doctoral research related to large scale time series analysis using advanced machine learning methods </td>
     </tr>
     <tr>
         <td valign="top"><strong>[Jun 2020]</strong></td>
