@@ -17,10 +17,10 @@ I'm Reshmi, an Applied Scientist at Microsoft. I recently graduated with a Ph.D.
     <col width="82%">
   <tr>
         <td valign="top"><strong>[Jun 2021]</strong></td>
-        <td>Research paper on using deep learning methods to back-forecast electricity demand accepted for poster presentation at at <a href = "https://www.climatechange.ai/events/icml2021"> Tackling Climate Change with Machine Learning Workshop</a> ICML, 2021</td>
+        <td>Research paper on using deep learning methods to back-forecast electricity demand accepted at <a href = "https://www.climatechange.ai/events/icml2021"> ICML 2021</a>S</td>
     </tr>
     <tr>
-        <td valign="top"><strong>[Jan 2021]</strong></td>
+        <td valign="top"><strongS>[Jan 2021]</strong></td>
         <td>Invited to be a part of the <a href = "https://www.janestreet.com/join-jane-street/our-programs/symposium/"> Jane Street Ph.D. Symposium</a> and present doctoral research related to large scale time series analysis using advanced machine learning methods </td>
     </tr>
     <tr>
