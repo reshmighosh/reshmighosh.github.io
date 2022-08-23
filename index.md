@@ -1,5 +1,5 @@
 
-### &emsp;&emsp; ABOUT  &emsp; [ACADEMICS](./Academics.md) &emsp; [PROJECTS](./projects) &emsp; [LIFE BEYOND PH.D.](./lifebeyondphd.md) &emsp;
+### &emsp;&emsp; ABOUT  &emsp; [ACADEMICS](./Academics.md) &emsp; [PROJECTS](./projects) &emsp; [Reviewing Activities](./reviewing.md) &emsp;
 
 
 I'm Reshmi, an Applied Scientist at Microsoft. I recently graduated with a Ph.D. from Carnegie Mellon University in 2021. I have always been passionate about machine learning, deep learning, economics, climate change, and renewable energy. I have 5+ years of working with data-driven techniques in python to discover underlying patterns in large datasets. I love leveraging data science techniques to derive key actionable insights about business and societal problems, and translating these insights into business strategies.
