@@ -24,12 +24,12 @@ Prior to joining Microsoft, I graduated with a Ph.D. from Carnegie Mellon Univer
  </tr>
    <tr>
         <td valign="top"><strong>[July 2022]</strong></td>
-    <td> <a href = https://aaclweb.org > AACL 2022 </a> short paper reviewer
+    <td> <a href = "https://aaclweb.org" > AACL 2022 </a> short paper reviewer
         </td>
  </tr>
  <tr>
         <td valign="top"><strong>[July 2022]</strong></td>
-        <td>Invited Speaker at <a href=  https://www.meetup.com/bay-area-women-in-machine-learning-and-data-science/events/286628485/> WiMLDS Bay Area </a> to present a talk about Deep Reinforcement Learning & Contextual Bandits
+        <td>Invited Speaker at <a href=  "https://www.meetup.com/bay-area-women-in-machine-learning-and-data-science/events/286628485/"> WiMLDS Bay Area </a> to present a talk about Deep Reinforcement Learning & Contextual Bandits
         </td>
  </tr>
     <tr>
@@ -39,17 +39,17 @@ Prior to joining Microsoft, I graduated with a Ph.D. from Carnegie Mellon Univer
  </tr>
    <tr>
         <td valign="top"><strong>[April 2022]</strong></td>
-   <td>Invited Speaker at <a href = https://odsc.com/boston/ODSC > ODSC East 2022 </a> to present a talk about Quantization methods for large sequential models
+   <td>Invited Speaker at <a href = "https://odsc.com/boston/ODSC" > ODSC East 2022 </a> to present a talk about Quantization methods for large sequential models
         </td>
  </tr>
   <tr>
         <td valign="top"><strong>[April 2022]</strong></td>
-   <td>Guest Lecturer at <a href = https://www.lti.cs.cmu.edu > Carnegie Mellon University, Language Technologies Institute </a> to present a talk about Contextual Bandits & Deep Reinforcemment Learning
+   <td>Guest Lecturer at <a href = "https://www.lti.cs.cmu.edu" > Carnegie Mellon University, Language Technologies Institute </a> to present a talk about Contextual Bandits & Deep Reinforcemment Learning
         </td>
  </tr>
    <tr>
         <td valign="top"><strong>[February 2022]</strong></td>
- <td>Semi-finalist at <a href = https://openai.com/blog/openai-codex/ > Open AI Codex </a> challenge (selected project: Integrating Open AI to databases to accelerate database quering process for non-developers)
+ <td>Semi-finalist at <a href = "https://openai.com/blog/openai-codex/" > Open AI Codex </a> challenge (selected project: Integrating Open AI to databases to accelerate database quering process for non-developers)
         </td>
  </tr>
     <tr>
