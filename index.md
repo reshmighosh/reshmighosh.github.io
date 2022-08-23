@@ -27,12 +27,12 @@ I'm Reshmi, an Applied Scientist at Microsoft. I recently graduated with a Ph.D.
  </tr>
  <tr>
         <td valign="top"><strong>[July 2022]</strong></td>
-        <td>Invited Speaker at <a =  https://www.linkedin.com/posts/wimlds-bayarea_machinelearning-wimlds-reinforcementlearning-activity-6950230195811340288-GQm1?utm_source=share&utm_medium=member_desktop> WiMLDS Bay Area </a> to present a talk about Deep Reinforcement Learning & Contextual Bandits
+        <td>Invited Speaker at <a href=  https://www.meetup.com/bay-area-women-in-machine-learning-and-data-science/events/286628485/> WiMLDS Bay Area </a> to present a talk about Deep Reinforcement Learning & Contextual Bandits
         </td>
  </tr>
     <tr>
         <td valign="top"><strong>[May 2022]</strong></td>
-    <td> Selected as a reviewer for evaluating proposals to Microsoft's internal Machine Learning and Data Science journal
+    <td> Selected as a reviewer for evaluating research paper submitted to Microsoft's Machine Learning, AI, and Data Science journal
         </td>
  </tr>
    <tr>
@@ -57,7 +57,7 @@ I'm Reshmi, an Applied Scientist at Microsoft. I recently graduated with a Ph.D.
     </tr>
     <tr>
         <td valign="top"><strong>[Jun 2021]</strong></td>
-        <td>Research paper on using deep learning methods to back-forecast electricity demand accepted at <a href = "https://www.climatechange.ai/events/icml2021"> ICML</a> 2021
+        <td>Research paper on using deep learning methods to back-forecast electricity demand accepted at <a href = https://s3.us-east-1.amazonaws.com/climate-change-ai/papers/icml2021/56/paper.pdf> ICML</a> 2021
         </td>
     </tr>
     <tr>
@@ -74,7 +74,7 @@ I'm Reshmi, an Applied Scientist at Microsoft. I recently graduated with a Ph.D.
     </tr>
     <tr>
         <td valign="top"><strong>[Apr 2020]</strong></td>
-        <td>Inducted as a part of research team at <a href="https://www.assetlab.org/people">Asset Lab</a>, University of Michigan, Ann Arbor to use stochastic methods to assess future grid reliability and also leverage advanced machine learning methods to discover patterns in large time series data with Prof. Michael Craig.
+        <td>Inducted as a part of research team at Asset Lab, University of Michigan, Ann Arbor to use stochastic methods to assess future grid reliability and also leverage advanced machine learning methods to discover patterns in large time series data with Prof. Michael Craig.
         </td>
     </tr>
     <tr>
