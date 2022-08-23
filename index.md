@@ -15,9 +15,24 @@ I'm Reshmi, an Applied Scientist at Microsoft. I recently graduated with a Ph.D.
 <table class='news-table'>
     <col width="18%">
     <col width="82%">
+     <tr>
+        <td valign="top"><strong>[July 2022]</strong></td>
+        <td>Research paper on topic segmentation for noisy conversational datasets (from joint effort by University of Massachusetts at Amherst & Microsoft Research) under review at COLING 2022
+        </td>
+    <tr>
+        <td valign="top"><strong>[Oct 2021]</strong></td>
+        <td> Defended Ph.D. thesis on the use of deep learning and stochastic methods to detect anomalous checkpoints in sequential electricity demand profiles. Transitioned to a Ph.D. Applied Scientist role at a rotational program in (MAIDAP) under Microsoft's Office of Applied Research.
+    </td>
+    </tr>
     <tr>
         <td valign="top"><strong>[Jun 2021]</strong></td>
-        <td>Research paper on using deep learning methods to back-forecast electricity demand accepted at <a href = "https://www.climatechange.ai/events/icml2021"> ICML</a>2021</td>
+        <td>Selected to be part of the high coveted (0.1% acceptance rate) 2-year Applied ML research rotational prgram: Microsoft AI Development Acceleration Program <a href = "https://www.microsoftnewengland.com/maidap/"> (MAIDAP) </a> post graduating from CMU.
+        </td>
+    </tr>
+    <tr>
+        <td valign="top"><strong>[Jun 2021]</strong></td>
+        <td>Research paper on using deep learning methods to back-forecast electricity demand accepted at <a href = "https://www.climatechange.ai/events/icml2021"> ICML</a> 2021
+        </td>
     </tr>
     <tr>
         <td valign="top"><strongS>[Jan 2021]</strong></td>
