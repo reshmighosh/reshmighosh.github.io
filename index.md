@@ -45,6 +45,11 @@ I'm Reshmi, an Applied Scientist at Microsoft. I recently graduated with a Ph.D.
    <td>Guest Lecturer at <a href = https://www.lti.cs.cmu.edu > Carnegie Mellon University, Language Technologies Institute </a> to present a talk about Contextual Bandits & Deep Reinforcemment Learning
         </td>
  </tr>
+   <tr>
+        <td valign="top"><strong>[February 2022]</strong></td>
+ <td>Semi-finalist at <a href = https://openai.com/blog/openai-codex/ > Open AI Codex </a> challenge (selected project: Integrating Open AI to databases to accelerate database quering process for non-developers)
+        </td>
+ </tr>
     <tr>
         <td valign="top"><strong>[Oct 2021]</strong></td>
         <td> Defended Ph.D. thesis on the use of deep learning and stochastic methods to detect anomalous checkpoints in sequential electricity demand profiles.
