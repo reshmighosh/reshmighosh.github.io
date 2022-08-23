@@ -30,6 +30,11 @@ I'm Reshmi, an Applied Scientist at Microsoft. I recently graduated with a Ph.D.
         <td>Invited Speaker at <a =  https://www.linkedin.com/posts/wimlds-bayarea_machinelearning-wimlds-reinforcementlearning-activity-6950230195811340288-GQm1?utm_source=share&utm_medium=member_desktop> WiMLDS Bay Area </a> to present a talk about Deep Reinforcement Learning & Contextual Bandits
         </td>
  </tr>
+    <tr>
+        <td valign="top"><strong>[May 2022]</strong></td>
+    <td> Selected as a reviewer for evaluating proposals to Microsoft's internal Machine Learning and Data Science journal
+        </td>
+ </tr>
    <tr>
         <td valign="top"><strong>[April 2022]</strong></td>
    <td>Invited Speaker at <a href = https://odsc.com/boston/ODSC > ODSC East 2022 </a> to present a talk about Quantization methods for large sequential models
@@ -37,7 +42,7 @@ I'm Reshmi, an Applied Scientist at Microsoft. I recently graduated with a Ph.D.
  </tr>
   <tr>
         <td valign="top"><strong>[April 2022]</strong></td>
-   <td>Invited Speaker at <a href = https://odsc.com/boston/ODSC > ODSC East 2022 </a> to present a talk about Quantization methods for large sequential models.
+   <td>Guest Lecturer at <a href = https://www.lti.cs.cmu.edu > Carnegie Mellon University, Language Technologies Institute </a> to present a talk about Contextual Bandits & Deep Reinforcemment Learning
         </td>
  </tr>
     <tr>
