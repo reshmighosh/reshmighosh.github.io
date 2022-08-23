@@ -2,7 +2,7 @@
 ### &emsp;&emsp; ABOUT  &emsp; [ACADEMICS](./Academics.md) &emsp; [PROJECTS](./projects) &emsp;
 
 
-I'm Reshmi, a Ph.D. Applied Scientist at Microsoft's highly coveted AI rotational program. I recently completed a project with Microsoft Office to improve upon a intelligent commanding feature, wherein I developed novel loss functions for a large Transformer model in production to improve user experience. 
+I'm Reshmi, a Ph.D. Applied Scientist at Microsoft's highly coveted AI rotational program. I recently completed a project with Microsoft Office to improve upon a intelligent commanding feature, wherein I developed novel loss functions for a Transformer based model in production to improve user experience. 
 
 Prior to joining Microsoft, I graduated with a Ph.D. from Carnegie Mellon University in 2021. I have always been passionate about machine learning, deep learning, economics, climate change, and renewable energy. I have 5+ years of working with data-driven techniques in python to discover underlying patterns in large datasets. I love leveraging data science techniques to derive key actionable insights about business and societal problems, and translating these insights into business strategies.
 
