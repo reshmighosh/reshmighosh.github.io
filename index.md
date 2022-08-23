@@ -15,14 +15,13 @@ I'm Reshmi, an Applied Scientist at Microsoft. I recently graduated with a Ph.D.
 <table class='news-table'>
     <col width="18%">
     <col width="82%">
-
      <tr>
         <td valign="top"><strong>[July 2022]</strong></td>
         <td>Research paper on topic segmentation for noisy conversational datasets (from joint effort by University of Massachusetts at Amherst & Microsoft Research) under review at COLING 2022
         </td>
  </tr>
    <tr>
-        <td valign="top"><strong>[April 2022]</strong></td>
+        <td valign="top"><strong>[July 2022]</strong></td>
     <td> <a href = https://aaclweb.org > AACL 2022 </a> short paper reviewer
         </td>
  </tr>
