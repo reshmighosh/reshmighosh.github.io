@@ -15,9 +15,9 @@ I'm Reshmi, an Applied Scientist at Microsoft. I recently graduated with a Ph.D.
 <table class='news-table'>
     <col width="18%">
     <col width="82%">
-  <tr>
+    <tr>
         <td valign="top"><strong>[Jun 2021]</strong></td>
-        <td>Research paper on using deep learning methods to back-forecast electricity demand accepted at <a href = "https://www.climatechange.ai/events/icml2021"> ICML 2021</a></td>
+        <td>Research paper on using deep learning methods to back-forecast electricity demand accepted at <a href = "https://www.climatechange.ai/events/icml2021"> ICML</a>2021</td>
     </tr>
     <tr>
         <td valign="top"><strongS>[Jan 2021]</strong></td>
