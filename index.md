@@ -17,6 +17,11 @@ Prior to joining Microsoft, I graduated with a Ph.D. from Carnegie Mellon Univer
 <table class='news-table'>
     <col width="18%">
     <col width="82%">
+      <tr>
+        <td valign="top"><strong>[Aug 2022]</strong></td>
+        <td>NLP + Reinforcement Learning lead reviewer @ Microsoft Machine Learning, AI and Data Science Conference, Fall 2022
+        </td>
+ </tr>
      <tr>
         <td valign="top"><strong>[July 2022]</strong></td>
         <td>Research paper on topic segmentation for noisy conversational datasets (from joint effort by University of Massachusetts at Amherst & Microsoft Research) under review at COLING 2022
