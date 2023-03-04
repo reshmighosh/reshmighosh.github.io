@@ -23,12 +23,12 @@ Prior to joining Microsoft, I graduated with a Ph.D. from Carnegie Mellon Univer
         </td>
  </tr>
   <tr>
-        <td valign="top"><strong>[Feb 2023]</strong></td>
+        <td valign="top"><strong>[Jan 2023]</strong></td>
         <td>ICLR 2023, AISTATS 2023, NIPS 2022, ICCV 2022 Reviewer
         </td>
  </tr>
    <tr>
-        <td valign="top"><strong>[Feb 2023]</strong></td>
+        <td valign="top"><strong>[October 2022]</strong></td>
         <td> Paper: Topic Segmentation in the Wild: Towards Segmentation of Semi-structured & Unstructured Chats accepted to NeurIPS 2022. Read <a href = "https://www.microsoft.com/en-us/research/publication/topic-segmentation-in-the-wild-towards-segmentation-of-semi-structured-unstructured-chats/" > here </a>
         </td>
  </tr>
