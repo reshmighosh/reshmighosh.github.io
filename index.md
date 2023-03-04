@@ -17,6 +17,21 @@ Prior to joining Microsoft, I graduated with a Ph.D. from Carnegie Mellon Univer
 <table class='news-table'>
     <col width="18%">
     <col width="82%">
+    <tr>
+        <td valign="top"><strong>[Feb 2023]</strong></td>
+        <td> Paper: Topic Segmentation for Unstructured Conversations accepted to IntelliSys Sept 2023. Link Coming Soon!
+        </td>
+ </tr>
+  <tr>
+        <td valign="top"><strong>[Feb 2023]</strong></td>
+        <td>ICLR 2023, AISTATS 2023, NIPS 2022, ICCV 2022 Reviewer
+        </td>
+ </tr>
+   <tr>
+        <td valign="top"><strong>[Feb 2023]</strong></td>
+        <td> Paper: Topic Segmentation in the Wild: Towards Segmentation of Semi-structured & Unstructured Chats accepted to NeurIPS 2022. Read <a href = "https://www.microsoft.com/en-us/research/publication/topic-segmentation-in-the-wild-towards-segmentation-of-semi-structured-unstructured-chats/" > here </a>
+        </td>
+ </tr>
       <tr>
         <td valign="top"><strong>[Aug 2022]</strong></td>
         <td>NLP + Reinforcement Learning lead reviewer @ Microsoft Machine Learning, AI and Data Science Conference, Fall 2022
