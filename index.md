@@ -44,7 +44,7 @@ Prior to joining Microsoft, I graduated with a Ph.D. from Carnegie Mellon Univer
  </tr>
    <tr>
         <td valign="top"><strong>[July 2022]</strong></td>
-    <td> <a href = "https://aaclweb.org" > AACL 2022 </a> and <a href "https://aaai.org/Conferences/AAAI-23/" > AAAI 2023 </a> reviewer
+    <td> <a href = "https://aaclweb.org" > AACL 2022 </a> and AAAI 2023 </a> reviewer
         </td>
  </tr>
  <tr>
