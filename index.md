@@ -8,7 +8,7 @@ Prior to joining Microsoft, I graduated with a Ph.D. from Carnegie Mellon Univer
 
  My doctoral research reflects the blend of of my interest areas in a public policy setting for energy systems. I am analyzing the future reliability of power systems for the United States by **developing probabilistic mathematical models** using terrabytes of reanalysis datasets to measure the resource adequacy metrics. Additionally, I am also working to reconstruct decades of missing electricity demand data using **large seq2seq models for detecting anomalous behavior (vanilla and with Attention)**. I am also attempting to use causal inference methods to identify underlying patterns in multi-decadal electricity load data, and understand it's implication on grid system.
 
- [Ph.D. Dissertation](https://drive.google.com/file/d/18T7ZjSKAcJFX_mivBmwltvG-X_2t1Ef_/view) | [Resume](https://reshmighosh.github.io/files/ReshmiG_Resume_Public.pdf) | [LinkedIn](https://www.linkedin.com/in/reshmi-ghosh/) | [Github](https://github.com/reshmighosh) | [Twitter](https://twitter.com/reshmigh)
+ [Ph.D. Dissertation](https://drive.google.com/file/d/18T7ZjSKAcJFX_mivBmwltvG-X_2t1Ef_/view) | [Resume](https://github.com/reshmighosh/reshmighosh.github.io/files/ReshmiGhosh_ResumeMarch2023.pdf) | [LinkedIn](https://www.linkedin.com/in/reshmi-ghosh/) | [Github](https://github.com/reshmighosh) | [Twitter](https://twitter.com/reshmigh)
 
 -------  
 
