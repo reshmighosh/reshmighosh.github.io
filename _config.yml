@@ -1,9 +1,14 @@
 # Site wide configuration
 theme: jekyll-theme-minimal
 title: Reshmi Ghosh
-description: Ph.D. Applied Scientist, Microsoft (Office of Applied Research)
-show_downloads: false
+description: Ph.D. Applied Scientist, Microsoft (MSAI)
+show_downloads: true
 logo: /images/1462696_10200387915380867_283294306_o.jpeg
 twitter: reshmighosh
 github: reshmighosh
+linkedin_url: https://www.linkedin.com/in/reshmi-ghosh/
+google_scholar_url: https://scholar.google.com/citations?user=ui8JeF5lKNMC&hl=en
+semantic_scholar_url: https://www.semanticscholar.org/author/your-id
+twitter_url: https://twitter.com/reshmigh
+Microsoft_webpage: https://www.microsoft.com/en-us/research/people/reshmighosh/
 
