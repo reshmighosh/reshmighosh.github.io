@@ -12,6 +12,13 @@ Prior to joining Microsoft, I graduated with a Ph.D. from Carnegie Mellon Univer
 
  [Ph.D. Dissertation](https://drive.google.com/file/d/18T7ZjSKAcJFX_mivBmwltvG-X_2t1Ef_/view) | [Resume](https://github.com/reshmighosh/reshmighosh.github.io/blob/master/files/ReshmiGhosh_ResumeMarch2023.pdf) | [LinkedIn](https://www.linkedin.com/in/reshmi-ghosh/) | [Github](https://github.com/reshmighosh) | [Twitter](https://twitter.com/reshmigh)
 
+
+ <a href="https//www.linkedin.com/in/reshmi-ghosh" target="_blank">
+     <i class="fa-brands fa-linkedin"></i>
+ </a>
+ <a href="https://twitter.com/reshmigh" target="_blank">
+     <i class="fab fa-twitter"></i>
+ </a>
 -------  
 
 
