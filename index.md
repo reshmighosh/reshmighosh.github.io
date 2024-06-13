@@ -2,7 +2,7 @@
 ### &emsp;&emsp; ABOUT  &emsp; [ACADEMICS](./Academics.md) &emsp; [PROJECTS](./projects) &emsp;
 
 
-I'm Reshmi, a Ph.D. Applied Scientist at Microsoft's Search and Intelligent Assistance (MSAI) team, focusing on developing state-of-the-art Responsible AI and Trustworthy evaluation mechanisms for LLM applications. I have focused my efforts in the past year on identifying, evaluating, and mitigating security vulnerabilities (prompt injections) in M365 Chat CoPilot, extending to Office 365 CoPilots (PowerPoint, Excel, Word, Outlook, Teams, etc.). Shortly before that, I was also responsible for leading the efforts to architect and integrate Generative AI capabilities in Microsoft's Productivity applications (M365 CoPilots, see Satya Nadella's announcement of these products [here](https://news.microsoft.com/reinventing-productivity/) (patent filed). 
+I'm Reshmi, Applied Scientist at Microsoft's Search and Intelligent Assistance (MSAI) team, focusing on developing state-of-the-art Responsible AI and Trustworthy evaluation mechanisms for LLM applications. I have focused my efforts in the past year on identifying, evaluating, and mitigating security vulnerabilities (prompt injections) in M365 Chat CoPilot, extending to Office 365 CoPilots (PowerPoint, Excel, Word, Outlook, Teams, etc.). Shortly before that, I was also responsible for leading the efforts to architect and integrate Generative AI capabilities in Microsoft's Productivity applications (M365 CoPilots, see Satya Nadella's announcement of these products [here](https://news.microsoft.com/reinventing-productivity/) (patent filed). 
 
 Before joining MSAI, I was selected to be part of the highly coveted [AI rotational program](https://www.microsoftnewengland.com/maidap/) at Microsoft's New England Research and Development Center (NERD) (currently under the Office of CTO, previously under Jaime Teevan's Office of Applied Research). I was one of the 17 individuals from 10K applicants (~0.2% acceptance rate) to this esteemed program. During my time in MAIDAP, I spent time bringing ML capabilities to detect anomalies in Azure services, serviced intelligent commanding features to Microsoft Office using seq2seq language modeling as well as researching user preferences in UX positioning by developing a novel loss function. I furthermore worked with the Viva Topics team to develop new probabilistic graphical methods to measure time saved to find new knowledge and developed an LLM application and novel evaluation framework for generating rich-text formatting within a client application.
 
@@ -26,9 +26,32 @@ Prior to joining Microsoft, I graduated with a Ph.D. from Carnegie Mellon Univer
 <table class='news-table'>
     <col width="18%">
     <col width="82%">
+<tr>
+        <td valign="top"><strong>[June 2024]</strong></td>
+        <td> Paper from IEEE Secure and Trustworthy ML (SatML), LLM Capture-The-Flag competition now live. Read research paper here <a href = "https://arxiv.org/abs/2406.07954" > here. We disocver that prompt-based protections to defend the leakage of 6-character secret from the system can bypassed using 4+ turn based conversations, showcasing that multi-turn Direct Prompt Injections can be very successful. The comptetion led to the collection of defense and attack dataset, published in <a href = "https://huggingface.co/datasets/ethz-spylab/ctf-satml24"> HuggingFace </a>
+        </td>
+ </tr>
+
+<tr>
+        <td valign="top"><strong>[March 2024]</strong></td>
+        <td> Came out as silver medal winners at the IEEE Secure and Trustworthy ML (SatML), LLM Capture-The-Flag competition
+        </td>
+ </tr>
+
+<tr>
+        <td valign="top"><strong>[October 2023]</strong></td>
+        <td> Paper on "Surgical Fine-Tuening" for resource efficient task-adaptation for Language encoders accepted to EMNLP 2023. Read research paper here <a href = "https://arxiv.org/abs/2310.17041" > here </a>
+         </a>
+        </td>
+ </tr>
+    <tr>
+        <td valign="top"><strong>[April 2023]</strong></td>
+        <td> Invited Technical Keynote Speaker at Voices of Data Science Conferenc, University of Massachusetts, Amherst </a>
+        </td>
+ </tr>
     <tr>
         <td valign="top"><strong>[Feb 2023]</strong></td>
-        <td> Paper: Topic Segmentation for Unstructured Conversations accepted to IntelliSys Sept 2023. Link Coming Soon!
+        <td> Paper: Topic Segmentation for Unstructured Conversations accepted to IntelliSys Sept 2023. Read the Springer 'Intelligent Systems and Applications' book chapter <a href = "https://link.springer.com/chapter/10.1007/978-3-031-47718-8_7" > here </a>
         </td>
  </tr>
   <tr>
