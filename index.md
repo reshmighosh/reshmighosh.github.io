@@ -1,5 +1,5 @@
 
-### &emsp;&emsp; ABOUT  &emsp; [ACADEMICS](./Academics.md) &emsp; [PROJECTS](./projects) &emsp;
+### &emsp;&emsp; ABOUT  &emsp; [INVITED TALKS](./) &emsp; [TEACING & SERVICES](./Academics.md) &emsp; [AWARDS](./projects) &emsp;
 
 
 I'm Reshmi, Applied Scientist at Microsoft's Search and Intelligent Assistance (MSAI) team, focusing on developing state-of-the-art Responsible AI and Trustworthy evaluation mechanisms for LLM applications. I have focused my efforts in the past year on identifying, evaluating, and mitigating security vulnerabilities (prompt injections) in M365 Chat CoPilot, extending to Office 365 CoPilots (PowerPoint, Excel, Word, Outlook, Teams, etc.). Shortly before that, I was also responsible for leading the efforts to architect and integrate Generative AI capabilities in Microsoft's Productivity applications (M365 CoPilots, see Satya Nadella's announcement of these products [here](https://news.microsoft.com/reinventing-productivity/) (patent filed). 
@@ -20,6 +20,18 @@ Prior to joining Microsoft, I graduated with a Ph.D. from Carnegie Mellon Univer
      <i class="fab fa-twitter"></i>
  </a>
 -------  
+
+<div style="height: 200px; overflow-y: scroll; border: 1px solid #ccc; padding: 10px;">
+  <h2>News</h2>
+  <ul>
+    <li>News Item 1</li>
+    <li>News Item 2</li>
+    <li>News Item 3</li>
+    <!-- Add more news items here -->
+  </ul>
+</div>
+
+-------
 
 
 <h3 align="center">Updates</h3>
