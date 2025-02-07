@@ -21,28 +21,20 @@ Prior to joining Microsoft, I graduated with a Ph.D. from Carnegie Mellon Univer
  </a>
 -------  
 <h3 align="center">Products/Software Highlights</h3>
-<div style="max-height: 300px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+<div style="max-height: 300px; overflow-y: auto; padding: 10px;">
     <ul style="margin: 0; padding: 0; list-style-type: none;">
-        <li><strong>Category 1</strong>
+        <li><strong>2025- it's becoming all about Agents </strong>
             <ul>
-                <li>Highlight 1</li>
-                <li>Highlight 2</li>
-                <li>Highlight 3</li>
-                <li>Highlight 4</li>
-                <li>Highlight 5</li>
-                <li>Highlight 6</li>
-                <li>Highlight 7</li>
+                <li>Contributed to safe release of Agentic workflows in [M365 Copilot](https://www.microsoft.com/insidetrack/blog/ai-powered-agents-in-action-how-were-embracing-this-new-agentic-moment-at-microsoft/) </li>
+             <li> Learn about Agents in [Copilot](https://news.microsoft.com/source/features/ai/ai-agents-what-they-are-and-how-theyll-change-the-way-we-work/)</li>
             </ul>
         </li>
-        <li><strong>Category 2</strong>
+        <li><strong>2024 - Year 2 of bringing AI into search and productivity</strong>
             <ul>
                 <li>Highlight 8</li>
                 <li>Highlight 9</li>
                 <li>Highlight 10</li>
                 <li>Highlight 11</li>
-                <li>Highlight 12</li>
-                <li>Highlight 13</li>
-                <li>Highlight 14</li>
             </ul>
         </li>
         <!-- Add more categories and highlights as needed -->
