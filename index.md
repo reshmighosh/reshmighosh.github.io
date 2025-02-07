@@ -20,6 +20,35 @@ Prior to joining Microsoft, I graduated with a Ph.D. from Carnegie Mellon Univer
      <i class="fab fa-twitter"></i>
  </a>
 -------  
+<h3 align="center">Products/Software Highlights</h3>
+<div style="max-height: 300px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+    <ul style="margin: 0; padding: 0; list-style-type: none;">
+        <li><strong>Category 1</strong>
+            <ul>
+                <li>Highlight 1</li>
+                <li>Highlight 2</li>
+                <li>Highlight 3</li>
+                <li>Highlight 4</li>
+                <li>Highlight 5</li>
+                <li>Highlight 6</li>
+                <li>Highlight 7</li>
+            </ul>
+        </li>
+        <li><strong>Category 2</strong>
+            <ul>
+                <li>Highlight 8</li>
+                <li>Highlight 9</li>
+                <li>Highlight 10</li>
+                <li>Highlight 11</li>
+                <li>Highlight 12</li>
+                <li>Highlight 13</li>
+                <li>Highlight 14</li>
+            </ul>
+        </li>
+        <!-- Add more categories and highlights as needed -->
+    </ul>
+</div>
+
 
 <h3 align="center">Research Highlights</h3>
 <div style="max-height: 300px; overflow-y: auto;">
