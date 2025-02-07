@@ -21,6 +21,31 @@ Prior to joining Microsoft, I graduated with a Ph.D. from Carnegie Mellon Univer
  </a>
 -------  
 
+<h3 align="center">Research Highlights</h3>
+<div style="max-height: 300px; overflow-y: auto;">
+    <ul>
+        <li><strong>Search and Safety for AI</strong>
+            <ul>
+                <li>Organizing a </li>
+                <li>Highlight 2</li>
+            </ul>
+        </li>
+        <li><strong>Human-AI Alignment</strong>
+            <ul>
+                <li>Highlight 3</li>
+                <li>Highlight 4</li>
+            </ul>
+        </li>
+     <li><strong>Interpreting and Explaining Black-box Language Models</strong>
+            <ul>
+                <li>Highlight 3</li>
+                <li>Highlight 4</li>
+            </ul>
+        </li>
+        <!-- Add more categories and highlights as needed -->
+    </ul>
+</div>
+
 
 <h3 align="center">Updates</h3>
 <table class='news-table'>
