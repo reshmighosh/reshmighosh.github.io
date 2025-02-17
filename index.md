@@ -27,14 +27,14 @@ Prior to joining Microsoft, I graduated with a Ph.D. from Carnegie Mellon Univer
     <ul style="margin: 0; padding: 0; list-style-type: none;">
         <li><strong>2025- it's becoming all about Agents </strong>
             <ul>
-                <li>Contributed to safe release of Agentic workflows in <a href ="https://www.microsoft.com/insidetrack/blog/ai-powered-agents-in-action-how-were-embracing-this-new-agentic-moment-at-microsoft/" target = "_blank"> M365 Copilot</a> </li>
-             <li> Learn about Agents in <a href="https://news.microsoft.com/source/features/ai/ai-agents-what-they-are-and-how-theyll-change-the-way-we-work/" target="_blank"> Copilot</a> /li>
+                <li>Contributed to safe release of Agentic workflows in <a href ="https://www.microsoft.com/insidetrack/blog/ai-powered-agents-in-action-how-were-embracing-this-new-agentic-moment-at-m[...]
+                <li>Learn about Agents in <a href="https://news.microsoft.com/source/features/ai/ai-agents-what-they-are-and-how-theyll-change-the-way-we-work/" target="_blank"> Copilot</a></li>
             </ul>
         </li>
         <li><strong>2024 - Year 2 of bringing AI into search and productivity</strong>
             <ul>
                 <li>Developed novel methods for post-training of AI-systems to prevent security breaches</li>
-                <li>Azure Prompt Shields now available for </li>
+                <li>Azure Prompt Shields now available for</li>
                 <li>Highlight 10</li>
                 <li>Highlight 11</li>
             </ul>
@@ -43,13 +43,12 @@ Prior to joining Microsoft, I graduated with a Ph.D. from Carnegie Mellon Univer
     </ul>
 </div>
 
-
 <h3 align="center">Research Highlights</h3>
-<div style="max-height: 300px; overflow-y: auto;">
+<div style="max-height: 300px; overflow-y: auto; padding: 10px;">
     <ul>
         <li><strong>Search and Safety for AI</strong>
             <ul>
-                <li>Organizing a </li>
+                <li>Organizing a</li>
                 <li>Highlight 2</li>
             </ul>
         </li>
@@ -59,7 +58,7 @@ Prior to joining Microsoft, I graduated with a Ph.D. from Carnegie Mellon Univer
                 <li>Highlight 4</li>
             </ul>
         </li>
-     <li><strong>Interpreting and Explaining Black-box Language Models</strong>
+        <li><strong>Interpreting and Explaining Black-box Language Models</strong>
             <ul>
                 <li>Highlight 3</li>
                 <li>Highlight 4</li>
