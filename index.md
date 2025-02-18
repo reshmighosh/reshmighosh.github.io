@@ -27,14 +27,15 @@ Prior to joining Microsoft, I graduated with a Ph.D. from Carnegie Mellon Univer
     <ul style="margin: 0; padding: 0; list-style-type: none;">
         <li><strong>2025- it's becoming all about Agents </strong>
             <ul>
-                <li>Contributed to safe release of Agentic workflows in <a href="https://www.microsoft.com/insidetrack/blog/ai-powered-agents-in-action-how-were-embracing-this-new-agentic-moment-at-m[...]"></a></li>
+             <li>Working with alignment issues of facts for a global audience and reduce over-refusal</li>
+                <li>Contributed to safe release of Agentic workflows in <a href="https://www.microsoft.com/insidetrack/blog/ai-powered-agents-in-action-how-were-embracing-this-new-agentic-moment-at-microsoft/"></a></li>
                 <li>Learn about Agents in <a href="https://news.microsoft.com/source/features/ai/ai-agents-what-they-are-and-how-theyll-change-the-way-we-work/" target="_blank"> Copilot</a></li>
             </ul>
         </li>
         <li><strong>2024 - Year 2 of bringing AI into search and productivity</strong>
             <ul>
                 <li>Working on novel post-training of AI-systems to prevent security breaches</li>
-                <li>Azure Prompt Shields now available for third party usage. Try it now!</li>
+                <li><a href="https://www.theverge.com/2024/3/28/24114664/microsoft-safety-ai-prompt-injections-hallucinations-azure">Azure Prompt Shields</a> now available for third party usage. Try it now!</li>
                 <li>Safeguarding automated search workflows from security breaches/prompt injections</li>
             </ul>
         </li>
