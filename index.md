@@ -34,9 +34,8 @@ Prior to joining Microsoft, I graduated with a Ph.D. from Carnegie Mellon Univer
         <li><strong>2024 - Year 2 of bringing AI into search and productivity</strong>
             <ul>
                 <li>Developed novel methods for post-training of AI-systems to prevent security breaches</li>
-                <li>Azure Prompt Shields now available for</li>
-                <li>Highlight 10</li>
-                <li>Highlight 11</li>
+                <li>Azure Prompt Shields now available for third party usage. Try it now!</li>
+                <li>Working on developing ML methods for safeguarding automated search workflows from security breaches/prompt injections</li>
             </ul>
         </li>
         <!-- Add more categories and highlights as needed -->
