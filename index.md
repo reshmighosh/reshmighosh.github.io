@@ -1,5 +1,5 @@
 
-### &emsp;&emsp; ABOUT  &emsp; [ACADEMICS](./Academics.md) &emsp; [PROJECTS](./projects) &emsp;
+### &emsp;&emsp; ABOUT  &emsp; [BLOG](./Blog.md) &emsp; [TEACHING](./Teaching.md) &emsp; [MENTORSHIP](./Mentorship.md) &emsp; [ACADEMICS](./Academics.md) &emsp; [PROJECTS](./projects) &emsp;
 
 
 Reshmi is a Senior Applied Scientist at Microsoft's Intelligent Search team (MSAI), currently involved in R&D and productionization of several **natural language and multimodal solutions for securing Copilot reasoning and enterprise RAG** from adversarial users. Most recently, she also contributed towards the post-training of AI-systems for aligning with human-preferences while ensuring safe search experiences. Reshmi loves working in fast-paced teams and has a rich experience of delivering high-impact features/products for Fortune 500 companies and end users. She also loves prototyping and working on incubation projects, an desire stemming from her past experience of finishing a forward-looking Ph.D. from Carnegie Mellon University in the intersection of deep learning, natural language processing, and renewable energy policies. 
