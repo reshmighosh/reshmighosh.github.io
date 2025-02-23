@@ -54,7 +54,7 @@ Her doctoral research reflects the blend of of my interest areas in a public pol
         <li><strong>Search and Safety for AI</strong>
             <ul>
                 <li>Organizing a</li>
-                <li>Highlight 2</li>
+                <li>Hiring a PhD Research Intern to work with me on cutting egde multimodal safety issues in Agents - apply <a href="https://jobs.careers.microsoft.com/global/en/job/1791737/Research-Intern---Multi-Agent-Models?amp;utm_campaign=LinkedIn-job-share">here </a></li>
             </ul>
         </li>
         <li><strong>Human-AI Alignment</strong>
