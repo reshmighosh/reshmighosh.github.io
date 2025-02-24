@@ -5,6 +5,10 @@
 Reshmi is a Senior Applied Scientist at Microsoft's Intelligent Search team (MSAI), currently involved in R&D and productionization of several **natural language and multimodal solutions for securing Copilot reasoning and enterprise RAG** from adversarial users. Most recently, she also contributed towards the post-training of AI-systems for aligning with human-preferences while ensuring secured search experiences experiences. Reshmi loves working in fast-paced teams and has a rich experience of delivering high-impact features/products for Fortune 500 companies and end users. She also loves prototyping and working on incubation projects, a desire stemming from her past experience of finishing a forward-looking Ph.D. from Carnegie Mellon University in the intersection of deep learning, natural language processing, and renewable energy policies. 
 
 ### Overview:
+
+[2025] - Working on Agents research and applications.
+
+
 [2023-2024] In the past 2 years of AI revolution, she has been focused on developing state-of-the-art Responsible AI and Trustworthy evaluation mechanisms for LLM and Multimodal model applications. Additionally, in 2023, Reshmi contributed to the development and shipped M365Copilot (Business Chat), followed by Azure Prompt Shileds in 2024. Shortly before that, she was tech leading efforts to architect and integrate first-ever Generative AI capabilities in Microsoft's Productivity applications (M365 CoPilots, see Satya Nadella's announcement of these products [here](https://news.microsoft.com/reinventing-productivity/)). 
 
 [<2023] Before joining MSAI, Reshmi was selected to be part of the highly coveted (~0.1% acceptance rate) [AI incubation program](https://www.microsoftnewengland.com/maidap/) at Microsoft's New England Research and Development Center (NERD) (currently under the Office of the CTO, previously under Jaime Teevan's Office of Applied Research). During this time, she worked on several incubation projects, notably:
