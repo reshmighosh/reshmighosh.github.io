@@ -1,4 +1,4 @@
-### &emsp;&emsp; [ABOUT](./index.md)  &emsp; [ACADEMICS](./Academics.md) &emsp;  [PROJECTS](./projects) &emsp; Reviewing Activities &emsp;
+### &emsp;&emsp; [ABOUT](./index.md)  &emsp; [ACADEMICS](./Academics.md) &emsp;  [PROJECTS](./projects) &emsp; SideQuests &emsp;
 
 ----
 
