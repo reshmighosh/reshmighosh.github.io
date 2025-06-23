@@ -1,7 +1,12 @@
 ### &emsp;&emsp; [ABOUT](./index.md)  &emsp; [ACADEMICS](./Academics.md) &emsp; PROJECTS &emsp; [Reviewing Activities](./reviewing.md)
 
 ------- 
-### PROJECTS
+## Papers 
+
+### 2025
+
+### 2024
+1. Quantifying reliance on external information over parametric knowledge during Retrieval Augmented Generation (RAG) using mechanistic analysis - https://arxiv.org/abs/2410.00857
 
 I love reading state of the art Machine and Deep Learning research papers and experiment with new model architectures by reimplmenting papers from scratch. I am currently working on end-to-end Automatic Speech recognition model with LibriSpeech data (*project link coming soon!*) using Transformer based architecture to parallelize the training process.
 
