@@ -4,15 +4,14 @@
 ## Papers 
 
 ### 2025
+1. Bidirectional Human-AI Alignment: Emerging Challenges and Opportunities, *Special Interest Groups (SIG)* at Conference of Human Factors in Computing Systems (CHI) [https://dl.acm.org/doi/abs/10.1145/3706599.3716291]
+2. ICLR 2025 Workshop on Bidirectional Human-AI Alignment
 
 ### 2024
-1. Quantifying reliance on external information over parametric knowledge during Retrieval Augmented Generation (RAG) using mechanistic analysis - https://arxiv.org/abs/2410.00857
+1. Quantifying reliance on external information over parametric knowledge during Retrieval Augmented Generation (RAG) using mechanistic analysis - Blackbox NLP Workshop, Empirical Methods for Natural Language Processing Conference, 2024 [https://arxiv.org/abs/2410.00857]
+2. 
+3. 
 
-I love reading state of the art Machine and Deep Learning research papers and experiment with new model architectures by reimplmenting papers from scratch. I am currently working on end-to-end Automatic Speech recognition model with LibriSpeech data (*project link coming soon!*) using Transformer based architecture to parallelize the training process.
-
-Moreover, during the course of my graduate studies I completed a series of academic and personal projects, with active participation in competitions like the MIT Energy Hackathon, Yale Graduate Case Competition(YGCC), Duke Graduate Case Competition, etc. During YGCC my team was one of the finalists in the competition, where we were touted as one of the most innovative teams to present a strategic solution to revolutionize electric scooter business using data-driven analysis.
-
-Some of my other academic and personal projects are listed below:
 
 <h3 align="center">Updates</h3>
 <table class='news-table'>
