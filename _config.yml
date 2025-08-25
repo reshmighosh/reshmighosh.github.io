@@ -1,14 +1,47 @@
-# Site wide configuration
-theme: jekyll-theme-minimal
-title: Reshmi Ghosh
-description: Senior Applied Scientist, Microsoft (MSAI)
-show_downloads: true
-logo: /images/1462696_10200387915380867_283294306_o.jpeg
-twitter: reshmighosh
-github: reshmighosh
-linkedin_url: https://www.linkedin.com/in/reshmi-ghosh/
-google_scholar_url: https://scholar.google.com/citations?user=ui8JeF5lKNMC&hl=en
-semantic_scholar_url: https://www.semanticscholar.org/author/your-id
-twitter_url: https://twitter.com/reshmigh
-Microsoft_webpage: https://www.microsoft.com/en-us/research/people/reshmighosh/
+title: "Reshmi Ghosh"
+description: "Trustworthy AI • Evaluation • RAI • Prompt Shields"
+url: "https://reshmighosh.github.io"
+author:
+  name: "Reshmi Ghosh"
+  avatar: /images/profile.jpg
+  links:
+    - label: Google Scholar
+      icon: "fas fa-graduation-cap"
+      url: "https://scholar.google.com/citations?user=ui8JeF5lKNMC"
+    - label: GitHub
+      icon: "fab fa-github"
+      url: "https://github.com/reshmighosh"
+
+# Minimal Mistakes
+remote_theme: "mmistakes/minimal-mistakes"
+minimal_mistakes_skin: "air"   # try: "dirt", "dark", etc.
+
+# Plugins supported by GitHub Pages
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Collections (see §2)
+collections:
+  publications:
+    output: true
+    permalink: /publications/:path/
+  talks:
+    output: true
+    permalink: /talks/:path/
+
+# Navigation
+header_pages:
+  - index.md
+  - projects.md
+  - publications.md
+  - talks.md
+
+# Defaults: thumbnails, author, layout
+defaults:
+  - scope: {path: "", type: publications}
+    values: {layout: single, classes: wide}
+  - scope: {path: "", type: talks}
+    values: {layout: single, classes: wide}
 
