@@ -14,7 +14,6 @@
 
 
 <h3 align="center">Updates</h3>
-<div class="table-scroll">
 <table class='news-table'>
     <col width="18%">
     <col width="82%">
@@ -48,4 +47,3 @@
     </tr>
 
 </table>
-</div>
