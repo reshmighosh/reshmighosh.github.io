@@ -3,7 +3,7 @@ description: "Trustworthy AI • Evaluation • RAI • Prompt Shields"
 url: "https://reshmighosh.github.io"
 author:
   name: "Reshmi Ghosh"
-  avatar: /images/1462696_10200387915380867_283294306_o.jpeg
+  avatar: /images/profile.jpg
   links:
     - label: Google Scholar
       icon: "fas fa-graduation-cap"
@@ -21,7 +21,6 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-feed
-  - jekyll-include-cache
 
 # Collections (see §2)
 collections:
