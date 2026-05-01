@@ -1,0 +1,126 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@charset "utf-8";
+
+@import "minimal-mistakes/skins/air"; // skin
+@import "minimal-mistakes"; // main partials
+
+
+/* ============================================================
+   CUSTOM OVERRIDES
+   Background: warm professional off-white (#f5f3ee)
+   Alternatives:
+     Cool blue-gray (tech-forward):  #f0f4f8
+     Warm cream (intellectual):      #faf8f3
+     Soft sage (research/science):   #f2f7f4
+   ============================================================ */
+
+body {
+  background-color: #f5f3ee;
+}
+
+.page__content,
+.archive,
+.list__item,
+.page,
+.sidebar {
+  background-color: transparent;
+}
+
+/* Masthead stays slightly lighter to create depth */
+.masthead {
+  background-color: #faf9f6;
+  border-bottom: 1px solid #e2dfd9;
+}
+
+/* ============================================================
+   SCROLLABLE TABLE WRAPPER
+   Wrap any <table> with <div class="table-scroll"> in markdown
+   ============================================================ */
+
+.table-scroll {
+  max-height: 480px;
+  overflow-y: auto;
+  border: 1px solid #dbd8d1;
+  border-radius: 6px;
+  margin-bottom: 1.5em;
+  background-color: #fefcf9;
+
+  /* Subtle custom scrollbar */
+  &::-webkit-scrollbar {
+    width: 7px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #f0ede7;
+    border-radius: 0 6px 6px 0;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #b8b3ab;
+    border-radius: 4px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #8a8680;
+  }
+}
+
+/* ============================================================
+   NEWS / UPDATES TABLE
+   ============================================================ */
+
+table.news-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9em;
+
+  tr {
+    border-bottom: 1px solid #ece9e3;
+    transition: background-color 0.12s ease;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:hover {
+      background-color: #f7f5f0;
+    }
+  }
+
+  td {
+    padding: 10px 14px;
+    vertical-align: top;
+    line-height: 1.55;
+  }
+
+  /* Date column */
+  td:first-child {
+    white-space: nowrap;
+    font-size: 0.82em;
+    font-weight: 600;
+    color: #6b6760;
+    padding-right: 16px;
+    letter-spacing: 0.01em;
+  }
+}
+
+/* ============================================================
+   SECTION HEADINGS — subtle warm underline accent
+   ============================================================ */
+
+h3[align="center"] {
+  border-bottom: 2px solid #d9d4cb;
+  padding-bottom: 0.3em;
+  margin-top: 1.8em;
+}
+
+/* ============================================================
+   SCROLLABLE HIGHLIGHT LISTS (existing divs in index.md)
+   ============================================================ */
+
+div[style*="max-height"] {
+  border: 1px solid #dbd8d1 !important;
+  border-radius: 6px !important;
+  background-color: #fefcf9 !important;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.04) !important;
+}

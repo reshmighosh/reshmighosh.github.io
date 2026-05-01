@@ -76,6 +76,7 @@ Reshmi holds a Ph.D. from Carnegie Mellon University. She has always been passio
 </div>
 
 <h3 align="center">Updates</h3>
+<div class="table-scroll">
 <table class='news-table'>
     <col width="18%">
     <col width="82%">
@@ -204,3 +205,4 @@ Reshmi holds a Ph.D. from Carnegie Mellon University. She has always been passio
         <td>Received Civil and Environmental Engineering department scholarship to support master's studies for the academic year 2016-2017. Scholarship resulted in 25% tuition waiver.</td>
     </tr>
 </table>
+</div>
