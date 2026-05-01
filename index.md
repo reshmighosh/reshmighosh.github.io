@@ -51,27 +51,29 @@ Reshmi holds a Ph.D. from Carnegie Mellon University. She has always been passio
 </div>
 
 <h3 align="center">Research Highlights</h3>
-<div style="max-height: 300px; overflow-y: auto; padding: 10px;">
+<div style="max-height: 400px; overflow-y: auto; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
     <ul>
         <li><strong>Search and Safety for AI</strong>
             <ul>
-                <li>Read our latest paper on detecting and mitigating prompt injections hidden in images <a href="https://arxiv.org/abs/2410.00296">here </a></li>
-                <li>Hiring a PhD Research Intern to work with me on cutting egde multimodal safety issues in Agents - apply <a href="https://jobs.careers.microsoft.com/global/en/job/1791737/Research-Intern---Multi-Agent-Models?amp;utm_campaign=LinkedIn-job-share">here </a></li>
+                <li>Detecting and mitigating prompt injections hidden in images — <a href="https://arxiv.org/abs/2410.00296">VLMGuard (2024)</a></li>
+                <li>Dataset and lessons from the 2024 SaTML LLM Capture-the-Flag Competition — <a href="https://arxiv.org/abs/2406.07954">NeurIPS 2024</a></li>
+                <li>Are My Optimized Prompts Compromised? Exploring vulnerabilities of LLM-based optimizers — <a href="https://aclanthology.org/2025.eacl-long.1/">EACL 2025</a></li>
             </ul>
         </li>
         <li><strong>Human-AI Alignment</strong>
             <ul>
-                <li>Highlight 3</li>
-                <li>Highlight 4</li>
+                <li>Bidirectional Human-AI Alignment: Emerging Challenges and Opportunities — <a href="https://dl.acm.org/doi/abs/10.1145/3706599.3716291">CHI 2025</a></li>
+                <li>Towards Bidirectional Human-AI Alignment: A Systematic Review for Clarifications, Framework, and Future Directions — <a href="https://arxiv.org/abs/2406.09264">NeurIPS 2025</a></li>
+                <li>ValueCompass: A Framework of Fundamental Values for Human-AI Alignment — <a href="https://arxiv.org/abs/2409.12259">arXiv 2024</a></li>
             </ul>
         </li>
         <li><strong>Interpreting and Explaining Black-box Language Models</strong>
             <ul>
-                <li>Highlight 3</li>
-                <li>Highlight 4</li>
+                <li>On Surgical Fine-tuning for Language Encoders — <a href="https://arxiv.org/abs/2310.17041">EMNLP 2023</a></li>
+                <li>From RAGs to Rich Parameters: Probing how LLMs utilize external knowledge over parametric memory — <a href="https://arxiv.org/abs/2406.12824">arXiv 2024</a></li>
+                <li>Quantifying reliance on external information during RAG using mechanistic analysis — <a href="https://arxiv.org/abs/2410.00857">BlackboxNLP @ EMNLP 2024</a></li>
             </ul>
         </li>
-        <!-- Add more categories and highlights as needed -->
     </ul>
 </div>
 
