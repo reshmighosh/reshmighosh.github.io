@@ -30,8 +30,15 @@ Reshmi holds a Ph.D. from Carnegie Mellon University. She has always been passio
  </a>
 -------  
 <h3 align="center">Products/Software Highlights</h3>
-<div style="max-height: 300px; overflow-y: auto; padding: 10px;">
+<div style="max-height: 400px; overflow-y: auto; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
     <ul style="margin: 0; padding: 0; list-style-type: none;">
+        <li><strong>2026 - Memory and Copilot Personalization</strong>
+            <ul>
+                <li>Building long-term memory systems that let Copilot retain user context across sessions while preserving privacy and trust boundaries</li>
+                <li>Researching personalization signals that adapt agent behavior to individual users without compromising safety guardrails</li>
+                <li>Exploring memory-grounded reasoning to reduce hallucinations and improve factual consistency in personalized agentic workflows</li>
+            </ul>
+        </li>
         <li><strong>2025- it's becoming all about Agents </strong>
             <ul>
              <li>Working with alignment issues of facts for a global audience and reduce over-refusal</li>
