@@ -12,3 +12,6 @@ semantic_scholar_url: https://www.semanticscholar.org/author/your-id
 twitter_url: https://twitter.com/reshmigh
 Microsoft_webpage: https://www.microsoft.com/en-us/research/people/reshmighosh/
 
+# Blog post URLs as /blog/post-name (instead of /yyyy/mm/dd/title.html)
+permalink: /blog/:title/
+
