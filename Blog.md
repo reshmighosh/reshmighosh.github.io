@@ -9,8 +9,8 @@ permalink: /Blog.html
 -------
 
 # Blog
-
-Notes on trustworthy AI, memory and personalization in agents, and the messy middle between research and shipped product.
+***Views are my own***
+Notes on building 0->1 products, better metrics, trustworthy AI, and personalization, and the messy middle between research and shipped product. Occassionally you might find notes about women empowerment, education, environment, policy, books I have been reading, and everthing in between!
 
 <ul style="list-style-type: none; padding: 0;">
 {% for post in site.posts %}
