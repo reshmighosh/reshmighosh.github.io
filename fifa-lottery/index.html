@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FIFA 2026 Ticket Lottery — What Were My Odds?</title>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<style>
+  :root {
+    --bg: #fafafa; --fg: #222; --muted: #666;
+    --accent: #2E86AB; --accent2: #E63946;
+    --card: #fff; --border: #e5e5e5;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 880px; margin: 0 auto; padding: 2rem 1rem; line-height: 1.6;
+  }
+  h1 { font-size: 1.8rem; margin-top: 0; }
+  h2 { font-size: 1.3rem; margin-top: 2.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+  th, td { padding: 0.5rem 0.75rem; text-align: left; border-bottom: 1px solid var(--border); }
+  th { background: #f0f0f0; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; margin: 1rem 0; }
+  .slider-row { display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: center; margin: 0.5rem 0; }
+  .slider-row label { font-size: 0.92rem; color: var(--muted); }
+  .slider-row input[type=range] { width: 100%; }
+  .slider-row .val { font-variant-numeric: tabular-nums; font-weight: 600; min-width: 5rem; text-align: right; }
+  .result-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+  .result-card { background: #fff; padding: 1rem; border-left: 4px solid var(--accent); border-radius: 4px; }
+  .result-card.lose { border-left-color: var(--accent2); }
+  .result-card .label { color: var(--muted); font-size: 0.85rem; }
+  .result-card .value { font-size: 2rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .plot { margin: 1rem 0; }
+  code { background: #eee; padding: 0.1em 0.4em; border-radius: 3px; font-size: 0.9em; }
+  .formula { background: #f5f5f5; padding: 0.75rem 1rem; border-radius: 4px; font-family: "SF Mono", Consolas, monospace; }
+  footer { color: var(--muted); font-size: 0.85rem; margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<h1>FIFA 2026 Ticket Lottery — What Were My Odds?</h1>
+
+<p>
+I applied for <strong>2 tickets</strong> in the FIFA Random Selection Draw
+(Dec 2025 – Jan 2026) and won <strong>1 of 2</strong>. This page estimates
+the probability of that outcome under a transparent model.
+</p>
+
+<p>
+FIFA reported
+<a href="https://inside.fifa.com/organisation/media-releases/over-500-million-ticket-requests-world-cup-2026-random-selection-draw">500M+ total ticket requests</a>
+across 104 matches, with
+<a href="https://www.wfaa.com/article/sports/soccer/world-cup/world-cup-2026-tickets-demand/287-084c28e3-f059-44a5-a00e-7003e58bf257">77 matches receiving 1M+ requests each</a>.
+Per-match counts were not published.
+</p>
+
+<h2>My applications</h2>
+<table>
+  <thead>
+    <tr><th>Match</th><th>Date</th><th>Venue</th><th>Cat</th><th>Tickets</th><th>Price</th><th>Result</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>M5: Haiti vs Scotland</td><td>Sat 13 Jun, 21:00</td><td>Gillette</td><td>3</td><td>1</td><td>$180</td><td>✅ Selected</td></tr>
+    <tr><td>M97: Quarterfinal</td><td>Thu 9 Jul, 16:00</td><td>Gillette</td><td>3</td><td>1</td><td>$650</td><td>❌ Not selected</td></tr>
+  </tbody>
+</table>
+
+<h2>The model</h2>
+<div class="formula">P(win) ≈ q × T_cat / D_cat</div>
+<ul>
+  <li><code>q</code> — tickets requested per application</li>
+  <li><code>T_cat</code> = capacity × public-pool fraction × category supply share</li>
+  <li><code>D_cat</code> = total match demand × category demand share</li>
+</ul>
+
+<h2>Tweak the assumptions</h2>
+<div class="card">
+  <div class="slider-row">
+    <div>
+      <label for="pf">Public pool fraction</label>
+      <input type="range" id="pf" min="0.40" max="0.80" step="0.01" value="0.65" />
+    </div>
+    <div class="val" id="pf-val">0.65</div>
+  </div>
+  <div class="slider-row">
+    <div>
+      <label for="cs">Cat 3 supply share</label>
+      <input type="range" id="cs" min="0.20" max="0.50" step="0.01" value="0.35" />
+    </div>
+    <div class="val" id="cs-val">0.35</div>
+  </div>
+  <div class="slider-row">
+    <div>
+      <label for="cd">Cat 3 demand share</label>
+      <input type="range" id="cd" min="0.30" max="0.60" step="0.01" value="0.45" />
+    </div>
+    <div class="val" id="cd-val">0.45</div>
+  </div>
+  <div class="slider-row">
+    <div>
+      <label for="d5">M5 (Haiti vs Scotland) total ticket-requests</label>
+      <input type="range" id="d5" min="100000" max="2000000" step="50000" value="400000" />
+    </div>
+    <div class="val" id="d5-val">400k</div>
+  </div>
+  <div class="slider-row">
+    <div>
+      <label for="d97">M97 (Quarterfinal) total ticket-requests</label>
+      <input type="range" id="d97" min="500000" max="6000000" step="100000" value="2500000" />
+    </div>
+    <div class="val" id="d97-val">2.5M</div>
+  </div>
+</div>
+
+<div class="result-grid">
+  <div class="result-card">
+    <div class="label">P(win M5 — Haiti vs Scotland)</div>
+    <div class="value" id="r-m5">—</div>
+  </div>
+  <div class="result-card lose">
+    <div class="label">P(win M97 — Quarterfinal)</div>
+    <div class="value" id="r-m97">—</div>
+  </div>
+  <div class="result-card">
+    <div class="label">P(my actual outcome: win M5 only)</div>
+    <div class="value" id="r-actual">—</div>
+  </div>
+  <div class="result-card lose">
+    <div class="label">P(neither)</div>
+    <div class="value" id="r-neither">—</div>
+  </div>
+</div>
+
+<h2>Monte Carlo with parameter uncertainty</h2>
+<p>10,000 worlds. Each input has a prior; the output is a <em>distribution</em>
+of P(win), which is the honest answer.</p>
+<div id="hist" class="plot"></div>
+<div id="ci-table"></div>
+
+<h2>Demand × public-pool heatmap</h2>
+<p>P(win) for Cat 3, 1 ticket. My two matches are plotted as points.</p>
+<div id="heat" class="plot"></div>
+
+<h2>Calibration & limitations</h2>
+<p>
+Expected wins under the median model: <strong id="exp-wins">—</strong>.
+Actual wins: <strong>1</strong>. Getting M5 was the most-likely positive outcome,
+but the model's expectation across both applications was below 0.1. I got somewhat lucky.
+</p>
+<ul>
+  <li><strong>Per-match demand</strong> dominates uncertainty. M5 sits in the "below 1M" bucket (27 of 104 matches); M97 is firmly above.</li>
+  <li><strong>Category shares</strong> are assumed proportional to typical FWC pricing tier splits.</li>
+  <li><strong>Reserved allocations</strong> (hospitality, sponsors, federations, media) are folded into one fraction.</li>
+  <li><strong>Downgrade option</strong> accepted; slightly increases effective P(win), not modeled.</li>
+  <li><strong>M5–M97 independence</strong> holds because my 2-ticket total is far below the 40-ticket cap.</li>
+</ul>
+
+<footer>
+Sources:
+<a href="https://inside.fifa.com/organisation/media-releases/over-500-million-ticket-requests-world-cup-2026-random-selection-draw">FIFA — 500M+ requests</a> ·
+<a href="https://www.wfaa.com/article/sports/soccer/world-cup/world-cup-2026-tickets-demand/287-084c28e3-f059-44a5-a00e-7003e58bf257">WFAA — 77/104 matches over 1M</a> ·
+<a href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/sales-phases">FIFA sales phases</a>
+</footer>
+
+<script>
+const GILLETTE = 65878;
+
+const $ = id => document.getElementById(id);
+const ids = ["pf", "cs", "cd", "d5", "d97"];
+
+function fmtBig(n) {
+  if (n >= 1e6) return (n/1e6).toFixed(1) + "M";
+  if (n >= 1e3) return (n/1e3).toFixed(0) + "k";
+  return n.toString();
+}
+
+function pct(x, d=2) { return (x * 100).toFixed(d) + "%"; }
+
+function pWin(q, demand, pf, cs, cd) {
+  const T = GILLETTE * pf * cs;
+  const D = demand * cd;
+  return Math.min(q * T / D, 1);
+}
+
+function update() {
+  const pf  = parseFloat($("pf").value);
+  const cs  = parseFloat($("cs").value);
+  const cd  = parseFloat($("cd").value);
+  const d5  = parseFloat($("d5").value);
+  const d97 = parseFloat($("d97").value);
+
+  $("pf-val").textContent  = pf.toFixed(2);
+  $("cs-val").textContent  = cs.toFixed(2);
+  $("cd-val").textContent  = cd.toFixed(2);
+  $("d5-val").textContent  = fmtBig(d5);
+  $("d97-val").textContent = fmtBig(d97);
+
+  const pm5  = pWin(1, d5,  pf, cs, cd);
+  const pm97 = pWin(1, d97, pf, cs, cd);
+
+  $("r-m5").textContent      = pct(pm5);
+  $("r-m97").textContent     = pct(pm97);
+  $("r-actual").textContent  = pct(pm5 * (1 - pm97));
+  $("r-neither").textContent = pct((1 - pm5) * (1 - pm97));
+}
+
+ids.forEach(id => $(id).addEventListener("input", update));
+update();
+
+// --- Monte Carlo (computed once on page load) ---
+function randNorm(mean, std) {
+  const u = 1 - Math.random();
+  const v = Math.random();
+  return mean + std * Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
+}
+const clamp = (x, lo, hi) => Math.max(lo, Math.min(hi, x));
+
+const N = 10000;
+const m5_samples = new Array(N);
+const m97_samples = new Array(N);
+for (let i = 0; i < N; i++) {
+  const pf = clamp(randNorm(0.65, 0.05), 0.45, 0.80);
+  const cs = clamp(randNorm(0.35, 0.05), 0.22, 0.48);
+  const cd = clamp(randNorm(0.45, 0.05), 0.30, 0.60);
+  const d5  = Math.exp(randNorm(Math.log(400000),  0.5));
+  const d97 = Math.exp(randNorm(Math.log(2500000), 0.4));
+  m5_samples[i]  = clamp(GILLETTE * pf * cs / (d5  * cd), 0, 1);
+  m97_samples[i] = clamp(GILLETTE * pf * cs / (d97 * cd), 0, 1);
+}
+
+function quantile(arr, q) {
+  const sorted = [...arr].sort((a, b) => a - b);
+  const i = Math.floor(q * (sorted.length - 1));
+  return sorted[i];
+}
+const m5_med  = quantile(m5_samples,  0.5);
+const m97_med = quantile(m97_samples, 0.5);
+
+Plotly.newPlot("hist", [
+  { x: m5_samples.map(p => p * 100), type: "histogram",
+    name: "M5: Haiti vs Scotland", opacity: 0.7,
+    marker: { color: "#2E86AB" }, nbinsx: 60 },
+  { x: m97_samples.map(p => p * 100), type: "histogram",
+    name: "M97: Quarterfinal", opacity: 0.7,
+    marker: { color: "#E63946" }, nbinsx: 60 },
+], {
+  barmode: "overlay",
+  xaxis: { title: "P(win) (%)" },
+  yaxis: { title: "Frequency" },
+  legend: { x: 0.65, y: 0.95 },
+  template: "plotly_white",
+  shapes: [
+    { type: "line", x0: m5_med * 100, x1: m5_med * 100, y0: 0, y1: 1,
+      yref: "paper", line: { dash: "dash", color: "#2E86AB" } },
+    { type: "line", x0: m97_med * 100, x1: m97_med * 100, y0: 0, y1: 1,
+      yref: "paper", line: { dash: "dash", color: "#E63946" } },
+  ],
+  annotations: [
+    { x: m5_med * 100, y: 1, yref: "paper",
+      text: `M5 median ${pct(m5_med, 1)}`, showarrow: false,
+      bgcolor: "white", font: { color: "#2E86AB" } },
+    { x: m97_med * 100, y: 0.92, yref: "paper",
+      text: `M97 median ${pct(m97_med, 1)}`, showarrow: false,
+      bgcolor: "white", font: { color: "#E63946" } },
+  ],
+}, { responsive: true });
+
+$("ci-table").innerHTML = `
+<table>
+<thead><tr><th>Match</th><th>Median P(win)</th><th>90% credible interval</th></tr></thead>
+<tbody>
+<tr><td>M5 (Haiti vs Scotland)</td><td>${pct(m5_med)}</td>
+    <td>${pct(quantile(m5_samples, 0.05))} – ${pct(quantile(m5_samples, 0.95))}</td></tr>
+<tr><td>M97 (Quarterfinal)</td><td>${pct(m97_med)}</td>
+    <td>${pct(quantile(m97_samples, 0.05))} – ${pct(quantile(m97_samples, 0.95))}</td></tr>
+</tbody>
+</table>`;
+
+$("exp-wins").textContent = (m5_med + m97_med).toFixed(2);
+
+// --- Heatmap ---
+const pfGrid = [];
+for (let i = 0; i < 60; i++) pfGrid.push(0.45 + (0.80 - 0.45) * i / 59);
+const dGrid = [];
+const dLo = Math.log10(100000), dHi = Math.log10(5000000);
+for (let i = 0; i < 60; i++) dGrid.push(Math.pow(10, dLo + (dHi - dLo) * i / 59));
+
+const z = dGrid.map(d => pfGrid.map(pf =>
+  Math.min(GILLETTE * pf * 0.35 / (d * 0.45), 1) * 100
+));
+
+Plotly.newPlot("heat", [
+  { type: "heatmap", x: pfGrid, y: dGrid, z, colorscale: "Viridis",
+    colorbar: { title: "P(win) %" } },
+  { type: "scatter", x: [0.65, 0.60], y: [400000, 2500000],
+    mode: "markers+text", text: ["M5 (won)", "M97 (lost)"],
+    textposition: "top right",
+    textfont: { color: "white", size: 13 },
+    marker: { size: 14, color: "white", line: { color: "black", width: 2 } },
+    showlegend: false },
+], {
+  xaxis: { title: "Public pool fraction" },
+  yaxis: { title: "Total ticket-requests for match", type: "log" },
+  template: "plotly_white",
+}, { responsive: true });
+</script>
+
+</body>
+</html>
