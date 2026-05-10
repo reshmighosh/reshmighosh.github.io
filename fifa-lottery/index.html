@@ -185,127 +185,168 @@ function pWin(q, demand, pf, cs, cd) {
   return Math.min(q * T / D, 1);
 }
 
-function update() {
-  const pf  = parseFloat($("pf").value);
-  const cs  = parseFloat($("cs").value);
-  const cd  = parseFloat($("cd").value);
-  const d5  = parseFloat($("d5").value);
-  const d97 = parseFloat($("d97").value);
-
-  $("pf-val").textContent  = pf.toFixed(2);
-  $("cs-val").textContent  = cs.toFixed(2);
-  $("cd-val").textContent  = cd.toFixed(2);
-  $("d5-val").textContent  = fmtBig(d5);
-  $("d97-val").textContent = fmtBig(d97);
-
-  const pm5  = pWin(1, d5,  pf, cs, cd);
-  const pm97 = pWin(1, d97, pf, cs, cd);
-
-  $("r-m5").textContent      = pct(pm5);
-  $("r-m97").textContent     = pct(pm97);
-  $("r-actual").textContent  = pct(pm5 * (1 - pm97));
-  $("r-neither").textContent = pct((1 - pm5) * (1 - pm97));
-}
-
-ids.forEach(id => $(id).addEventListener("input", update));
-update();
-
-// --- Monte Carlo (computed once on page load) ---
 function randNorm(mean, std) {
   const u = 1 - Math.random();
   const v = Math.random();
   return mean + std * Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
 }
 const clamp = (x, lo, hi) => Math.max(lo, Math.min(hi, x));
-
-const N = 10000;
-const m5_samples = new Array(N);
-const m97_samples = new Array(N);
-for (let i = 0; i < N; i++) {
-  const pf = clamp(randNorm(0.65, 0.05), 0.45, 0.80);
-  const cs = clamp(randNorm(0.35, 0.05), 0.22, 0.48);
-  const cd = clamp(randNorm(0.45, 0.05), 0.30, 0.60);
-  const d5  = Math.exp(randNorm(Math.log(400000),  0.5));
-  const d97 = Math.exp(randNorm(Math.log(2500000), 0.4));
-  m5_samples[i]  = clamp(GILLETTE * pf * cs / (d5  * cd), 0, 1);
-  m97_samples[i] = clamp(GILLETTE * pf * cs / (d97 * cd), 0, 1);
-}
-
 function quantile(arr, q) {
   const sorted = [...arr].sort((a, b) => a - b);
   const i = Math.floor(q * (sorted.length - 1));
   return sorted[i];
 }
-const m5_med  = quantile(m5_samples,  0.5);
-const m97_med = quantile(m97_samples, 0.5);
 
-Plotly.newPlot("hist", [
-  { x: m5_samples.map(p => p * 100), type: "histogram",
-    name: "M5: Haiti vs Scotland", opacity: 0.7,
-    marker: { color: "#2E86AB" }, nbinsx: 60 },
-  { x: m97_samples.map(p => p * 100), type: "histogram",
-    name: "M97: Quarterfinal", opacity: 0.7,
-    marker: { color: "#E63946" }, nbinsx: 60 },
-], {
-  barmode: "overlay",
-  xaxis: { title: "P(win) (%)" },
-  yaxis: { title: "Frequency" },
-  legend: { x: 0.65, y: 0.95 },
-  template: "plotly_white",
-  shapes: [
-    { type: "line", x0: m5_med * 100, x1: m5_med * 100, y0: 0, y1: 1,
-      yref: "paper", line: { dash: "dash", color: "#2E86AB" } },
-    { type: "line", x0: m97_med * 100, x1: m97_med * 100, y0: 0, y1: 1,
-      yref: "paper", line: { dash: "dash", color: "#E63946" } },
-  ],
-  annotations: [
-    { x: m5_med * 100, y: 1, yref: "paper",
-      text: `M5 median ${pct(m5_med, 1)}`, showarrow: false,
-      bgcolor: "white", font: { color: "#2E86AB" } },
-    { x: m97_med * 100, y: 0.92, yref: "paper",
-      text: `M97 median ${pct(m97_med, 1)}`, showarrow: false,
-      bgcolor: "white", font: { color: "#E63946" } },
-  ],
-}, { responsive: true });
+const N = 10000;
+let histInited = false, heatInited = false;
 
-$("ci-table").innerHTML = `
+function readSliders() {
+  return {
+    pf:  parseFloat($("pf").value),
+    cs:  parseFloat($("cs").value),
+    cd:  parseFloat($("cd").value),
+    d5:  parseFloat($("d5").value),
+    d97: parseFloat($("d97").value),
+  };
+}
+
+function runMC(p) {
+  const m5 = new Array(N), m97 = new Array(N);
+  for (let i = 0; i < N; i++) {
+    const pf = clamp(randNorm(p.pf, 0.05), 0.40, 0.80);
+    const cs = clamp(randNorm(p.cs, 0.05), 0.20, 0.50);
+    const cd = clamp(randNorm(p.cd, 0.05), 0.30, 0.60);
+    const d5_s  = Math.exp(randNorm(Math.log(p.d5),  0.5));
+    const d97_s = Math.exp(randNorm(Math.log(p.d97), 0.4));
+    m5[i]  = clamp(GILLETTE * pf * cs / (d5_s  * cd), 0, 1);
+    m97[i] = clamp(GILLETTE * pf * cs / (d97_s * cd), 0, 1);
+  }
+  return { m5, m97 };
+}
+
+function renderHistogram(m5, m97) {
+  const m5_med  = quantile(m5,  0.5);
+  const m97_med = quantile(m97, 0.5);
+  const data = [
+    { x: m5.map(p => p * 100),  type: "histogram",
+      name: "M5: Haiti vs Scotland", opacity: 0.7,
+      marker: { color: "#2E86AB" }, nbinsx: 60 },
+    { x: m97.map(p => p * 100), type: "histogram",
+      name: "M97: Quarterfinal", opacity: 0.7,
+      marker: { color: "#E63946" }, nbinsx: 60 },
+  ];
+  const layout = {
+    barmode: "overlay",
+    xaxis: { title: "P(win) (%)" },
+    yaxis: { title: "Frequency" },
+    legend: { x: 0.65, y: 0.95 },
+    template: "plotly_white",
+    shapes: [
+      { type: "line", x0: m5_med * 100,  x1: m5_med * 100,  y0: 0, y1: 1,
+        yref: "paper", line: { dash: "dash", color: "#2E86AB" } },
+      { type: "line", x0: m97_med * 100, x1: m97_med * 100, y0: 0, y1: 1,
+        yref: "paper", line: { dash: "dash", color: "#E63946" } },
+    ],
+    annotations: [
+      { x: m5_med * 100,  y: 1.00, yref: "paper",
+        text: `M5 median ${pct(m5_med, 1)}`, showarrow: false,
+        bgcolor: "white", font: { color: "#2E86AB" } },
+      { x: m97_med * 100, y: 0.92, yref: "paper",
+        text: `M97 median ${pct(m97_med, 1)}`, showarrow: false,
+        bgcolor: "white", font: { color: "#E63946" } },
+    ],
+  };
+  if (!histInited) {
+    Plotly.newPlot("hist", data, layout, { responsive: true });
+    histInited = true;
+  } else {
+    Plotly.react("hist", data, layout);
+  }
+
+  $("ci-table").innerHTML = `
 <table>
 <thead><tr><th>Match</th><th>Median P(win)</th><th>90% credible interval</th></tr></thead>
 <tbody>
 <tr><td>M5 (Haiti vs Scotland)</td><td>${pct(m5_med)}</td>
-    <td>${pct(quantile(m5_samples, 0.05))} – ${pct(quantile(m5_samples, 0.95))}</td></tr>
+    <td>${pct(quantile(m5, 0.05))} – ${pct(quantile(m5, 0.95))}</td></tr>
 <tr><td>M97 (Quarterfinal)</td><td>${pct(m97_med)}</td>
-    <td>${pct(quantile(m97_samples, 0.05))} – ${pct(quantile(m97_samples, 0.95))}</td></tr>
+    <td>${pct(quantile(m97, 0.05))} – ${pct(quantile(m97, 0.95))}</td></tr>
 </tbody>
 </table>`;
+  $("exp-wins").textContent = (m5_med + m97_med).toFixed(2);
+}
 
-$("exp-wins").textContent = (m5_med + m97_med).toFixed(2);
+function renderHeatmap(p) {
+  const pfGrid = [];
+  for (let i = 0; i < 60; i++) pfGrid.push(0.40 + (0.80 - 0.40) * i / 59);
+  const dGrid = [];
+  const dLo = Math.log10(100000), dHi = Math.log10(6000000);
+  for (let i = 0; i < 60; i++) dGrid.push(Math.pow(10, dLo + (dHi - dLo) * i / 59));
 
-// --- Heatmap ---
-const pfGrid = [];
-for (let i = 0; i < 60; i++) pfGrid.push(0.45 + (0.80 - 0.45) * i / 59);
-const dGrid = [];
-const dLo = Math.log10(100000), dHi = Math.log10(5000000);
-for (let i = 0; i < 60; i++) dGrid.push(Math.pow(10, dLo + (dHi - dLo) * i / 59));
+  const z = dGrid.map(d => pfGrid.map(pf =>
+    Math.min(GILLETTE * pf * p.cs / (d * p.cd), 1) * 100
+  ));
 
-const z = dGrid.map(d => pfGrid.map(pf =>
-  Math.min(GILLETTE * pf * 0.35 / (d * 0.45), 1) * 100
-));
+  const data = [
+    { type: "heatmap", x: pfGrid, y: dGrid, z, colorscale: "Viridis",
+      colorbar: { title: "P(win) %" } },
+    { type: "scatter", x: [p.pf, p.pf], y: [p.d5, p.d97],
+      mode: "markers+text", text: ["M5 (won)", "M97 (lost)"],
+      textposition: "top right",
+      textfont: { color: "white", size: 13 },
+      marker: { size: 14, color: "white", line: { color: "black", width: 2 } },
+      showlegend: false },
+  ];
+  const layout = {
+    xaxis: { title: "Public pool fraction" },
+    yaxis: { title: "Total ticket-requests for match", type: "log" },
+    template: "plotly_white",
+  };
+  if (!heatInited) {
+    Plotly.newPlot("heat", data, layout, { responsive: true });
+    heatInited = true;
+  } else {
+    Plotly.react("heat", data, layout);
+  }
+}
 
-Plotly.newPlot("heat", [
-  { type: "heatmap", x: pfGrid, y: dGrid, z, colorscale: "Viridis",
-    colorbar: { title: "P(win) %" } },
-  { type: "scatter", x: [0.65, 0.60], y: [400000, 2500000],
-    mode: "markers+text", text: ["M5 (won)", "M97 (lost)"],
-    textposition: "top right",
-    textfont: { color: "white", size: 13 },
-    marker: { size: 14, color: "white", line: { color: "black", width: 2 } },
-    showlegend: false },
-], {
-  xaxis: { title: "Public pool fraction" },
-  yaxis: { title: "Total ticket-requests for match", type: "log" },
-  template: "plotly_white",
-}, { responsive: true });
+let pendingFrame = null, pendingMC = null;
+function update() {
+  const p = readSliders();
+
+  $("pf-val").textContent  = p.pf.toFixed(2);
+  $("cs-val").textContent  = p.cs.toFixed(2);
+  $("cd-val").textContent  = p.cd.toFixed(2);
+  $("d5-val").textContent  = fmtBig(p.d5);
+  $("d97-val").textContent = fmtBig(p.d97);
+
+  const pm5  = pWin(1, p.d5,  p.pf, p.cs, p.cd);
+  const pm97 = pWin(1, p.d97, p.pf, p.cs, p.cd);
+  $("r-m5").textContent      = pct(pm5);
+  $("r-m97").textContent     = pct(pm97);
+  $("r-actual").textContent  = pct(pm5 * (1 - pm97));
+  $("r-neither").textContent = pct((1 - pm5) * (1 - pm97));
+
+  // Coalesce slider events into one frame; debounce the MC by ~120ms
+  // so dragging stays smooth but lifting the mouse re-runs the simulation.
+  if (pendingFrame) cancelAnimationFrame(pendingFrame);
+  pendingFrame = requestAnimationFrame(() => renderHeatmap(p));
+
+  if (pendingMC) clearTimeout(pendingMC);
+  pendingMC = setTimeout(() => {
+    const { m5, m97 } = runMC(p);
+    renderHistogram(m5, m97);
+  }, 120);
+}
+
+ids.forEach(id => $(id).addEventListener("input", update));
+
+// Initial render: point estimates, heatmap, and full Monte Carlo
+update();
+const p0 = readSliders();
+const init = runMC(p0);
+renderHistogram(init.m5, init.m97);
+renderHeatmap(p0);
 </script>
 
 </body>
