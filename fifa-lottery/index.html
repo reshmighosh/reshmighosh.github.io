@@ -43,18 +43,21 @@
 
 <h1>FIFA 2026 Ticket Lottery — What Were My Odds?</h1>
 
-<p>
-I applied for <strong>2 tickets</strong> in the FIFA Random Selection Draw
-(Dec 2025 – Jan 2026) and won <strong>1 of 2</strong>. This page estimates
-the probability of that outcome under a transparent model.
+<p style="color: var(--muted); font-size: 0.95rem; margin-top: -0.5rem;">
+  An interactive Monte Carlo over the FIFA World Cup 2026 Random Selection Draw — calibrated against my own two applications.
 </p>
 
 <p>
-FIFA reported
-<a href="https://inside.fifa.com/organisation/media-releases/over-500-million-ticket-requests-world-cup-2026-random-selection-draw">500M+ total ticket requests</a>
-across 104 matches, with
-<a href="https://www.wfaa.com/article/sports/soccer/world-cup/world-cup-2026-tickets-demand/287-084c28e3-f059-44a5-a00e-7003e58bf257">77 matches receiving 1M+ requests each</a>.
-Per-match counts were not published.
+In the <strong>first week of January 2026</strong> I applied for two tickets in the FIFA World Cup 2026 Random Selection Draw. I won the application for <strong>Match 5 (Haiti vs. Scotland)</strong> and lost the application for <strong>Match 97 (a quarterfinal)</strong>. After the draw closed I started wondering: <em>what were my actual odds, given how lopsided the demand was across matches?</em>
+</p>
+
+<p>FIFA published two useful aggregate numbers and almost nothing else:</p>
+<ul>
+  <li><a href="https://inside.fifa.com/organisation/media-releases/over-500-million-ticket-requests-world-cup-2026-random-selection-draw">500M+ total ticket requests</a> across 104 matches</li>
+  <li><a href="https://www.wfaa.com/article/sports/soccer/world-cup/world-cup-2026-tickets-demand/287-084c28e3-f059-44a5-a00e-7003e58bf257">77 of those matches received 1M+ requests</a> each</li>
+</ul>
+<p>
+Per-match counts were never released. So the modeling problem is: given those aggregates and a few well-defined unknowns, can we put a credible interval on the probability of winning a specific application? Yes — and you don't need anything more sophisticated than a Monte Carlo over informed priors. <strong>Drag the sliders below to play with the assumptions; the histogram, heatmap, and credible intervals re-render live.</strong>
 </p>
 
 <h2>My applications</h2>
@@ -68,13 +71,29 @@ Per-match counts were not published.
   </tbody>
 </table>
 
-<h2>The model</h2>
+<h2>The model in one line</h2>
 <div class="formula">P(win) ≈ q × T_cat / D_cat</div>
+<p>where</p>
 <ul>
-  <li><code>q</code> — tickets requested per application</li>
+  <li><code>q</code> — tickets requested per application (capped at 4 per match by FIFA)</li>
   <li><code>T_cat</code> = capacity × public-pool fraction × category supply share</li>
   <li><code>D_cat</code> = total match demand × category demand share</li>
 </ul>
+<p>That's the whole thing. Everything interesting is in how you put priors on the four inputs — and in respecting two anchors FIFA <em>did</em> publish (500M total demand, 77/104 matches over 1M).</p>
+
+<h3 style="font-size: 1.05rem;">What's known vs. assumed</h3>
+<table>
+  <thead><tr><th>Input</th><th>Source</th><th>How I treat it</th></tr></thead>
+  <tbody>
+    <tr><td>Stadium capacity</td><td>FIFA published</td><td>Fixed (Gillette: 65,878)</td></tr>
+    <tr><td>Public-pool fraction</td><td>Industry rule of thumb</td><td>Prior centered at 65%, with uncertainty</td></tr>
+    <tr><td>Pre-sale drainage</td><td>FIFA: "nearly 2M tickets sold before phase 3"</td><td>Prior centered at 20% drainage of T_cat</td></tr>
+    <tr><td>Cat 3 supply share</td><td>Logical (largest tier)</td><td>Prior centered at 35%</td></tr>
+    <tr><td>Cat 3 demand share</td><td>Cheap-tier downgrade behaviour</td><td>Interpolates 40% (low-demand) → 55% (high-demand)</td></tr>
+    <tr><td>Per-match demand</td><td>Unpublished</td><td>M5 lognormal at 800k; M97 at 5M; rescaled per-iteration to the 500M anchor</td></tr>
+    <tr><td>q-rule</td><td>Unspecified by FIFA</td><td>Toggleable: linear-in-q or application-equal</td></tr>
+  </tbody>
+</table>
 
 <h2>Tweak the assumptions</h2>
 <div class="card">
@@ -167,8 +186,13 @@ of P(win), which is the honest answer.</p>
 <div id="ci-table"></div>
 
 <h2>Demand × public-pool heatmap</h2>
-<p>P(win) for Cat 3, 1 ticket. My two matches are plotted as points.</p>
+<p>P(win) for Cat 3, 1 ticket — under your current slider settings (drainage, cd-interpolation, and q-rule are all respected). My two matches are plotted as points.</p>
 <div id="heat" class="plot"></div>
+
+<h2>Why M5 and M97 are roughly independent</h2>
+<p>
+I applied for one ticket per match, two total. The 40-ticket aggregate cap doesn't bind here, so the two draws can be treated as independent. If you'd applied for many tickets across many matches, you'd want a sequential-draw correction — at the cap, your earlier wins reduce your remaining lottery participation. Most of this page is conditioned on q=1 per application and the model is honest about that.
+</p>
 
 <h2>Calibration & limitations</h2>
 <p>
@@ -235,6 +259,19 @@ With N=2 the prior dominates; the data weakly tilts toward demand being a touch 
     </tbody>
   </table>
 </details>
+
+<h2>Next steps</h2>
+<p>
+The single biggest unknown in this model is per-match demand. FIFA may publish post-tournament attendance and sales-by-match data — if any of that becomes public, the natural next step is a proper Bayesian update: sample the prior, compute the likelihood from observed sell-through, post the updated probability. That'll meaningfully tighten the credible intervals here, and may force a real shift on the central estimates if FIFA's released numbers diverge from these priors.
+</p>
+<p>
+Other follow-ups, in rough order of effect:
+</p>
+<ul>
+  <li><strong>Fraud / bot discount on reported demand.</strong> If "effective" demand is 70–90% of the 500M+ headline number, P(win) values are systematically low by ~10–40%.</li>
+  <li><strong>Stage-aware supply shares.</strong> Knockout matches likely shift inventory toward Cat 1/2; v2 still uses one supply share for everything.</li>
+  <li><strong>Portfolio-aware allocation.</strong> FIFA's actual algorithm probably isn't fully independent across matches for an applicant — heavy applicants likely get conditional uplift on later matches if they got nothing earlier.</li>
+</ul>
 
 <footer>
 Sources:

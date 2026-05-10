@@ -9,7 +9,7 @@ excerpt: "I applied for 2 tickets in the FIFA Random Selection Draw and won 1. T
 
 *Posted {{ page.date | date: "%B %d, %Y" }}*
 
-In December 2025 I applied for two tickets in the FIFA World Cup 2026 Random Selection Draw. I won the application for **Match 5 (Haiti vs. Scotland)** and lost the application for **Match 97 (a quarterfinal)**. After the draw closed I started wondering: *what were my actual odds, given how lopsided the demand was across matches?*
+In the first week of January 2026 I applied for two tickets in the FIFA World Cup 2026 Random Selection Draw. I won the application for **Match 5 (Haiti vs. Scotland)** and lost the application for **Match 97 (a quarterfinal)**. After the draw closed I started wondering: *what were my actual odds, given how lopsided the demand was across matches?*
 
 FIFA published two useful aggregate numbers and almost nothing else:
 
@@ -91,7 +91,15 @@ For a one-shot post like this, the simple HTML version was clearly the right cal
 
 This is not a calibration of FIFA's actual draw mechanism — they almost certainly stratify by category, residency, and possibly host-country bias in ways that aren't public. It's a transparent first-principles estimate that anchors on the two aggregate numbers FIFA *did* publish, and exposes every assumption as a slider.
 
-If FIFA publishes post-tournament attendance/sales by match, the natural next step is a Bayesian update: sample the prior, compute the likelihood from observed sell-through, post the updated probability. That'd be a good follow-up post.
+## Next steps
+
+The single biggest unknown in this model is per-match demand. **If FIFA publishes post-tournament attendance and sales-by-match data — should any of that become public — the natural next step is a proper Bayesian update.** Sample the prior, compute the likelihood from observed sell-through, post the updated probability. That'll meaningfully tighten the credible intervals and may force a real shift on the central estimates if FIFA's released numbers diverge from these priors. I'll write that follow-up the moment the data lands.
+
+A few smaller follow-ups in the meantime:
+
+- **Fraud / bot discount on reported demand** — if "effective" demand is 70–90% of the 500M+ headline, P(win) values are systematically low by ~10–40%.
+- **Stage-aware supply shares** — knockout matches likely shift inventory toward Cat 1/2; v2 still uses one supply share for everything.
+- **Portfolio-aware allocation** — FIFA's actual algorithm probably isn't fully independent across matches for an applicant. Heavy applicants likely get a conditional uplift on later matches if they got nothing earlier; doesn't matter for my N=2 case but matters for generalization.
 
 ## Try it
 
