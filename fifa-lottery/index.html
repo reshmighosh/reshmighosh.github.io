@@ -80,10 +80,17 @@ Per-match counts were not published.
 <div class="card">
   <div class="slider-row">
     <div>
-      <label for="pf">Public pool fraction</label>
+      <label for="pf">Public pool fraction (after hospitality, sponsors, federations)</label>
       <input type="range" id="pf" min="0.40" max="0.80" step="0.01" value="0.65" />
     </div>
     <div class="val" id="pf-val">0.65</div>
+  </div>
+  <div class="slider-row">
+    <div>
+      <label for="presale">Pre-sale drainage of public pool (Visa + Early Draw)</label>
+      <input type="range" id="presale" min="0" max="0.40" step="0.01" value="0.20" />
+    </div>
+    <div class="val" id="presale-val">20%</div>
   </div>
   <div class="slider-row">
     <div>
@@ -94,25 +101,44 @@ Per-match counts were not published.
   </div>
   <div class="slider-row">
     <div>
-      <label for="cd">Cat 3 demand share</label>
-      <input type="range" id="cd" min="0.30" max="0.60" step="0.01" value="0.45" />
+      <label for="cdlo">Cat 3 demand share — low-demand matches</label>
+      <input type="range" id="cdlo" min="0.30" max="0.50" step="0.01" value="0.40" />
     </div>
-    <div class="val" id="cd-val">0.45</div>
+    <div class="val" id="cdlo-val">0.40</div>
+  </div>
+  <div class="slider-row">
+    <div>
+      <label for="cdhi">Cat 3 demand share — high-demand matches</label>
+      <input type="range" id="cdhi" min="0.40" max="0.65" step="0.01" value="0.55" />
+    </div>
+    <div class="val" id="cdhi-val">0.55</div>
   </div>
   <div class="slider-row">
     <div>
       <label for="d5">M5 (Haiti vs Scotland) total ticket-requests</label>
-      <input type="range" id="d5" min="100000" max="2000000" step="50000" value="400000" />
+      <input type="range" id="d5" min="100000" max="2000000" step="50000" value="800000" />
     </div>
-    <div class="val" id="d5-val">400k</div>
+    <div class="val" id="d5-val">800k</div>
   </div>
   <div class="slider-row">
     <div>
       <label for="d97">M97 (Quarterfinal) total ticket-requests</label>
-      <input type="range" id="d97" min="500000" max="6000000" step="100000" value="2500000" />
+      <input type="range" id="d97" min="500000" max="10000000" step="100000" value="5000000" />
     </div>
-    <div class="val" id="d97-val">2.5M</div>
+    <div class="val" id="d97-val">5.0M</div>
   </div>
+  <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border);">
+    <label style="font-size: 0.92rem; color: var(--muted);">Per-ticket allocation rule (q-rule)</label>
+    <div style="margin-top: 0.5rem; font-size: 0.95rem;">
+      <label style="margin-right: 1.5rem;">
+        <input type="radio" name="qrule" value="linear" checked /> Each ticket is a separate draw <code>P ∝ q</code>
+      </label>
+      <label>
+        <input type="radio" name="qrule" value="app" /> Each application is one entry <code>P independent of q</code>
+      </label>
+    </div>
+  </div>
+  <div id="consistency" style="margin-top: 1rem; padding: 0.6rem 0.8rem; border-radius: 4px; font-size: 0.88rem;"></div>
 </div>
 
 <div class="result-grid">
@@ -147,16 +173,68 @@ of P(win), which is the honest answer.</p>
 <h2>Calibration & limitations</h2>
 <p>
 Expected wins under the median model: <strong id="exp-wins">—</strong>.
-Actual wins: <strong>1</strong>. Getting M5 was the most-likely positive outcome,
-but the model's expectation across both applications was below 0.1. I got somewhat lucky.
+Actual wins: <strong>1</strong>. The observed outcome (win M5, lose M97) is the second-most-likely
+configuration under the central model — not strongly evidence-of nor evidence-against.
+With N=2 the prior dominates; the data weakly tilts toward demand being a touch lower than central.
 </p>
+
+<h3 style="font-size: 1.05rem; margin-top: 1.5rem;">What the four fixes changed vs. v1</h3>
 <ul>
-  <li><strong>Per-match demand</strong> dominates uncertainty. M5 sits in the "below 1M" bucket (27 of 104 matches); M97 is firmly above.</li>
-  <li><strong>Category shares</strong> are assumed proportional to typical FWC pricing tier splits.</li>
-  <li><strong>Reserved allocations</strong> (hospitality, sponsors, federations, media) are folded into one fraction.</li>
-  <li><strong>Downgrade option</strong> accepted; slightly increases effective P(win), not modeled.</li>
-  <li><strong>M5–M97 independence</strong> holds because my 2-ticket total is far below the 40-ticket cap.</li>
+  <li><strong>Pre-sale drainage of T_cat</strong> — Visa Presale (Sep 2025) and Early Draw (Oct 2025) had already moved <a href="https://inside.fifa.com/organisation/media-releases/over-500-million-ticket-requests-world-cup-2026-random-selection-draw">~2M tickets</a> before phase 3. Default 20% drainage shrinks effective public-pool supply.</li>
+  <li><strong>Global 500M demand constraint</strong> — Per-match priors are sampled, then rescaled per Monte Carlo iteration so the implied total respects FIFA's reported 500M+ anchor (±5% noise). Forces internal consistency that v1 didn't enforce.</li>
+  <li><strong>Demand-share covariance</strong> — Cat 3 demand share interpolates between low-match (40%) and high-match (55%) values rather than being flat. Reflects price-elastic downgrading on marquee matches.</li>
+  <li><strong>q-rule toggle</strong> — Linear-in-q vs application-equal. For my q=1 applications it's a no-op; for generalization to multi-ticket apps the spread is up to 4×.</li>
 </ul>
+
+<details style="margin-top: 1.5rem;">
+  <summary style="cursor: pointer; font-weight: 600;">Full assumptions inventory (click to expand)</summary>
+  <table style="margin-top: 1rem;">
+    <thead><tr><th>#</th><th>Assumption</th><th>Value / status</th></tr></thead>
+    <tbody>
+      <tr><td colspan="3" style="background: #f0f0f0; font-weight: 600;">A. Lottery mechanics</td></tr>
+      <tr><td>A1</td><td>Selection uniform random within (match, category)</td><td>Asserted by FIFA</td></tr>
+      <tr><td>A2</td><td>All applications equally weighted in Random Selection Draw</td><td>Implied by FIFA's "open to anyone" framing</td></tr>
+      <tr><td>A3</td><td>Outcomes independent across matches for one applicant</td><td>Tight at q_total ≪ 40</td></tr>
+      <tr><td>A4</td><td>P(win) is linear in q (tickets per app)</td><td>Toggleable above; truth is somewhere between linear and app-equal</td></tr>
+      <tr><td>A5</td><td>All-or-nothing: app wins all q tickets or none</td><td>Standard FWC behavior</td></tr>
+
+      <tr><td colspan="3" style="background: #f0f0f0; font-weight: 600;">B. Supply (per match, public pool)</td></tr>
+      <tr><td>B1</td><td>Public-pool fraction</td><td>0.65 default, 0.40–0.80 range</td></tr>
+      <tr><td>B2</td><td>Cat 3 supply share</td><td>0.35 default, 0.20–0.50 range</td></tr>
+      <tr><td>B3</td><td>Supply shares constant across matches/stages</td><td>Acknowledged limitation; KO matches likely shift toward Cat 1/2</td></tr>
+      <tr><td>B4</td><td>Pre-sale drainage of T_cat</td><td>20% default, 0–40% (now modeled)</td></tr>
+      <tr><td>B5</td><td>Cat 4 (host residents only) is a separate sub-pool</td><td>Carved out</td></tr>
+
+      <tr><td colspan="3" style="background: #f0f0f0; font-weight: 600;">C. Demand (per match)</td></tr>
+      <tr><td>C1</td><td>M5 (Haiti vs Scotland) total ticket-requests</td><td>Lognormal centered at 800k, σ=0.5</td></tr>
+      <tr><td>C2</td><td>M97 (Quarterfinal) total ticket-requests</td><td>Lognormal centered at 5M, σ=0.4</td></tr>
+      <tr><td>C3</td><td>Cat 3 demand share</td><td>40% (low-demand) → 55% (high-demand), interpolated</td></tr>
+      <tr><td>C4</td><td>Demand-share covariance with match popularity</td><td>Modeled (now)</td></tr>
+      <tr><td>C5</td><td>Σ demand_i across 104 matches ≈ 500M</td><td>Enforced via per-iteration rescaling (now)</td></tr>
+      <tr><td>C6</td><td>"Effective" demand = reported demand</td><td>Open question — likely overstates by 10–30% (bots, duplicates)</td></tr>
+
+      <tr><td colspan="3" style="background: #f0f0f0; font-weight: 600;">D. User specifics</td></tr>
+      <tr><td>D1</td><td>Cat 3 application</td><td>Confirmed from receipt</td></tr>
+      <tr><td>D2</td><td>1 ticket per application (q=1)</td><td>Confirmed</td></tr>
+      <tr><td>D3</td><td>Downgrade acceptance</td><td>Accepted, not modeled (small upward bias on P)</td></tr>
+      <tr><td>D4</td><td>Two applications independent</td><td>Tight at total = 2</td></tr>
+
+      <tr><td colspan="3" style="background: #f0f0f0; font-weight: 600;">E. Modeling choices</td></tr>
+      <tr><td>E1</td><td>Lognormal demand priors</td><td>Right-skewed count data; σ values eyeballed</td></tr>
+      <tr><td>E2</td><td>Truncated normals for fractions</td><td>Bounded, symmetric</td></tr>
+      <tr><td>E3</td><td>10,000 Monte Carlo samples</td><td>Stable to ~0.1pp on quantiles</td></tr>
+      <tr><td>E4</td><td>No Bayesian update from observed outcome</td><td>N=2 too weak; prior dominates</td></tr>
+      <tr><td>E5</td><td>Heatmap fixed at Cat 3, q=1</td><td>Generalization needs small-multiples</td></tr>
+
+      <tr><td colspan="3" style="background: #f0f0f0; font-weight: 600;">F. Calibration anchors</td></tr>
+      <tr><td>F1</td><td>500M+ total ticket requests (FIFA, Jan 2026)</td><td>Used as global sum constraint</td></tr>
+      <tr><td>F2</td><td>77 of 104 matches received 1M+ requests</td><td>Used to size below/above-1M buckets</td></tr>
+      <tr><td>F3</td><td>Top applicant nations: hosts + Germany, England, Brazil, Spain, Portugal, Argentina, Colombia</td><td>Qualitative input to M5 prior (neither team in top 7)</td></tr>
+      <tr><td>F4</td><td>Gillette Stadium capacity 65,878</td><td>Public</td></tr>
+      <tr><td>F5</td><td>"Nearly 2M tickets sold before phase 3"</td><td>Used to set pre-sale drainage default</td></tr>
+    </tbody>
+  </table>
+</details>
 
 <footer>
 Sources:
@@ -167,9 +245,15 @@ Sources:
 
 <script>
 const GILLETTE = 65878;
+// Bucket sizes from FIFA: 77 of 104 matches got 1M+ requests, 27 got fewer.
+const N_LO = 27, N_HI = 77;
+const GLOBAL_TOTAL = 500e6;        // FIFA-anchored total ticket requests
+const GLOBAL_TOTAL_SD = 25e6;      // ±5% noise on the anchor
+// Demand log-range used for cd interpolation and heatmap axes
+const D_AXIS_LO = 1e5, D_AXIS_HI = 1e7;
 
 const $ = id => document.getElementById(id);
-const ids = ["pf", "cs", "cd", "d5", "d97"];
+const ids = ["pf", "presale", "cs", "cdlo", "cdhi", "d5", "d97"];
 
 function fmtBig(n) {
   if (n >= 1e6) return (n/1e6).toFixed(1) + "M";
@@ -179,10 +263,26 @@ function fmtBig(n) {
 
 function pct(x, d=2) { return (x * 100).toFixed(d) + "%"; }
 
-function pWin(q, demand, pf, cs, cd) {
-  const T = GILLETTE * pf * cs;
-  const D = demand * cd;
-  return Math.min(q * T / D, 1);
+// Fix #3: Cat-3 demand share covaries with overall match demand
+//         (cheap-tier demand rises for marquee matches as applicants downgrade)
+function cdForDemand(demand, cdlo, cdhi) {
+  const t = (Math.log10(demand) - Math.log10(D_AXIS_LO)) /
+            (Math.log10(D_AXIS_HI) - Math.log10(D_AXIS_LO));
+  const tc = Math.max(0, Math.min(1, t));
+  return cdlo + (cdhi - cdlo) * tc;
+}
+
+// Fix #4: q-rule is a modeling choice — expose both
+function pWin(q, demand, pf, cs, presale, cdlo, cdhi, qrule) {
+  // Fix #1: subtract Visa Presale + Early Draw drainage from T_cat
+  const T = GILLETTE * pf * cs * (1 - presale);
+  const D = demand * cdForDemand(demand, cdlo, cdhi);
+  const base = T / D;
+  return Math.min(qrule === "app" ? base : q * base, 1);
+}
+
+function getQRule() {
+  return document.querySelector('input[name="qrule"]:checked').value;
 }
 
 function randNorm(mean, std) {
@@ -202,24 +302,45 @@ let histInited = false, heatInited = false;
 
 function readSliders() {
   return {
-    pf:  parseFloat($("pf").value),
-    cs:  parseFloat($("cs").value),
-    cd:  parseFloat($("cd").value),
-    d5:  parseFloat($("d5").value),
-    d97: parseFloat($("d97").value),
+    pf:      parseFloat($("pf").value),
+    presale: parseFloat($("presale").value),
+    cs:      parseFloat($("cs").value),
+    cdlo:    parseFloat($("cdlo").value),
+    cdhi:    parseFloat($("cdhi").value),
+    d5:      parseFloat($("d5").value),
+    d97:     parseFloat($("d97").value),
+    qrule:   getQRule(),
   };
 }
 
 function runMC(p) {
   const m5 = new Array(N), m97 = new Array(N);
+  const q = 1;
   for (let i = 0; i < N; i++) {
-    const pf = clamp(randNorm(p.pf, 0.05), 0.40, 0.80);
-    const cs = clamp(randNorm(p.cs, 0.05), 0.20, 0.50);
-    const cd = clamp(randNorm(p.cd, 0.05), 0.30, 0.60);
-    const d5_s  = Math.exp(randNorm(Math.log(p.d5),  0.5));
-    const d97_s = Math.exp(randNorm(Math.log(p.d97), 0.4));
-    m5[i]  = clamp(GILLETTE * pf * cs / (d5_s  * cd), 0, 1);
-    m97[i] = clamp(GILLETTE * pf * cs / (d97_s * cd), 0, 1);
+    const pf      = clamp(randNorm(p.pf,      0.05), 0.30, 0.85);
+    const presale = clamp(randNorm(p.presale, 0.05), 0.00, 0.50);
+    const cs      = clamp(randNorm(p.cs,      0.05), 0.18, 0.52);
+    const cdlo    = clamp(randNorm(p.cdlo,    0.04), 0.25, 0.55);
+    const cdhi    = clamp(randNorm(p.cdhi,    0.04), 0.40, 0.70);
+    let d5_s  = Math.exp(randNorm(Math.log(p.d5),  0.5));
+    let d97_s = Math.exp(randNorm(Math.log(p.d97), 0.4));
+
+    // Fix #2: enforce global 500M ± 5% sum constraint by treating
+    // (d5_s, d97_s) as representatives of their respective buckets and
+    // rescaling so the implied total demand respects the FIFA anchor.
+    const implied = d5_s * N_LO + d97_s * N_HI;
+    const target  = Math.max(1e8, randNorm(GLOBAL_TOTAL, GLOBAL_TOTAL_SD));
+    const scale   = target / implied;
+    d5_s  *= scale;
+    d97_s *= scale;
+
+    const T = GILLETTE * pf * cs * (1 - presale);
+    const D5  = d5_s  * cdForDemand(d5_s,  cdlo, cdhi);
+    const D97 = d97_s * cdForDemand(d97_s, cdlo, cdhi);
+    const base5  = T / D5;
+    const base97 = T / D97;
+    m5[i]  = clamp(p.qrule === "app" ? base5  : q * base5,  0, 1);
+    m97[i] = clamp(p.qrule === "app" ? base97 : q * base97, 0, 1);
   }
   return { m5, m97 };
 }
@@ -280,12 +401,18 @@ function renderHeatmap(p) {
   const pfGrid = [];
   for (let i = 0; i < 60; i++) pfGrid.push(0.40 + (0.80 - 0.40) * i / 59);
   const dGrid = [];
-  const dLo = Math.log10(100000), dHi = Math.log10(6000000);
+  const dLo = Math.log10(D_AXIS_LO), dHi = Math.log10(D_AXIS_HI);
   for (let i = 0; i < 60; i++) dGrid.push(Math.pow(10, dLo + (dHi - dLo) * i / 59));
 
-  const z = dGrid.map(d => pfGrid.map(pf =>
-    Math.min(GILLETTE * pf * p.cs / (d * p.cd), 1) * 100
-  ));
+  // Heatmap shows P(win) under current sliders, with all four fixes applied:
+  // T uses pre-sale drainage; cd interpolates with demand; q-rule respected.
+  const q = 1;
+  const z = dGrid.map(d => pfGrid.map(pf => {
+    const T = GILLETTE * pf * p.cs * (1 - p.presale);
+    const cd = cdForDemand(d, p.cdlo, p.cdhi);
+    const base = T / (d * cd);
+    return Math.min(p.qrule === "app" ? base : q * base, 1) * 100;
+  }));
 
   const data = [
     { type: "heatmap", x: pfGrid, y: dGrid, z, colorscale: "Viridis",
@@ -310,25 +437,48 @@ function renderHeatmap(p) {
   }
 }
 
+function updateConsistency(p) {
+  const implied = p.d5 * N_LO + p.d97 * N_HI;
+  const ratio = implied / GLOBAL_TOTAL;
+  const el = $("consistency");
+  let bg, fg, msg;
+  if (ratio >= 0.85 && ratio <= 1.15) {
+    bg = "#e6f4ea"; fg = "#1f6e3a";
+    msg = `✓ Implied total ${(implied/1e6).toFixed(0)}M is consistent with FIFA's 500M anchor`;
+  } else if (ratio < 0.85) {
+    bg = "#fff4e0"; fg = "#8a5a1a";
+    msg = `⚠ Implied total ${(implied/1e6).toFixed(0)}M is below the 500M anchor — Monte Carlo will rescale demands up by ${(1/ratio).toFixed(2)}×`;
+  } else {
+    bg = "#fde7e7"; fg = "#a02828";
+    msg = `⚠ Implied total ${(implied/1e6).toFixed(0)}M exceeds the 500M anchor — Monte Carlo will rescale demands down by ${ratio.toFixed(2)}×`;
+  }
+  el.style.background = bg;
+  el.style.color = fg;
+  el.textContent = msg;
+}
+
 let pendingFrame = null, pendingMC = null;
 function update() {
   const p = readSliders();
 
-  $("pf-val").textContent  = p.pf.toFixed(2);
-  $("cs-val").textContent  = p.cs.toFixed(2);
-  $("cd-val").textContent  = p.cd.toFixed(2);
-  $("d5-val").textContent  = fmtBig(p.d5);
-  $("d97-val").textContent = fmtBig(p.d97);
+  $("pf-val").textContent      = p.pf.toFixed(2);
+  $("presale-val").textContent = (p.presale * 100).toFixed(0) + "%";
+  $("cs-val").textContent      = p.cs.toFixed(2);
+  $("cdlo-val").textContent    = p.cdlo.toFixed(2);
+  $("cdhi-val").textContent    = p.cdhi.toFixed(2);
+  $("d5-val").textContent      = fmtBig(p.d5);
+  $("d97-val").textContent     = fmtBig(p.d97);
 
-  const pm5  = pWin(1, p.d5,  p.pf, p.cs, p.cd);
-  const pm97 = pWin(1, p.d97, p.pf, p.cs, p.cd);
+  const pm5  = pWin(1, p.d5,  p.pf, p.cs, p.presale, p.cdlo, p.cdhi, p.qrule);
+  const pm97 = pWin(1, p.d97, p.pf, p.cs, p.presale, p.cdlo, p.cdhi, p.qrule);
   $("r-m5").textContent      = pct(pm5);
   $("r-m97").textContent     = pct(pm97);
   $("r-actual").textContent  = pct(pm5 * (1 - pm97));
   $("r-neither").textContent = pct((1 - pm5) * (1 - pm97));
 
-  // Coalesce slider events into one frame; debounce the MC by ~120ms
-  // so dragging stays smooth but lifting the mouse re-runs the simulation.
+  updateConsistency(p);
+
+  // Coalesce slider events into one frame; debounce the MC by ~120ms.
   if (pendingFrame) cancelAnimationFrame(pendingFrame);
   pendingFrame = requestAnimationFrame(() => renderHeatmap(p));
 
@@ -340,8 +490,10 @@ function update() {
 }
 
 ids.forEach(id => $(id).addEventListener("input", update));
+document.querySelectorAll('input[name="qrule"]').forEach(el =>
+  el.addEventListener("change", update));
 
-// Initial render: point estimates, heatmap, and full Monte Carlo
+// Initial render
 update();
 const p0 = readSliders();
 const init = runMC(p0);

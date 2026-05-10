@@ -40,13 +40,16 @@ That's the whole thing. Everything interesting is in how you put priors on the f
 
 | Input | Source | How I treat it |
 |---|---|---|
-| Stadium capacity | FIFA published | Fixed (44k for M5, 82k for M97) |
-| Public-pool fraction | Industry rule of thumb | Prior: ~60% of capacity, with uncertainty |
+| Stadium capacity | FIFA published | Fixed (Gillette: 65,878) |
+| Public-pool fraction | Industry rule of thumb | Prior centered at 65%, with uncertainty |
+| Pre-sale drainage | FIFA: "nearly 2M tickets sold before phase 3" | Prior centered at 20% drainage of T_cat |
 | Category supply share | Logical (Cat 3 is the largest tier) | Prior centered at 35% |
-| Category demand share | Heuristic (cheapest non-host-restricted tier draws disproportionate demand) | Prior centered at 45% |
-| Per-match demand | Unpublished — bucketed using "1M+ for 77 matches" | M5 below 1M (lognormal at 400k); M97 above 1M (QF, lognormal at 2.5M) |
+| Category demand share | Cheap-tier demand rises with match popularity (downgrade behaviour) | Interpolates 40% (low-demand) → 55% (high-demand) |
+| Per-match demand | Unpublished — bucketed using "1M+ for 77 matches" | M5 lognormal at 800k; M97 lognormal at 5M |
+| Global demand sum | FIFA: 500M+ across 104 matches | Per-iteration rescaling enforces Σ ≈ 500M ± 5% |
+| q-rule | Unspecified by FIFA | Toggle between linear-in-q and application-equal |
 
-The biggest source of uncertainty is per-match demand. The choice of lognormal priors with quite wide variance is deliberate — I want the credible intervals to reflect that I genuinely don't know the demand for any specific match.
+The biggest source of uncertainty is per-match demand. The choice of lognormal priors with wide variance is deliberate — I want the credible intervals to reflect that I genuinely don't know the demand for any specific match.
 
 ## Why M5 and M97 are roughly independent
 
@@ -54,14 +57,25 @@ I applied for one ticket per match, two total. The 40-ticket aggregate cap doesn
 
 ## Results
 
-Pulling the priors together and running 10,000 Monte Carlo draws:
+Pulling the priors together and running 10,000 Monte Carlo draws under the central scenario:
 
-- **Match 5 (Haiti vs. Scotland)**: median P(win) ≈ **3.7%**, 90% CI ≈ [1.8%, 7.4%]
-- **Match 97 (Quarterfinal)**: median P(win) ≈ **0.6%**, 90% CI ≈ [0.3%, 1.3%]
+- **Match 5 (Haiti vs. Scotland)**: median P(win) ≈ **2.5–3%**, 90% CI roughly [1.2%, 5%]
+- **Match 97 (Quarterfinal)**: median P(win) ≈ **0.35–0.5%**, 90% CI roughly [0.15%, 0.9%]
 
-So winning the M5 application and losing the M97 application is *exactly* what the model would predict on average. The point estimate of "win 1 of these 2" is around 3.6% — not common, but very much in the meat of the distribution. No update needed.
+So winning M5 and losing M97 sits comfortably inside the model's bulk — the second-most-likely joint outcome under the central settings. The model isn't refuted, and with N=2 it's also not strongly confirmed.
 
-The interesting result for me was the **demand × public-pool heatmap**: P(win) is much more sensitive to per-match demand than to the public-pool fraction. If you knew M97's true demand to within ±20%, you could collapse the credible interval substantially. Whereas tightening your prior on the public-pool fraction barely moves the needle.
+The interesting comparative result is the **demand × public-pool heatmap**: P(win) is much more sensitive to per-match demand than to the public-pool fraction. If you knew M97's true demand to within ±20%, you could collapse the credible interval substantially. Whereas tightening your prior on the public-pool fraction barely moves the needle.
+
+## What v2 fixed (after a critique)
+
+A first version of this model gave noticeably more optimistic numbers (M5 ~3.7%, M97 ~0.6%). After someone walked through the assumptions carefully, I rewrote it with four fixes:
+
+1. **Pre-sale drainage** — Visa Presale and the Early Draw had moved ~2M tickets before the Random Selection Draw. The original model treated T_cat as fully available; v2 subtracts a 20% drainage prior.
+2. **Global 500M demand constraint** — FIFA's reported aggregate is now enforced. Per Monte Carlo iteration, the sampled per-match demands are rescaled so the implied 104-match total respects 500M ± 5%. This forces the priors to be internally consistent in a way v1 didn't.
+3. **Demand-share covariance** — A flat 45% Cat 3 demand share was the wrong simplification. Marquee matches see disproportionate downgrade-to-Cat-3 behavior, so v2 interpolates between 40% (low-demand) and 55% (high-demand).
+4. **q-rule toggle** — v1 silently assumed P(win) ∝ q. The competing model is "each application is one entry regardless of tickets requested." For my q=1 applications this is a no-op, but the spread for multi-ticket apps is up to 4×, so v2 exposes it explicitly.
+
+Net effect: numbers came down, credible intervals tightened, and the page now carries an [assumptions inventory](/fifa-lottery/#) (collapsed under the limitations section) listing every modeling choice — supply, demand, lottery mechanics, calibration anchors, and what's still open. That last bit matters more than the headline number; you should be able to push back on any single assumption and see the model react.
 
 ## Why I built it three ways
 
