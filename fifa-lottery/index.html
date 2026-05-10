@@ -48,7 +48,7 @@
 </p>
 
 <p>
-In the <strong>first week of January 2026</strong> I applied for two tickets in the FIFA World Cup 2026 Random Selection Draw. I won the application for <strong>Match 5 (Haiti vs. Scotland)</strong> and lost the application for <strong>Match 97 (a quarterfinal)</strong>. After the draw closed I started wondering: <em>what were my actual odds, given how lopsided the demand was across matches?</em>
+In the <strong>first week of January 2026</strong> I placed several bets in the FIFA World Cup 2026 Random Selection Draw. The two applications below are <strong>representative</strong> of those bets — one low-demand group-stage match (selected) and one quarterfinal (not selected) — chosen because they bracket the interesting range of per-match demand. After the draw closed I started wondering: <em>what were the actual odds on each, given how lopsided the demand was across matches?</em>
 </p>
 
 <p>FIFA published two useful aggregate numbers and almost nothing else:</p>
@@ -60,7 +60,8 @@ In the <strong>first week of January 2026</strong> I applied for two tickets in 
 Per-match counts were never released. So the modeling problem is: given those aggregates and a few well-defined unknowns, can we put a credible interval on the probability of winning a specific application? Yes — and you don't need anything more sophisticated than a Monte Carlo over informed priors. <strong>Drag the sliders below to play with the assumptions; the histogram, heatmap, and credible intervals re-render live.</strong>
 </p>
 
-<h2>My applications</h2>
+<h2>Two representative applications</h2>
+<p style="font-size: 0.9rem; color: var(--muted);">Illustrative of the bets placed; not an exhaustive list. Outcomes shown for these two are real and used as the data point the page reasons about.</p>
 <table>
   <thead>
     <tr><th>Match</th><th>Date</th><th>Venue</th><th>Cat</th><th>Tickets</th><th>Price</th><th>Result</th></tr>
@@ -196,10 +197,8 @@ I applied for one ticket per match, two total. The 40-ticket aggregate cap doesn
 
 <h2>Calibration & limitations</h2>
 <p>
-Expected wins under the median model: <strong id="exp-wins">—</strong>.
-Actual wins: <strong>1</strong>. The observed outcome (win M5, lose M97) is the second-most-likely
-configuration under the central model — not strongly evidence-of nor evidence-against.
-With N=2 the prior dominates; the data weakly tilts toward demand being a touch lower than central.
+Expected wins across the two representative applications under the median model: <strong id="exp-wins">—</strong>.
+Observed: <strong>1 of 2</strong>. The observed configuration (selected on the low-demand match, not on the quarterfinal) is the second-most-likely outcome under the central model — not strongly evidence-of nor evidence-against. With only two data points the prior dominates; the data weakly tilts toward demand being a touch lower than central.
 </p>
 
 <h3 style="font-size: 1.05rem; margin-top: 1.5rem;">What the four fixes changed vs. v1</h3>
@@ -237,11 +236,11 @@ With N=2 the prior dominates; the data weakly tilts toward demand being a touch 
       <tr><td>C5</td><td>Σ demand_i across 104 matches ≈ 500M</td><td>Enforced via per-iteration rescaling (now)</td></tr>
       <tr><td>C6</td><td>"Effective" demand = reported demand</td><td>Open question — likely overstates by 10–30% (bots, duplicates)</td></tr>
 
-      <tr><td colspan="3" style="background: #f0f0f0; font-weight: 600;">D. User specifics</td></tr>
-      <tr><td>D1</td><td>Cat 3 application</td><td>Confirmed from receipt</td></tr>
-      <tr><td>D2</td><td>1 ticket per application (q=1)</td><td>Confirmed</td></tr>
+      <tr><td colspan="3" style="background: #f0f0f0; font-weight: 600;">D. Application specifics (for the two representative bets)</td></tr>
+      <tr><td>D1</td><td>Cat 3 application</td><td>True for both representative bets</td></tr>
+      <tr><td>D2</td><td>1 ticket per application (q=1)</td><td>True for both representative bets</td></tr>
       <tr><td>D3</td><td>Downgrade acceptance</td><td>Accepted, not modeled (small upward bias on P)</td></tr>
-      <tr><td>D4</td><td>Two applications independent</td><td>Tight at total = 2</td></tr>
+      <tr><td>D4</td><td>Two applications independent</td><td>Tight at the q-totals shown</td></tr>
 
       <tr><td colspan="3" style="background: #f0f0f0; font-weight: 600;">E. Modeling choices</td></tr>
       <tr><td>E1</td><td>Lognormal demand priors</td><td>Right-skewed count data; σ values eyeballed</td></tr>

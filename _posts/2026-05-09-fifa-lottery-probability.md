@@ -9,7 +9,7 @@ excerpt: "I applied for 2 tickets in the FIFA Random Selection Draw and won 1. T
 
 *Posted {{ page.date | date: "%B %d, %Y" }}*
 
-In the first week of January 2026 I applied for two tickets in the FIFA World Cup 2026 Random Selection Draw. I won the application for **Match 5 (Haiti vs. Scotland)** and lost the application for **Match 97 (a quarterfinal)**. After the draw closed I started wondering: *what were my actual odds, given how lopsided the demand was across matches?*
+In the first week of January 2026 I placed several bets in the FIFA World Cup 2026 Random Selection Draw. The two applications I'll walk through here are **representative** of those bets — one low-demand group-stage match (selected) and one quarterfinal (not selected). I picked these two because they bracket the interesting range of per-match demand. After the draw closed I started wondering: *what were the actual odds on each, given how lopsided demand was across matches?*
 
 FIFA published two useful aggregate numbers and almost nothing else:
 
