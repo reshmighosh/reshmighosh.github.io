@@ -35,11 +35,7 @@ This paper is the one I point people to when they ask "okay, but where would I a
 
 ### *On Surgical Fine-Tuning for Language Encoders* — EMNLP 2023 Findings, [arXiv 2310.17041](https://arxiv.org/abs/2310.17041)
 
-The pre-cursor to the RAG line. Before I was probing models to understand RAG behavior, I was probing them to understand which *layers* actually need to move during task adaptation. The finding — that you can get most of the benefit of full fine-tuning by touching a small, principled subset of layers — was itself a small piece of interpretability. It told us layer-level locality matters, and that prepared the ground for the activation-patching work that came later.
-
-### *Hop, Skip, and Overthink: Diagnosing Why Reasoning Models Fumble during Multi-Hop Analysis* — 2025
-
-The newest line. Reasoning models are the hottest product surface right now, and they fail in ways that single-step generation doesn't. The interesting question isn't "do they hallucinate" (yes), it's "where in the multi-hop chain does the failure get introduced, and is it the same kind of failure each time?" Early findings: it isn't. The error modes cluster, and the clusters are tractable mechanistically. Expect more on this from us.
+The precursor to the RAG line. Before I was probing models to understand RAG behavior, I was probing them to understand which *layers* actually need to move during task adaptation. The finding — that you can get most of the benefit of full fine-tuning by touching a small, principled subset of layers — was itself a small piece of interpretability. It told us layer-level locality matters, and that prepared the ground for the activation-patching work that came later.
 
 ## What the bet has actually paid back
 
