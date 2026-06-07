@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "Reading the residual stream: a mechanistic study of misgendering in Gemma and Aya"
-date: 2026-05-09
-excerpt: "Two years ago I made a deliberate bet to focus on mechanistic interpretability of language models. The thesis was simple: the shortest path to a better product is understanding why the model behaves the way it does. Here's what I worked on, what I learned, and where I think this goes next."
+date: 2026-06-06
+excerpt: "Two years ago I made a deliberate bet to focus on mechanistic interpretability of language models. The thesis was simple: the shortest path to a better product is understanding why the model behaves the way it does."
 ---
 
 # {{ page.title }}
