@@ -56,6 +56,17 @@ I have observed the best language models today misgender (maybe not as frequentl
 - **Hindi** — gender-neutral pronouns, but verbs inflect for subject gender. Signal sits on the verb form.
 - **Bengali** — no grammatical gender at all. The only cue is the subject's name.
 
+The dataset is small but deliberate: **five female + five male names per language, written in source-language script**. The choice to use native names instead of a single shared roster was a direct response to v1 (see [appendix below](#appendix--what-v1-got-wrong-and-what-it-taught-us)) — v1 embedded European first names (Maria, Carlos, Lisa, ...) inside Bengali/Hindi/Marathi sentences, and the script-mixing itself leaked gender signal in a way we couldn't separate from the source-language grammar. Native names in native script force the model to engage the actual Bengali/Hindi/Marathi name distribution it would see in a real product setting.
+
+| Language | Female names (with romanisation) | Male names (with romanisation) |
+|---|---|---|
+| Bengali  | বদিশা *(Bidisha)*, রাজশ্রী *(Rajashree)*, দেবলিনা *(Deboleena)*, নীলাঞ্জনা *(Nilanjana)*, ঐন্দ্রিলা *(Oindrilla)* | উৎপল *(Utpal)*, বিমল *(Bimal)*, দেবদিত্য *(Debaditya)*, শায়ন *(Shayan)*, অরবিন্দ *(Aurobindo)* |
+| Hindi    | रेशमी *(Reshmi)*, प्रिया *(Priya)*, आरती *(Aarti)*, अंजली *(Anjali)*, काजल *(Kajal)* | अर्जुन *(Arjun)*, विक्रम *(Vikram)*, राहुल *(Rahul)*, अभिषेक *(Abhishek)*, अमित *(Amit)* |
+| Marathi  | साई *(Sai)*, मधुरा *(Madhura)*, अश्विनी *(Ashwini)*, वैष्णवी *(Vaishnavi)*, ओजस्वी *(Ojasvi)* | साकेत *(Saket)*, अजिंक्य *(Ajinkya)*, चैतन्य *(Chaitanya)*, अमोल *(Amol)*, अनिकेत *(Aniket)* |
+| English  | Emily, Sarah, Anna, Lisa, Maria | David, Michael, Carlos, Felix, Pedro |
+
+All four name lists were cross-checked with a native or near-native reader of each script — one early Bengali name (*ইমন / Iman*) was a homograph for an unrelated Bengali word and had to be replaced. That kind of cultural validation is invisible labor that's easy to skip; in this experiment, skipping it was the difference between a sub-chance probe accuracy and a clean signal.
+
 I ran two models on this: **Gemma-2-2B-it** and **Aya-23-8B** (Cohere's purpose-built multilingual model). For each, I measured **two separate things**:
 
 1. **Encoding** — a linear probe trained on the mean-pooled residual stream after the model has read the source sentence. *Does the model represent the subject's gender internally?*
