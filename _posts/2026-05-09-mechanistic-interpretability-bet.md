@@ -9,46 +9,47 @@ excerpt: "Two years ago I made a deliberate bet to focus on mechanistic interpre
 
 *Posted {{ page.date | date: "%B %d, %Y" }}*
 
-A couple of years ago I made a deliberate bet on where to spend my research time, and increasingly my team's: **mechanistic interpretability of large language models**, with a specific focus on how production-class models actually use the information they're given. The thesis was simple, even if it doesn't sound like a hot take: **the shortest path to a better product is understanding why the model behaves the way it does — not making it bigger, not adding another loss term, not chasing another evaluation suite.** When you genuinely understand what's happening inside the model, you stop being surprised by it, you spot the gaps that benchmarks hide, and you ship features that hold up in production rather than fall apart at the user-experience layer.
+In 2023, I made a deliberate bet on where to spend my side-quest research time: **mechanistic interpretability of large language models**. The thesis was simple, even if it doesn't sound like a hot take: **the shortest path to a better product is understanding why the model behaves the way it does -- not making it bigger, not adding another loss term, not chasing another evaluation suite.** I have been an advocate of interpretability even before November 2022. Explaining (using tools like LIME, SHAP, etc.) why machine learning models were predicting a specific outcome helped me in:
+1. deciphering reconstructed electricity demand patterns (synthetic generated data) for 40 years in the past, for my PhD thesis, 
+2. optimizing small language models/machine learning models tuned for M365 suite, deployed in edge devices, under high-stake constraints (device memory, latency, and accuracy),
+3. determining root causes for failures (preemptively) in cloud service (Azure VMs) and extrapolating those patterns to associated micro-services.
 
-This post is a stake in the ground on what that bet looked like in practice — what I worked on, what surprised me, and where I think the field needs to go next.
+When you genuinely understand what's happening inside the model, you stop being surprised by it, you spot the gaps that benchmarks hide, and you ship features that hold up in production rather than fall apart at the user-experience layer.
 
-## What I mean by mechanistic interpretability
+This post is a stake in the ground on what that bet looked like in practice -- what I worked on, what surprised me, and where I think the field needs to go next, especially as I gear up to welcome a new Intern this year to uncover some production model behaviors.
 
-"Mechanistic interpretability" is a broad and broadening label. The narrow version — circuit-level analysis on small toy transformers — is intellectually beautiful, but it isn't where most of my time has gone. The flavor I've focused on is more applied: **probing real production-scale language models to understand which internal representations get used when, especially when the model has *both* parametric memory and retrieved context to draw from.**
+## What is mechanistic interpretability?
 
-That last clause is the whole game. Modern systems are not just LMs — they're LMs plus retrievers, plus tool calls, plus injected context, plus structured memory. Every shipped feature involves the model arbitrating between sources of information. If you can't see *which* sources the model is actually leaning on, you're flying blind.
+"Mechanistic interpretability" is a broadening label, that enables deciphering model "circuits" using small toy transformers. What I am/was particularly fasinated with, is the tooling  **probing real production-scale language models to understand which internal representations get used when, especially when the model has *both* parametric memory and retrieved context to draw from.**
 
-## The papers, in narrative order
+This is also where it parts ways with the older, model-agnostic interpretability stack — methods like **LIME and SHAP** that estimate which inputs *mattered* for a single prediction by perturbing a black-box model from the outside. Those methods are useful as a sanity check, but they are post-hoc, correlational, and silent on *how* the model actually arrived at the output; they tell you a story about the prediction without giving you a handle on the computation behind it. For an LLM-plus-retriever system where the failure mode is "the model deferred to context it shouldn't have," LIME-style importance scores describe the symptom but don't tell you which sub-network to instrument or steer. Mechanistic interpretability opens the model, identifies the specific representations and circuits responsible, and — crucially — gives you a *causal* lever you can pull at inference time. That shift from explanation-as-description to explanation-as-intervention is what makes it product-shaping rather than just diagnostic.
+
+## Experiments with Mech Interpretability and understanding model behavior
 
 ### *From RAGs to Rich Parameters* — [arXiv 2406.12824](https://arxiv.org/abs/2406.12824)
 
 The question this paper asks is direct: when a language model is given retrieved context plus a query, **does it actually use the retrieved context, or does it fall back on what it learned during pre-training?** People had hand-waved about this for years, usually arguing one side or the other based on prompt-level tricks. We wanted a mechanistic answer.
 
-We probed activations layer-by-layer and found that production-class LLMs lean *heavily* on retrieved context — they actively minimize their use of parametric memory when context is available. That sounds like unambiguous good news for RAG. It isn't. The same property that makes RAG work is the property that makes prompt injection work. The model is wired to defer to whatever you put in its context window; that's a feature for retrieval and a vulnerability for adversarial inputs. Once we understood the mechanism, it stopped being a surprise that prompt-injection defenses are so hard to get right by patching at the API layer alone.
-
-### *Quantifying Reliance on External Information via Mechanistic Analysis* — BlackboxNLP @ EMNLP 2024, [arXiv 2410.00857](https://arxiv.org/abs/2410.00857)
-
-The natural follow-up was: *by how much* does the model lean on context, and is that ratio stable across model families and knowledge types? We extended the methodology with activation patching to quantify the parametric-vs-context split, then asked when the lean reverses. Short answer: it isn't uniform. Specific layer ranges retain parametric bias for specific kinds of knowledge — and those are exactly the places worth focusing interpretability work if your goal is improving factual robustness.
-
-This paper is the one I point people to when they ask "okay, but where would I actually intervene?" The probing maps tell you which layers to instrument, and where the upside lives.
+We probed activations layer-by-layer and found that production-class LLMs lean *heavily* on retrieved context, they actively minimize their use of parametric memory when context is available. That sounds like unambiguous good news for RAG. It isn't. The same property that makes RAG work is the property that makes prompt injection work. The model is wired to defer to whatever you put in its context window; that's a feature for retrieval and a vulnerability for adversarial inputs. Once we understood the mechanism, it stopped being a surprise that prompt-injection defenses are so hard to get right by patching at the API layer alone.
 
 ### *On Surgical Fine-Tuning for Language Encoders* — EMNLP 2023 Findings, [arXiv 2310.17041](https://arxiv.org/abs/2310.17041)
 
-The precursor to the RAG line. Before I was probing models to understand RAG behavior, I was probing them to understand which *layers* actually need to move during task adaptation. The finding — that you can get most of the benefit of full fine-tuning by touching a small, principled subset of layers — was itself a small piece of interpretability. It told us layer-level locality matters, and that prepared the ground for the activation-patching work that came later.
+The precursor to the RAG line. Before I was probing models to understand RAG behavior, I was probing them to understand which *layers* actually need to move during task adaptation. The finding, that you can get most of the benefit of full fine-tuning by touching a small, principled subset of layers, was itself a small piece of interpretability. It told us layer-level locality matters, and that prepared the ground for the activation-patching work that came later.
 
 ## What the bet has actually paid back
 
-Every paper above was motivated by a problem my team or an adjacent team was running into in production:
+The learnings from the research are broadly applicable:
 
 - **Factual drift in RAG systems.** When retrieved context is stale or wrong, models parrot it. We now know mechanistically why: they're wired to. That changes how you build the retrieval layer, the monitoring layer, and the user-facing fallback behavior.
-- **Prompt injection hidden in documents and images.** The same context-deference that makes RAG good makes it manipulable. Interpretability findings fed directly into how my team thinks about [prompt shields](https://www.theverge.com/2024/3/28/24114664/microsoft-safety-ai-prompt-injections-hallucinations-azure) and adversarial detection now.
+- **Prompt injection hidden in documents and images.** The same context-deference that makes RAG good makes it manipulable. Interpretability findings fed directly into how I about prompt injections and adversarial detection now.
 - **Hallucination patterns.** Knowing which layers re-engage parametric memory tells you which interventions actually move the needle versus which are theater. Saves enormous amounts of dev cycles spent on things that won't generalize.
-- **Knowing when to *not* ship a model.** This one is the underrated dividend. Interpretability evidence has, on multiple occasions, been the deciding factor for whether a model variant goes into production. Benchmarks tell you the average; mechanistic analysis tells you the tail.
+- **Knowing when to *not* ship a post-trained model.** This one is the underrated dividend. Interpretability evidence has, on multiple occasions, been the deciding factor for whether a model variant goes into production. Benchmarks tell you the average; mechanistic analysis tells you the tail.
 
-## A worked example — cross-lingual gender circuits in Gemma and Aya
+## Following my curiosity about languages and misgendering in language models — cross-lingual gender circuits in Gemma and Aya
 
-Concrete example of how I've been using this lens lately. I wanted to probe whether multilingual LLMs have a *cross-lingual gender-resolution circuit*: when a model is given a source-language passage and asked to translate it into German (which forces a pronoun choice between Er and Sie), does it actually extract gender from the source-language grammar, or does it default to something else? Four source languages give a clean ladder of how much gender information the source provides:
+**Context**: I was born into a Bengali family that lived in several states across western and southern India. Bengali for those who don't know, is a gender-neutral language and doesn't assign pronouns with objects and verbs. This is in sharp-constrast with Konkani and Hindi (which I had to take up in school as second and third language) and Marathi, which do have genders assigned to verbs and pronouns influence sentence formation to a very large degree. My Bengali knowledge often would overfit my "actual" intelligence to learn gender-dependent languages like Konkani, Hindi, and Marathi, and till date I do not know the protocol on how these languages assign genders to non-living objects, like chair, tables, cars, etc. My abysmally bad non-English scores in exams are a testament to my struggles. Today, if I have to code-switch and speak a non-English language, I generally wing the genders for inanimate objects. 
+
+I have observed the best language models today misgender (maybe not as frequently as I do :P), and this behavior is visible even with grounding context. This got me thinking and I wanted to probe whether multilingual LLMs have a *cross-lingual gender-resolution circuit*: when a model is given a source-language passage and asked to translate it into German (which forces a pronoun choice between Er and Sie), does it actually extract gender from the source-language grammar, or does it default to something else? Four source languages give a clean ladder of how much gender information the source provides:
 
 - **English** — explicit pronoun gender. Control / upper bound.
 - **Marathi** — both pronoun (तो/ती) and verb (होता/होती) inflect for gender. Strongest grammatical signal of the three Indic options.
@@ -87,7 +88,7 @@ This is where the story gets interesting. Here's the side-by-side comparison of 
 
 **Gemma's encoding and routing are matched everywhere.** What the model knows, it uses. The Bengali ceiling at 0.70 is real but explainable — only the name token carries gender information, and Gemma's grasp of distinctively-Bengali names is partial.
 
-**Aya has a large, language-dependent encoding-to-routing gap.** Most strikingly: Aya's Marathi probe accuracy is **1.00** — the model has perfectly encoded the subject's gender from the Marathi grammatical cues — but Aya's Marathi translation accuracy is **0.50**, chance. The model knows the gender and doesn't use it. Hindi shows the same pattern at lower magnitude (gap 0.2). English shows no gap. The clearer the grammatical signal, the worse Aya's routing relative to its encoding.
+**Aya has a large, language-dependent encoding-to-routing gap.** Most strikingly: Aya's Marathi probe accuracy is **1.00** — the model has perfectly encoded the subject's gender from the Marathi grammatical cues, but Aya's Marathi translation accuracy is **0.50**, chance. The model knows the gender and doesn't use it. Hindi shows the same pattern at lower magnitude (gap 0.2). English shows no gap. The clearer the grammatical signal, the worse Aya's routing relative to its encoding.
 
 The translation box plots make the failure mode visible:
 
@@ -109,26 +110,26 @@ The mechanistic finding tells you exactly where to intervene: not in the encodin
 
 ### Caveats I want to be honest about
 
-- **Aya Bengali probe at 0.30** is below chance, not at chance. With n=10 and leave-one-out CV, that suggests Aya's representations of distinctively-Bengali names cluster *opposite* to their actual gender labels. Most likely cause: Aya's Bengali training data is thinner than its training data for other Indic languages, so its name-gender associations are weak or idiosyncratic for names like অরবিন্দ, নীলাঞ্জনা, etc. The downstream translation accuracy (0.60) is closer to what we'd expect from a model relying on contextual cues rather than name embeddings.
+- **Aya Bengali probe at 0.30** is below chance, not at chance. With n=10 and leave-one-out CV, that suggests Aya's representations of distinctively-Bengali names cluster *opposite* to their actual gender labels. Most likely cause: Aya's Bengali training data is thinner than its training data for other Indic languages, so its name-gender associations are weak or idiosyncratic for names like অরবিন্দ (Aurobindo), নীলাঞ্জনা (Nilanjana), etc. The downstream translation accuracy (0.60) is closer to what we'd expect from a model relying on contextual cues rather than name embeddings.
 - **n=5 per gender per language is small.** The direction of every claim is robust to leave-one-out, but the absolute accuracies have ~10% noise. Scaling to ~30 per gender per language is the obvious next step for a paper.
 - **Native-speaker validation of the dataset was indispensable.** v2 with naive-Latin-script names embedded in Indic sentences produced badly confounded results; the cleaned v2.1 dataset (with names natively rendered in source-language script and one homograph removed) gave us the clean signal above. Same lesson applies to anyone running cross-lingual mechanistic experiments.
 - **Forced-choice scoring needs care.** v2 used sentence-start pronouns ("Sie war..." / "Er war...") and produced uninterpretable numbers because both models have strong sentence-starter priors that swamped the gender signal. v3 uses mid-sentence pronouns averaged across three templates. The artifact disappeared, English routing went from 0.0 to 1.0 for Aya. If you run a forced-choice probe and the numbers are noisy, suspect the prior before suspecting the model.
 
 ## Where I think this goes next
 
-Three directions I expect to spend time on (and would happily collaborate on) over the next 12–24 months:
+Three directions I expect to spend time on:
 
 1. **From probing to intervention.** Probing is descriptive. The next bar is *causal* — can we steer the parametric-vs-context tradeoff *at inference time*, per query, conditioned on context confidence? That's where this becomes a directly product-shaping tool rather than a postmortem one.
 2. **Agentic and multi-step reasoning.** Single-turn RAG is a relatively clean mechanistic surface. Multi-step agents that loop tool calls, accumulate working memory, and replan over partial successes are where current interpretability methods break down — and where the most valuable next round of research sits.
 3. **Interpretability that survives preference tuning.** Many of the cleanest probing results are on base models or supervised-fine-tuned models. The story gets messier after RLHF/DPO. Methodology that holds up *post* preference tuning is, in my opinion, the highest-leverage open problem in the area.
 
-## Appendix — what v1 got wrong, and what it taught us
+## Appendix — what went wrong before these experiments, and what it taught me
 
 The cross-lingual probing experiment above is v2. The first pass (v1) used a different framing and produced almost no signal, but the *way* it failed turned out to be the most useful part of the project — it told us what kind of measurement actually works for this question. Worth including here because the negative results are themselves a finding.
 
 ### v1 setup, briefly
 
-V1 used **continuation framing**: present a source-language passage followed by a German question — *"Was hat diese Person gestern gemacht?"* — and measure the model's next-token logit difference for `Er` vs. `Sie`. The dataset used European first names (Maria, Carlos, Lisa, Pedro, …) embedded inside Indic-language sentences, on the theory that name-controlled minimal pairs would let us isolate the source-language grammatical signal.
+V1 used **continuation framing**: present a source-language passage followed by a German question — *"Was hat diese Person gestern gemacht?"* and measure the model's next-token logit difference for `Er` vs. `Sie`. The dataset used European first names (Maria, Carlos, Lisa, Pedro, …) embedded inside Indic-language sentences, on the theory that name-controlled minimal pairs would let us isolate the source-language grammatical signal.
 
 Two things went wrong simultaneously: the prompt contained a feminine grammatical anchor, and the dataset contained a script-mixing confound. The result was that **neither model showed a clean cross-lingual signal** under v1's measurement, and we couldn't tell which part of the setup was responsible.
 
@@ -158,17 +159,5 @@ Neither heatmap shows a clean restoration hotspot. Gemma has scattered blue (mil
 
 **The right way to use activation patching for a question like this** is minimal pairs *within* a single language: e.g., for Hindi, patch between a sentence with masculine verb-form `था` and one with feminine `थी`, holding every other token (including the name and the position of the verb) fixed. That gives you a controlled causal intervention. v1's cross-script patching didn't, and the heatmaps reflect that.
 
-### What this section is doing in the post
-
-Two reasons to keep the v1 material visible rather than hide a failed pilot:
-
-1. **Honest methodology.** The narrative "we tried this, it didn't work, here's exactly why" is the actual research process. Stripping it gives the false impression that v2 sprang fully formed from a hypothesis, when in fact each of v2's design choices was a direct response to a confound v1 revealed.
-2. **Reusable lessons.** *"Don't put grammatical anaphors in your evaluation prompts"*, *"don't embed Latin-script names in Indic sentences without a control"*, and *"cross-script activation patching doesn't carry causal weight"* are findings other people running similar experiments will likely re-derive at their own cost. Saving someone else two weeks of debugging is part of the point of writing this up.
-
-## Closing — the bet, restated
-
-Picking interpretability as a research focus felt counter-trend when I started in 2023. The conventional view was that interpretability was either too academic to ship or too narrow to matter; the headline dollars were going elsewhere. I'm glad I made the bet anyway. Every product team I've worked alongside has eventually hit a wall that mechanistic understanding *resolved* — not a benchmark wall, but a "we don't know why this user-visible behavior keeps happening" wall. Interpretability is the cheapest tool I know for getting past that wall, and the dividend compounds with each model generation: the questions become more precise rather than less.
-
-If you're working on related problems — especially the intervention, agent, or post-RLHF angles above — I'd love to compare notes. Find me on [LinkedIn](https://www.linkedin.com/in/reshmi-ghosh/) or [Twitter](https://twitter.com/reshmigh).
 
 — Reshmi
