@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Why I bet on mechanistic interpretability"
+title: "Reading the residual stream: a mechanistic study of misgendering in Gemma and Aya"
 date: 2026-05-09
 excerpt: "Two years ago I made a deliberate bet to focus on mechanistic interpretability of language models. The thesis was simple: the shortest path to a better product is understanding why the model behaves the way it does. Here's what I worked on, what I learned, and where I think this goes next."
 ---
@@ -63,9 +63,9 @@ The dataset is small but deliberate: **five female + five male names per languag
 | Bengali  | বদিশা *(Bidisha)*, রাজশ্রী *(Rajashree)*, দেবলিনা *(Deboleena)*, নীলাঞ্জনা *(Nilanjana)*, ঐন্দ্রিলা *(Oindrilla)* | উৎপল *(Utpal)*, বিমল *(Bimal)*, দেবদিত্য *(Debaditya)*, শায়ন *(Shayan)*, অরবিন্দ *(Aurobindo)* |
 | Hindi    | रेशमी *(Reshmi)*, प्रिया *(Priya)*, आरती *(Aarti)*, अंजली *(Anjali)*, काजल *(Kajal)* | अर्जुन *(Arjun)*, विक्रम *(Vikram)*, राहुल *(Rahul)*, अभिषेक *(Abhishek)*, अमित *(Amit)* |
 | Marathi  | साई *(Sai)*, मधुरा *(Madhura)*, अश्विनी *(Ashwini)*, वैष्णवी *(Vaishnavi)*, ओजस्वी *(Ojasvi)* | साकेत *(Saket)*, अजिंक्य *(Ajinkya)*, चैतन्य *(Chaitanya)*, अमोल *(Amol)*, अनिकेत *(Aniket)* |
-| English  | Emily, Sarah, Anna, Lisa, Maria | David, Michael, Carlos, Felix, Pedro |
+| English  | Emily, Sarah, Anna, Lisa, Maria | Alex, Michael, Carlos, Felix, Pedro |
 
-All four name lists were cross-checked with a native or near-native reader of each script — one early Bengali name (*ইমন / Iman*) was a homograph for an unrelated Bengali word and had to be replaced. That kind of cultural validation is invisible labor that's easy to skip; in this experiment, skipping it was the difference between a sub-chance probe accuracy and a clean signal.
+All four name lists were cross-checked with a native or near-native reader of each script, one early Bengali name (*ইমন / Iman*) was a homograph for an unrelated Bengali word and had to be replaced. (Most Bengali names are of my family members. Also **fun-fact** if not Reshmi (Hindi language centered), I was to be named *Nilanjana*, which is deeply rooted in Bengali cultural context -so this was a fun experiment also calibrating how LLMs using my first name and potential first name could misgender me.) That kind of cultural validation is invisible labor that's easy to skip; in this experiment, skipping it was the difference between a sub-chance probe accuracy and a clean signal.
 
 I ran two models on this: **Gemma-2-2B-it** and **Aya-23-8B** (Cohere's purpose-built multilingual model). For each, I measured **two separate things**:
 
