@@ -11,13 +11,13 @@ excerpt: "Frontier models now sit within a point or two of each other at the top
 
 ## TL;DR
 
-Benchmarks are how the AI field keeps score — but the scoreboard is breaking.
+Benchmarks are how the AI field keeps score, but the scoreboard is breaking.
 Frontier models now sit within a point or two of each other at the top of
 benchmarks that defined "hard" only a few years ago; the gap between *what we
 measure* and *what we mean* keeps widening; and the single accuracy number on a
 leaderboard hides brittleness, contamination, and statistical noise. This post
 walks through **why benchmarks saturate**, takes a deep dive into the **ceiling
-effect**, and then gets concrete about **designing better metrics** — judging
+effect**, and then gets concrete about **designing better metrics** : judging
 task complexity, stratifying by difficulty, and weighting hard items so the
 score actually reflects capability. Eight plots are included.
 
@@ -73,7 +73,7 @@ these systems.
 
 The effective ceiling is **below 100%**, because benchmarks contain mislabeled or
 ambiguous items. The audit *"Are We Done with MMLU?"* [9] found that a meaningful
-fraction of MMLU questions contain errors — in some subsets (e.g., Virology) a
+fraction of MMLU questions contain errors, in some subsets (e.g., Virology) a
 large share of sampled questions were flawed. When ~6%+ of the gold labels are
 wrong, a "95%" is statistically indistinguishable from a "perfect" model: both
 are at the **noise ceiling**. Past that point you are largely measuring who best
@@ -139,7 +139,7 @@ distribution, not a point. Sclar et al.'s FormatSpread study [17] documented
 spreads as large as **76 accuracy points** from formatting alone — e.g., a single
 LLaMA-2-13B task swinging from ~6% to ~82%. A leaderboard cell of "70%" may
 silently mean "anywhere from 55% to 85% depending on whitespace and
-punctuation." Good practice — too often skipped — is to report **confidence
+punctuation." Good practice, too often skipped, is to report **confidence
 intervals**, **variance across seeds/prompts**, and **significance tests** for
 the gaps between models.
 
@@ -203,8 +203,8 @@ sharp: a single accuracy number increasingly *over-credits* the hardest items,
 exactly where you most want it to be trustworthy. (Tellingly, the paper tabulates
 accuracy by *subtopic* and *model scale*, but not a clean accuracy-by-level table —
 so beware second-hand "per-level accuracy" numbers; several circulating versions
-are fabricated.) **Stratified reporting** — accuracy per difficulty band, each with its own
-confidence interval — restores the signal a saturated aggregate destroys, and
+are fabricated.) **Per-stratum reporting**, each band scored on its own metric with its own
+confidence interval, restores the signal a saturated aggregate destroys, and
 makes ceiling effects visible (easy strata saturate first; hard strata stay
 discriminative far longer).
 
@@ -276,7 +276,7 @@ biases.
 
 **Figure 6.** Real numbers from Zheng et al. [24]:
 **self-enhancement bias** — GPT-4 favors its own answers by ~10 percentage points
-of win rate, and Claude-v1 by ~25 — and a **verbosity attack** in which simply
+of win rate, and Claude-v1 by ~25, and a **verbosity attack** in which simply
 making an answer longer/repetitive won in **8 of 23** cases (~35%) it shouldn't
 have. There is also **position bias** (order-dependence), mitigated by swapping
 positions and averaging. Mitigations exist (position-swapping, calibrating
@@ -296,7 +296,7 @@ measuring instrument that itself needs validation.
    ARC-AGI [12], FrontierMath.
 4. **Task-grounded, agentic evaluation** like SWE-bench [13] — resolving real
    GitHub issues against real test suites, outcome-based not trivia-based.
-5. **Human preference at scale** — Chatbot Arena [26] (pairwise votes, Elo), with
+5. **Human preference at scale**: Chatbot Arena [26] (pairwise votes, Elo), with
    awareness of its own style/length biases.
 6. **Holistic, multi-metric, difficulty-aware reporting** — HELM [19] breadth
    plus the stratification/weighting/IRT machinery of Section 5, always with
