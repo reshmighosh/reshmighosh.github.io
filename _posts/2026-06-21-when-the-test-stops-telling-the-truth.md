@@ -194,16 +194,21 @@ makes everything below possible.
 
 ### 5.2 Difficulty stratification: report per-stratum, not just the mean
 
-**Figure 7.** On the MATH benchmark, accuracy
-collapses with difficulty: a GPT-4o-class model scores ~62% on Level-1 items but
-only ~40% on Level-5, and older models fall from the high-30s to ~5% [5, 20].
-A single mean over all five levels hides exactly the place where models differ.
-**Stratified reporting** — accuracy per difficulty band, each with its own
+**Figure 7.** The Minerva authors stratified
+MATH by difficulty and reported an *exact* per-level breakdown of the model's
+**false-positive rate** — cases where the final answer is right but the reasoning
+is wrong [20, Table 5]. It climbs monotonically with difficulty, from **under 5%**
+on Level-1 problems to **30%** on Level-5 (flat average: 8%). The implication is
+sharp: a single accuracy number increasingly *over-credits* the hardest items,
+exactly where you most want it to be trustworthy. (Tellingly, the paper tabulates
+accuracy by *subtopic* and *model scale*, but not a clean accuracy-by-level table —
+so beware second-hand "per-level accuracy" numbers; several circulating versions
+are fabricated.) **Stratified reporting** — accuracy per difficulty band, each with its own
 confidence interval — restores the signal a saturated aggregate destroys, and
 makes ceiling effects visible (easy strata saturate first; hard strata stay
 discriminative far longer).
 
-![Accuracy by MATH difficulty level](/images/evals/7_difficulty_stratification.png)
+![MATH false-positive rate by difficulty level (Minerva 62B)](/images/evals/7_difficulty_stratification.png)
 
 ### 5.3 Weighting and aggregated scoring: make hard items worth more
 
@@ -351,8 +356,10 @@ more meaning than one number can hold.
 19. Liang et al. (2022). *Holistic Evaluation of Language Models (HELM).*
     arXiv:2211.09110.
 20. Lewkowycz et al. (2022). *Solving Quantitative Reasoning Problems with
-    Language Models (Minerva).* arXiv:2206.14858. (Per-difficulty-level MATH
-    accuracy.)
+    Language Models (Minerva).* arXiv:2206.14858. (Table 5: MATH false-positive
+    rate by difficulty level for Minerva 62B — L1 <5%, L2 10%, L3 <5%, L4 15%,
+    L5 30%, avg 8%. The paper reports MATH accuracy by subtopic and model scale,
+    not a per-difficulty-level accuracy table.)
 21. Lalor et al. (2016). *Building an Evaluation Scale using Item Response
     Theory.* EMNLP. arXiv:1605.08889.
 22. Rodriguez et al. (2021). *Evaluating the Evaluation of Diversity / QA
