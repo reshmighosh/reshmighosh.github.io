@@ -59,7 +59,7 @@ the instrument can no longer separate the things it measures. Once the best mode
 scores 92% and the next scores 91%, the one-point gap is mostly **measurement
 noise**, not a real capability difference.
 
-**Figure 5.** This is the saturation story at a single
+**Figure 2.** This is the saturation story at a single
 moment. In 2020–2022, MMLU scores were spread across a wide, *informative* range
 (GPT-3 43.9, Gopher 60.0, Chinchilla 67.5, PaLM 69.3, GPT-3.5 ~70). By 2024–2025
 the frontier is a tight cluster — DeepSeek-V3 88.5, GPT-4o 88.7, Claude 3.5
@@ -89,7 +89,7 @@ averaged away. (Section 5 is the fix: stop averaging naively.)
 
 ### 2.4 The treadmill
 
-**Figure 2.** The time from a benchmark's release to
+**Figure 3.** The time from a benchmark's release to
 models reaching human-level has compressed dramatically: MNIST took ~14 years,
 ImageNet ~3 (ResNet surpassing the human error rate around 2015 [10]), SQuAD ~2,
 GLUE ~1.2, SuperGLUE ~1.6, GSM8K ~2, GPQA [11] ~1. MMLU is the **stickier
@@ -112,7 +112,7 @@ curation, or fine-tuning — it stops faithfully tracking the underlying
 capability. The most direct (and often unintentional) route to a high score is
 **data contamination**: test examples leaking into pretraining [15].
 
-**Figure 3.** A clean real-world demonstration: Scale
+**Figure 4.** A clean real-world demonstration: Scale
 AI's GSM1k [16] re-created GSM8K's style and difficulty as a fresh, unseen test.
 Evaluated on it, the most overfit model families (notably Phi and Mistral
 variants) dropped by **up to ~8 points**, while frontier models (GPT-4, Claude,
@@ -133,7 +133,7 @@ away most of what matters.
 
 ### 4.1 Brittleness and variance
 
-**Figure 4.** Run the *same* model on the *same*
+**Figure 5.** Run the *same* model on the *same*
 task under semantically-equivalent prompt formats and the "accuracy" becomes a
 distribution, not a point. Sclar et al.'s FormatSpread study [17] documented
 spreads as large as **76 accuracy points** from formatting alone — e.g., a single
@@ -194,7 +194,7 @@ makes everything below possible.
 
 ### 5.2 Difficulty stratification: report per-stratum, not just the mean
 
-**Figure 7.** The Minerva authors stratified
+**Figure 6.** The Minerva authors stratified
 MATH by difficulty and reported an *exact* per-level breakdown of the model's
 **false-positive rate** — cases where the final answer is right but the reasoning
 is wrong [20, Table 5]. It climbs monotonically with difficulty, from **under 5%**
@@ -225,7 +225,7 @@ Once items are stratified, you can aggregate deliberately instead of by accident
   baseline (e.g., chance-correct on 4-way MCQ is 25%), so "above chance" is what
   is actually rewarded.
 
-**Figure 8 (worked example).** Two models have
+**Figure 7 (worked example).** Two models have
 *identical* 70% flat accuracy, but opposite difficulty profiles: Model A nails
 the hard items and misses easy ones; Model B is the reverse. Flat accuracy calls
 them equal. A difficulty-weighted score (harder items worth more) separates them
@@ -274,7 +274,7 @@ To escape rigid string-matching, the field increasingly uses **LLMs as judges**
 of open-ended outputs (e.g., MT-Bench) [24]. It scales beautifully — and imports
 biases.
 
-**Figure 6.** Real numbers from Zheng et al. [24]:
+**Figure 8.** Real numbers from Zheng et al. [24]:
 **self-enhancement bias** — GPT-4 favors its own answers by ~10 percentage points
 of win rate, and Claude-v1 by ~25, and a **verbosity attack** in which simply
 making an answer longer/repetitive won in **8 of 23** cases (~35%) it shouldn't
