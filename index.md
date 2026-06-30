@@ -1,25 +1,39 @@
 
-### &emsp;&emsp; ABOUT  &emsp; [BLOG](./Blog.md) &emsp; [TEACHING](./Teaching.md) &emsp; [MENTORSHIP](./Mentorship.md) &emsp;
+### &emsp;&emsp; ABOUT  &emsp; [TECHNICAL BLOG](./Blog.md) &emsp; [TEACHING](./Teaching.md) &emsp; [MENTORSHIP](./Mentorship.md) &emsp;
 
 
-Reshmi is a Senior Applied Scientist at Microsoft's Intelligent Search team (MSAI), currently involved in R&D and productionization of several **natural language and multimodal solutions for securing Copilot reasoning and enterprise RAG** from adversarial users. Most recently, she also contributed towards the post-training of AI-systems for aligning with human-preferences while ensuring secured search experiences experiences. Reshmi loves working in fast-paced teams and has a rich experience of delivering high-impact features/products for Fortune 500 companies and end users. She also loves prototyping and working on incubation projects, a desire stemming from her past experience of finishing a forward-looking Ph.D. from Carnegie Mellon University in the intersection of deep learning, natural language processing, and renewable energy policies. 
+Hi! I am Reshmi Ghosh, a Senior Applied Scientist at Microsoft Turing in the Copilot, Agents and Core org (Previously at MSAI and Microsoft AI Acceleration Program under Office of the CTO). I currently serve as a Technical Lead to drive teams to build the next generation of productivity tools that are trustworthy and efficient. I am working in the areas of long-running asynchronous agentic tasks, computer-use coding harness, safety, personalization/memory, alignment, reasoning, and trustworthy-evaluations.
 
-### Overview:
+Most recently I was involved in R&D and productionization of several **natural language and multimodal solutions for securing Copilot reasoning and enterprise RAG** from direct and indirect prompt injections and worked on several cross-organization projects related to AI security. I have also contributed towards the post-training of AI-systems for aligning with human-preferences while ensuring reliable search experiences. 
 
-[2024 Fall - now ] - Working on Agents research and applications.
+I have a rich experience of delivering high-impact features/products for Fortune 500 companies and end users. I also love prototyping and working on incubation projects, a desire stemming from my past experience of finishing a forward-looking Ph.D. from Carnegie Mellon University in the intersection of deep learning, natural language processing, and renewable energy policies.
 
+I am looking forward to continue working in fast-paced teams and across multiple areas and disciplines/roles and growing to become an empathetic product leader. Email me for an updated resume with a [gsh.reshmi@gmail.com](mailto:gsh.reshmi@gmail.com). I do not require visa-sponsorship. 
 
-[2023- Fall 2024] In the past 2 years of AI revolution, she has been focused on developing state-of-the-art Responsible AI and Trustworthy evaluation mechanisms for LLM and Multimodal model applications. Additionally, in 2023, Reshmi contributed to the development and shipped M365Copilot (Business Chat), followed by Azure Prompt Shileds in 2024. Shortly before that, she was tech leading efforts to architect and integrate first-ever Generative AI capabilities in Microsoft's Productivity applications (M365 CoPilots, see Satya Nadella's announcement of these products [here](https://news.microsoft.com/reinventing-productivity/)). 
+### Products shipped/Contributed to:
 
-[<2023] Before joining MSAI, Reshmi was selected to be part of the highly coveted (~0.1% acceptance rate) [AI incubation program](https://www.microsoftnewengland.com/maidap/) at Microsoft's New England Research and Development Center (NERD) (currently under the Office of the CTO, previously under Jaime Teevan's Office of Applied Research). During this time, she worked on several incubation projects, notably:
+Current:  Next Generation Personalization, Memory Orchestration, Long-running Tasks, Asynchronous Tasks, Reducing Over Mitigation, Mechanistic Interpretability
+
+Last year: Security of Agentic Infrastructure, Deep Reasoning, Evaluation Framework, Coding and Artifact Generation Harness
+
+Older: Working on Agents research and applications. Special focus on Safety and Security (Direct Prompt Injections and Cross-Domain Prompt Injections)
+
+[Fall 2023 – Fall 2024] I had been focused on developing state-of-the-art Responsible AI and Trustworthy evaluation mechanisms for LLM and Multimodal model applications. Additionally, in 2023, I contributed to the development and shipped M365Copilot (Business Chat), followed by Azure Prompt Shields in 2024 to mitigate Cross Domain Prompt Injections.
+
+[2021 - Spring 2023] Before joining MSAI, I was selected to be part of a coveted (~0.1% acceptance rate) [AI incubation program](https://www.microsoftnewengland.com/maidap/) at Microsoft's New England Research and Development Center (NERD) (currently under the Office of the CTO, previously under Jaime Teevan's Office of Applied Research). During this time, I shipped several products, notably:
 1. Developed and implemented anomaly detection methods for SLA in Azure core services
 2. Developed and deployed in production, intelligent commanding features leveraging seq2seq language model to Microsoft Office. Also prototyped a novel loss function that can predict as well as researching user preferences in UX positioning by developing a novel loss function.
-3. Developed probablistic graphical models to measure time saved in finding new information by knowledge workers, aiding in productivity increases through Viva Topics (see product announcement [here](https://venturebeat.com/business/microsoft-launches-viva-topics-an-ai-powered-information-curator-for-enterprises/)!)
+3. Developed probabilistic graphical models to measure time saved in finding new information by knowledge workers, aiding in productivity increases through Viva Topics (see product announcement [here](https://venturebeat.com/business/microsoft-launches-viva-topics-an-ai-powered-information-curator-for-enterprises/)!)
 4. Shipped a LLM application and novel evaluation framework for generating rich-text formatting within a client application.
 
-Reshmi holds a Ph.D. from Carnegie Mellon University. She has always been passionate about applying machine learning, deep learning, economics to solving socio-technical problems, such as in the intersection of climate change and renewable energy integration. With over 8+ years of innovating, leading, and strategizing AI solutions for nuanced user problems, Reshmi hopes to continue working with automation tools that can benefit the scientific community, and uers equally.
+This work led into MSAI, where I was tech leading efforts to architect and integrate first-ever Generative AI capabilities in Microsoft's Productivity applications (M365 CoPilots, see Satya Nadella's announcement of these products [here](https://news.microsoft.com/reinventing-productivity/)).
 
-[Google Scholar](https://scholar.google.com/citations?user=ui8JeF5lKNMC&hl=en) | [Ph.D. Dissertation](https://drive.google.com/file/d/18T7ZjSKAcJFX_mivBmwltvG-X_2t1Ef_/view) | [LinkedIn](https://www.linkedin.com/in/reshmi-ghosh/) | [Github](https://github.com/reshmighosh) | [Twitter](https://twitter.com/reshmigh) | [Resume](https://github.com/reshmighosh/reshmighosh.github.io/blob/master/files/ReshmiGhosh_ResumeMarch2023.pdf)
+
+Education Background: I hold a Ph.D. from Carnegie Mellon University. I have always been passionate about applying machine learning, deep learning, economics to solving socio-technical problems, such as in the intersection of climate change and renewable energy integration. 
+
+With over 10+ years of innovating, leading, and strategizing AI solutions for nuanced user problems, I hope to continue building products and tools that can benefit the scientific community, and users equally.
+
+[Google Scholar](https://scholar.google.com/citations?user=ui8JeF5lKNMC&hl=en) | [LinkedIn](https://www.linkedin.com/in/reshmi-ghosh/) | [Github](https://github.com/reshmighosh) | [Twitter](https://twitter.com/reshmigh) | [Nonchalant-Thoughts-at-Substack](https://reshmighosh.substack.com/)
 
 
  <a href="https//www.linkedin.com/in/reshmi-ghosh" target="_blank">
