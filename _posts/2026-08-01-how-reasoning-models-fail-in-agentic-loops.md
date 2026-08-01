@@ -26,7 +26,7 @@ analysis of *why* models overthink [2].
 
 ---
 
-## 1. Why a single answer is forgiving and a loop is not
+## Why a single answer is forgiving and a loop is not
 
 Most of how we evaluate reasoning models still assumes a one-shot world: ask a
 question, grade the answer, move on. Basically assess a user query and final response pair. If the model wandered for ten paragraphs
@@ -44,7 +44,7 @@ headline accuracy number.
 
 ---
 
-## 2. Pattern 1: There are missed hops and coverage gaps
+## Pattern 1: There are missed hops and coverage gaps
 
 In our work on multi-hop analysis [1], we looked at questions that can only be
 answered by **combining evidence from multiple distinct sources**, the kind of
@@ -67,7 +67,7 @@ the task never should have reached.
 
 ---
 
-## 3. Pattern 2: Overthinking - Explorer and Late Landing
+## Pattern 2: Overthinking - Explorer and Late Landing
 
 The counterintuitive failure is the opposite of laziness. Reasoning models often
 *over*-reason. The ACL 2026 analysis in [2] introduces **TRACE**, which breaks a
@@ -95,7 +95,7 @@ wrong one right before the agent commits an action.
 
 ---
 
-## 4. Pattern 3: Misreading the question before reasoning even starts
+## Pattern 3: Misreading the question before reasoning even starts
 
 The most upstream failure in [1] is the quietest: the model **misinterprets the
 question before the reasoning process begins**. No amount of careful chain-of-
@@ -109,7 +109,7 @@ end-to-end and still be entirely off-target. The cost is very high in these case
 
 ---
 
-## 5. The compounding effect, concretely
+## The compounding effect, concretely
 
 Here's the intuition that makes all of this urgent for agents. Suppose each step
 of a loop is independently "good" with probability *p*. The probability that an
@@ -131,7 +131,7 @@ often decay faster than this optimistic table suggests.
 
 ---
 
-## 6. What to measure? and what to do?
+## What to measure? and what to do?
 
 If the patterns are structural, the fixes should be too:
 
@@ -149,7 +149,7 @@ If the patterns are structural, the fixes should be too:
 
 ---
 
-## 7. Closing thought
+## Closing thought
 
 These patterns aren't hypothetical, they've already surfaced in production. In
 July 2025, a Replit coding agent deleted a live production database *during an
