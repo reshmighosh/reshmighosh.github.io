@@ -8,7 +8,7 @@ Most recently I was involved in R&D and productionization of several **natural l
 
 I have a rich experience of delivering high-impact features/products for Fortune 500 companies and end users. I also love prototyping and working on incubation projects, a desire stemming from my past experience of finishing a forward-looking Ph.D. from Carnegie Mellon University in the intersection of deep learning, natural language processing, and renewable energy policies.
 
-I am looking forward to continue working in fast-paced teams and across multiple areas and disciplines/roles and growing to become an empathetic product leader. Email me for an updated resume with a [gsh.reshmi@gmail.com](mailto:gsh.reshmi@gmail.com). I do not require visa-sponsorship. 
+I am looking forward to continue working in fast-paced teams and across multiple areas and disciplines/roles and growing to become an empathetic product leader. Email me at [gsh.reshmi@gmail.com](mailto:gsh.reshmi@gmail.com) to discuss new opportunities. **I do not require visa-sponsorship.** 
 
 ### Products shipped/Contributed to:
 
