@@ -127,7 +127,7 @@ above are exactly the ones that *aren't* independent, a missed hop or a misread
 question makes the *next* step more likely to fail too, so real trajectories
 often decay faster than this optimistic table suggests.
 
-![Chance a full agent trajectory stays clean as the number of steps grows, for 90%, 95%, and 99% per-step reliability. Even 95% reliability drops below a coin flip past ~13 steps.](./images/agentic-reliability-decay.png)
+![Chance a full agent trajectory stays clean as the number of steps grows, for 90%, 95%, and 99% per-step reliability. Even 95% reliability drops below a coin flip past ~13 steps.](/images/agentic-reliability-decay.png)
 
 ---
 
