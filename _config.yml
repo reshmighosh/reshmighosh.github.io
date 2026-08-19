@@ -1,13 +1,15 @@
 # Site wide configuration
 theme: jekyll-theme-minimal
 title: Reshmi Ghosh
-description: Senior Applied Scientist, Microsoft (MSAI)
-show_downloads: true
+description: Technical Lead & Senior Applied Scientist, Microsoft Turing | Copilot and Agents Core org
+show_downloads: false
 logo: /images/1462696_10200387915380867_283294306_o.jpeg
 twitter: reshmighosh
 github: reshmighosh
+github_profile_url: https://github.com/reshmighosh
 linkedin_url: https://www.linkedin.com/in/reshmi-ghosh/
 google_scholar_url: https://scholar.google.com/citations?user=ui8JeF5lKNMC&hl=en
+microsoft_research_url: https://www.microsoft.com/en-us/research/people/reshmighosh/
 semantic_scholar_url: https://www.semanticscholar.org/author/your-id
 twitter_url: https://twitter.com/reshmigh
 Microsoft_webpage: https://www.microsoft.com/en-us/research/people/reshmighosh/

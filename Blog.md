@@ -4,13 +4,13 @@ title: Blog
 permalink: /Blog.html
 ---
 
-### &emsp;&emsp; [ABOUT](./index.md)  &emsp; BLOG &emsp; [TEACHING](./Teaching.md) &emsp; [MENTORSHIP](./Mentorship.md) &emsp;
+### &emsp;&emsp; [ABOUT](/)  &emsp; BLOG &emsp; [PROFESSIONAL SERVICE](/ProfessionalService.html) &emsp; [AWARDS](/Awards.html) &emsp;
 
 -------
 
 # Blog
 ***Views are my own***
-Notes on building 0->1 products, better metrics, trustworthy AI, and personalization, and the messy middle between research and shipped product. Occassionally you might find notes about women empowerment, education, environment, policy, books I have been reading, and everthing in between!
+Notes on building 0->1 products, better metrics, trustworthy AI, and personalization, and the messy middle between research and shipped product. Occassionally you might find notes about women empowerment, economics, education, environment, policy, books I have been reading, and everthing in between!
 
 <ul style="list-style-type: none; padding: 0;">
 {% for post in site.posts %}
