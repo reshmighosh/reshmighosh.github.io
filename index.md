@@ -33,6 +33,8 @@ With over 10+ years of innovating, leading, and strategizing AI solutions for nu
             <ul class="release-list">
                 <li><strong>Built:</strong> Long-term memory systems that let Copilot retain user context across sessions while preserving privacy and trust boundaries.</li>
                 <li><strong>Shaped:</strong> Personalization signals that adapt agent behavior to individual users without compromising safety guardrails.</li>
+                <li><strong>Developed:</strong> Frontier evaluations for the long-running task harness and improved the reliability of asynchronous Copilot tasks.</li>
+                <li><strong>Released:</strong> Contributed to the release of computer-use agentic workflows.</li>
                 <li><strong>Explored:</strong> Memory-grounded reasoning patterns to reduce hallucinations and improve factual consistency in personalized workflows.</li>
             </ul>
         </details>
@@ -88,6 +90,7 @@ With over 10+ years of innovating, leading, and strategizing AI solutions for nu
             </div>
             <ul class="release-list">
                 <li><strong>Selected:</strong> Joined Microsoft’s AI incubation program at NERD with an approximately 0.1% acceptance rate.</li>
+                <li><strong>Highest impact:</strong> Contributed to the development and release of the first version of Copilot, covered <a href="https://time.com/6279668/satya-nadella-microsoft-leadership-brief/">here</a>.</li>
                 <li><strong>Built:</strong> Anomaly detection systems for Azure core-service SLAs and intelligent commanding features for Microsoft Office.</li>
                 <li><strong>Developed:</strong> Probabilistic models behind Viva Topics and an LLM application plus evaluation framework for rich-text generation in a client application.</li>
             </ul>
