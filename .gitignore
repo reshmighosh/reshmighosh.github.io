@@ -1,0 +1,7 @@
+_site/
+.venv/
+.vscode/
+.claude/
+Gemfile
+Gemfile.lock
+timeline-mock.html

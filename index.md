@@ -38,30 +38,48 @@ With over 10+ years of innovating, leading, and strategizing AI solutions for nu
 -------  
 <h3 align="center">Products/Software Highlights</h3>
 <div class="interactive-panel">
-    <p class="section-note">Expand each year to scan product focus areas, shipped capabilities, and ongoing bets.</p>
+    <p class="section-note">Each release window highlights what shipped, what hardened, and what became the next product bet.</p>
     <div class="interactive-stack">
         <details open>
-            <summary><strong>2026</strong> Memory and Copilot Personalization</summary>
-            <ul>
-                <li>Building long-term memory systems that let Copilot retain user context across sessions while preserving privacy and trust boundaries</li>
-                <li>Researching personalization signals that adapt agent behavior to individual users without compromising safety guardrails</li>
-                <li>Exploring memory-grounded reasoning to reduce hallucinations and improve factual consistency in personalized agentic workflows</li>
+            <summary><strong>2026</strong> Memory and personalization become product primitives</summary>
+            <p class="release-theme">The focus shifted from isolated features to durable user context, asynchronous work, and trustworthy long-running agents.</p>
+            <div class="release-tags">
+                <span class="release-tag">Platform</span>
+                <span class="release-tag">Memory</span>
+                <span class="release-tag">Personalization</span>
+            </div>
+            <ul class="release-list">
+                <li><strong>Built:</strong> Long-term memory systems that let Copilot retain user context across sessions while preserving privacy and trust boundaries.</li>
+                <li><strong>Shaped:</strong> Personalization signals that adapt agent behavior to individual users without compromising safety guardrails.</li>
+                <li><strong>Explored:</strong> Memory-grounded reasoning patterns to reduce hallucinations and improve factual consistency in personalized workflows.</li>
             </ul>
         </details>
         <details>
-            <summary><strong>2025</strong> It’s becoming all about agents</summary>
-            <ul>
-                <li>Working with alignment issues of facts for a global audience and reducing over-refusal</li>
-                <li>Contributed to the safe release of agentic workflows in <a href="https://www.microsoft.com/insidetrack/blog/ai-powered-agents-in-action-how-were-embracing-this-new-agentic-moment-at-microsoft/">M365 Copilots</a></li>
-                <li>Learn about agents in <a href="https://news.microsoft.com/source/features/ai/ai-agents-what-they-are-and-how-theyll-change-the-way-we-work/" target="_blank">Copilot</a></li>
+            <summary><strong>2025</strong> The agentic release wave</summary>
+            <p class="release-theme">This was the year product work became deeply agentic: orchestration, safety, grounding, and user trust all had to hold together at runtime.</p>
+            <div class="release-tags">
+                <span class="release-tag">Agents</span>
+                <span class="release-tag">Alignment</span>
+                <span class="release-tag">Runtime Safety</span>
+            </div>
+            <ul class="release-list">
+                <li><strong>Hardened:</strong> Fact alignment for a global audience while reducing over-refusal in product behavior.</li>
+                <li><strong>Released:</strong> Contributed to the safe launch of agentic workflows in <a href="https://www.microsoft.com/insidetrack/blog/ai-powered-agents-in-action-how-were-embracing-this-new-agentic-moment-at-microsoft/">M365 Copilots</a>.</li>
+                <li><strong>Extended:</strong> Helped move Copilot from single-turn assistance toward more capable, multi-step agent experiences.</li>
             </ul>
         </details>
         <details>
-            <summary><strong>2024</strong> Year 2 of bringing AI into search and productivity</summary>
-            <ul>
-                <li>Working on novel post-training of AI systems to prevent security breaches</li>
-                <li><a href="https://www.theverge.com/2024/3/28/24114664/microsoft-safety-ai-prompt-injections-hallucinations-azure">Azure Prompt Shields</a> became available for third-party usage</li>
-                <li>Safeguarding automated search workflows from security breaches and prompt injections</li>
+            <summary><strong>2024</strong> Securing AI search and productivity</summary>
+            <p class="release-theme">The center of gravity was AI security: prompt injections, post-training defenses, and enterprise-grade trust for search and productivity systems.</p>
+            <div class="release-tags">
+                <span class="release-tag">Security</span>
+                <span class="release-tag">Post-Training</span>
+                <span class="release-tag">Enterprise AI</span>
+            </div>
+            <ul class="release-list">
+                <li><strong>Developed:</strong> Novel post-training methods for AI systems designed to prevent security breaches.</li>
+                <li><strong>Shipped:</strong> <a href="https://www.theverge.com/2024/3/28/24114664/microsoft-safety-ai-prompt-injections-hallucinations-azure">Azure Prompt Shields</a> for third-party usage.</li>
+                <li><strong>Safeguarded:</strong> Automated search workflows against prompt injections and related security failures.</li>
             </ul>
         </details>
     </div>
