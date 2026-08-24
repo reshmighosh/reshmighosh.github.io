@@ -12,24 +12,6 @@ For invited talks, conference presentations, and reviewing activities, see [Prof
 
 I am looking forward to continue working in fast-paced teams and across multiple areas and disciplines/roles and growing to become an empathetic product leader. Email me at [gsh.reshmi@gmail.com](mailto:gsh.reshmi@gmail.com) to discuss new opportunities. **I have an employment-based green card and do not require visa sponsorship.** 
 
-### Products shipped/Contributed to:
-
-Current:  Next Generation Personalization, Memory Orchestration, Long-running Tasks, Asynchronous Tasks, Reducing Over Mitigation, Mechanistic Interpretability
-
-Last year: Security of Agentic Infrastructure, Deep Reasoning, Evaluation Framework, Coding and Artifact Generation Harness
-
-Older: Working on Agents research and applications. Special focus on Safety and Security (Direct Prompt Injections and Cross-Domain Prompt Injections)
-
-[Fall 2023 – Fall 2024] I had been focused on developing state-of-the-art Responsible AI and Trustworthy evaluation mechanisms for LLM and Multimodal model applications. Additionally, in 2023, I contributed to the development and shipped M365Copilot (Business Chat), followed by Azure Prompt Shields in 2024 to mitigate Cross Domain Prompt Injections.
-
-[2021 - Spring 2023] Before joining MSAI, I was selected to be part of a coveted (~0.1% acceptance rate) [AI incubation program](https://www.microsoftnewengland.com/maidap/) at Microsoft's New England Research and Development Center (NERD) (currently under the Office of the CTO, previously under Jaime Teevan's Office of Applied Research). During this time, I shipped several products, notably:
-1. Developed and implemented anomaly detection methods for SLA in Azure core services
-2. Developed and deployed in production, intelligent commanding features leveraging seq2seq language model to Microsoft Office. Also prototyped a novel loss function that can predict as well as researching user preferences in UX positioning by developing a novel loss function.
-3. Developed probabilistic graphical models to measure time saved in finding new information by knowledge workers, aiding in productivity increases through Viva Topics (see product announcement [here](https://venturebeat.com/business/microsoft-launches-viva-topics-an-ai-powered-information-curator-for-enterprises/)!)
-4. Shipped a LLM application and novel evaluation framework for generating rich-text formatting within a client application.
-
-This work led into MSAI, where I was tech leading efforts to architect and integrate first-ever Generative AI capabilities in Microsoft's Productivity applications (M365 CoPilots, see Satya Nadella's announcement of these products [here](https://news.microsoft.com/reinventing-productivity/)).
-
 
 Education Background: I hold a Ph.D. from Carnegie Mellon University. I have always been passionate about applying machine learning, deep learning, economics to solving socio-technical problems, such as in the intersection of climate change and renewable energy integration. 
 
@@ -38,7 +20,7 @@ With over 10+ years of innovating, leading, and strategizing AI solutions for nu
 -------  
 <h3 align="center">Products/Software Highlights</h3>
 <div class="interactive-panel">
-    <p class="section-note">Each release window highlights what shipped, what hardened, and what became the next product bet.</p>
+    <p class="section-note">A compact release timeline of what shipped, what hardened in production, and what became the next product platform bet.</p>
     <div class="interactive-stack">
         <details open>
             <summary><strong>2026</strong> Memory and personalization become product primitives</summary>
@@ -69,6 +51,20 @@ With over 10+ years of innovating, leading, and strategizing AI solutions for nu
             </ul>
         </details>
         <details>
+            <summary><strong>2023–2024</strong> Responsible AI and first Copilot releases</summary>
+            <p class="release-theme">This era connected evaluation research directly to product launches, from the first Copilot releases to enterprise-grade defenses for prompt injection and security failures.</p>
+            <div class="release-tags">
+                <span class="release-tag">Copilot</span>
+                <span class="release-tag">Evaluation</span>
+                <span class="release-tag">Responsible AI</span>
+            </div>
+            <ul class="release-list">
+                <li><strong>Led:</strong> State-of-the-art Responsible AI and trustworthy evaluation work for LLM and multimodal applications.</li>
+                <li><strong>Shipped:</strong> Early M365 Copilot capabilities, including Business Chat, as generative AI entered Microsoft productivity products.</li>
+                <li><strong>Translated:</strong> Research into production safeguards that later supported Azure Prompt Shields and related enterprise defenses.</li>
+            </ul>
+        </details>
+        <details>
             <summary><strong>2024</strong> Securing AI search and productivity</summary>
             <p class="release-theme">The center of gravity was AI security: prompt injections, post-training defenses, and enterprise-grade trust for search and productivity systems.</p>
             <div class="release-tags">
@@ -80,6 +76,20 @@ With over 10+ years of innovating, leading, and strategizing AI solutions for nu
                 <li><strong>Developed:</strong> Novel post-training methods for AI systems designed to prevent security breaches.</li>
                 <li><strong>Shipped:</strong> <a href="https://www.theverge.com/2024/3/28/24114664/microsoft-safety-ai-prompt-injections-hallucinations-azure">Azure Prompt Shields</a> for third-party usage.</li>
                 <li><strong>Safeguarded:</strong> Automated search workflows against prompt injections and related security failures.</li>
+            </ul>
+        </details>
+        <details>
+            <summary><strong>2021–2023</strong> Office of the CTO / AI Incubation</summary>
+            <p class="release-theme">Before the current Copilot era, the work centered on incubation: shipping foundational ML systems, experimenting aggressively, and learning how research ideas survive production constraints.</p>
+            <div class="release-tags">
+                <span class="release-tag">Incubation</span>
+                <span class="release-tag">ML Systems</span>
+                <span class="release-tag">Product Foundations</span>
+            </div>
+            <ul class="release-list">
+                <li><strong>Selected:</strong> Joined Microsoft’s AI incubation program at NERD with an approximately 0.1% acceptance rate.</li>
+                <li><strong>Built:</strong> Anomaly detection systems for Azure core-service SLAs and intelligent commanding features for Microsoft Office.</li>
+                <li><strong>Developed:</strong> Probabilistic models behind Viva Topics and an LLM application plus evaluation framework for rich-text generation in a client application.</li>
             </ul>
         </details>
     </div>
