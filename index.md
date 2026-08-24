@@ -10,7 +10,7 @@ I have a rich experience of delivering high-impact features/products for Fortune
 
 For invited talks, conference presentations, and reviewing activities, see [Professional Service](/ProfessionalService.html).
 
-I am looking forward to continue working in fast-paced teams and across multiple areas and disciplines/roles and growing to become an empathetic product leader. Email me at [gsh.reshmi@gmail.com](mailto:gsh.reshmi@gmail.com) to discuss new opportunities. **I do not require visa-sponsorship.** 
+I am looking forward to continue working in fast-paced teams and across multiple areas and disciplines/roles and growing to become an empathetic product leader. Email me at [gsh.reshmi@gmail.com](mailto:gsh.reshmi@gmail.com) to discuss new opportunities. **I have an employment-based green card and do not require visa sponsorship.** 
 
 ### Products shipped/Contributed to:
 
