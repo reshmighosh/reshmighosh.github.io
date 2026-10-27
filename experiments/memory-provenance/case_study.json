@@ -1,0 +1,59 @@
+{
+  "description": "Synthetic, hand-authored history and gold labels. No real user data or model-generated responses.",
+  "conversations": [
+    {"id": "m01", "date": "2026-01-12", "source": "I'm vegetarian. Please remember this for restaurant suggestions.", "claim": "User is vegetarian for restaurant suggestions.", "subject": "user", "topics": ["dining"], "scope": "global", "reusable": true, "superseded_by": "m06"},
+    {"id": "m02", "date": "2026-02-08", "source": "For restaurant suggestions, I prefer a quiet restaurant where I can hear the conversation.", "claim": "User prefers a quiet restaurant.", "subject": "user", "topics": ["dining"], "scope": "global", "reusable": true},
+    {"id": "m03", "date": "2026-03-16", "source": "My father needs step-free access when we visit a restaurant or hotel.", "claim": "Father needs step-free restaurant and hotel access.", "subject": "father", "topics": ["dining", "lodging"], "scope": "global", "reusable": true},
+    {"id": "m04", "date": "2026-04-04", "source": "When I travel, I prefer a hotel near a train station. Remember that for future hotel searches.", "claim": "User prefers a hotel near a train station.", "subject": "user", "topics": ["lodging"], "scope": "global", "reusable": true},
+    {"id": "m05", "date": "2026-05-10", "source": "My colleague is vegetarian and needs vegetarian restaurant options at dinner.", "claim": "Colleague needs vegetarian restaurant dinner options.", "subject": "colleague", "topics": ["dining"], "scope": "global", "reusable": true},
+    {"id": "m06", "date": "2026-06-18", "source": "Update my restaurant preferences: I now eat fish, but not other meat.", "claim": "User now eats fish but not other meat.", "subject": "user", "topics": ["dining"], "scope": "global", "reusable": true},
+    {"id": "m07", "date": "2026-07-07", "source": "For this private budgeting conversation only, my restaurant dinner budget is $20. Do not retain or reuse this detail.", "claim": "User's restaurant dinner budget is $20.", "subject": "user", "topics": ["dining"], "scope": "global", "reusable": false},
+    {"id": "m08", "date": "2026-08-11", "source": "For future travel plans, remember that I prefer a museum visit to shopping.", "claim": "User prefers a museum visit to shopping during travel.", "subject": "user", "topics": ["activities"], "scope": "global", "reusable": true},
+    {"id": "m09", "date": "2026-09-03", "source": "For this conference abstract only, please keep the abstract under 150 words.", "claim": "This conference abstract must be under 150 words.", "subject": "user", "topics": ["writing"], "scope": "abstract-2026", "reusable": true},
+    {"id": "m10", "date": "2026-09-19", "source": "For the conference dinner only, please choose a vegetarian restaurant for the whole group.", "claim": "Conference dinner needs a vegetarian restaurant.", "subject": "user", "topics": ["dining"], "scope": "conference-2026", "reusable": true},
+    {"id": "m11", "date": "2026-10-02", "source": "For work project updates, use concise bullet points. Keep this preference for future project updates.", "claim": "Work project updates should use concise bullet points.", "subject": "user", "topics": ["writing"], "scope": "work-update", "reusable": true},
+    {"id": "m12", "date": "2026-10-12", "source": "For visits with my father, choose a restaurant near accessible transit.", "claim": "Father visits need a restaurant near accessible transit.", "subject": "father", "topics": ["dining"], "scope": "father-visit", "reusable": true}
+  ],
+  "queries": [
+    {
+      "id": "q01", "text": "Find a quiet restaurant for dinner on my solo trip.", "date": "2026-10-26",
+      "subjects": ["user"], "topics": ["dining"], "scope": "solo-trip",
+      "gold": {"eligible": ["m02", "m06"], "superseded": ["m01"], "wrong_subject": ["m03", "m05", "m12"], "out_of_scope": ["m04", "m08", "m09", "m10", "m11"], "prohibited": ["m07"]}
+    },
+    {
+      "id": "q02", "text": "Find a quiet restaurant for dinner with my father near accessible transit.", "date": "2026-10-26",
+      "subjects": ["user", "father"], "topics": ["dining"], "scope": "father-visit",
+      "gold": {"eligible": ["m02", "m03", "m06", "m12"], "superseded": ["m01"], "wrong_subject": ["m05"], "out_of_scope": ["m04", "m08", "m09", "m10", "m11"], "prohibited": ["m07"]}
+    },
+    {
+      "id": "q03", "text": "Revise the conference abstract we discussed in September.", "date": "2026-10-26",
+      "subjects": ["user"], "topics": ["writing"], "scope": "abstract-2026",
+      "gold": {"eligible": ["m09"], "superseded": ["m01"], "wrong_subject": ["m03", "m05", "m12"], "out_of_scope": ["m02", "m04", "m06", "m08", "m10", "m11"], "prohibited": ["m07"]}
+    },
+    {
+      "id": "q04", "text": "Draft my work project update for this week.", "date": "2026-10-26",
+      "subjects": ["user"], "topics": ["writing"], "scope": "work-update",
+      "gold": {"eligible": ["m11"], "superseded": ["m01"], "wrong_subject": ["m03", "m05", "m12"], "out_of_scope": ["m02", "m04", "m06", "m08", "m09", "m10"], "prohibited": ["m07"]}
+    },
+    {
+      "id": "q05", "text": "Find a hotel for my solo travel near a train station.", "date": "2026-10-26",
+      "subjects": ["user"], "topics": ["lodging"], "scope": "solo-trip",
+      "gold": {"eligible": ["m04"], "superseded": ["m01"], "wrong_subject": ["m03", "m05", "m12"], "out_of_scope": ["m02", "m06", "m08", "m09", "m10", "m11"], "prohibited": ["m07"]}
+    },
+    {
+      "id": "q06", "text": "Explain why fish can breathe underwater.", "date": "2026-10-26",
+      "subjects": ["user"], "topics": ["science"], "scope": "general",
+      "gold": {"eligible": [], "superseded": ["m01"], "wrong_subject": ["m03", "m05", "m12"], "out_of_scope": ["m02", "m04", "m06", "m08", "m09", "m10", "m11"], "prohibited": ["m07"]}
+    },
+    {
+      "id": "q07", "text": "Suggest a museum or shopping visit for my next travel afternoon.", "date": "2026-10-26",
+      "subjects": ["user"], "topics": ["activities"], "scope": "solo-trip",
+      "gold": {"eligible": ["m08"], "superseded": ["m01"], "wrong_subject": ["m03", "m05", "m12"], "out_of_scope": ["m02", "m04", "m06", "m09", "m10", "m11"], "prohibited": ["m07"]}
+    },
+    {
+      "id": "q08", "text": "Find a quiet vegetarian restaurant for the conference dinner.", "date": "2026-10-26",
+      "subjects": ["user"], "topics": ["dining"], "scope": "conference-2026",
+      "gold": {"eligible": ["m02", "m06", "m10"], "superseded": ["m01"], "wrong_subject": ["m03", "m05", "m12"], "out_of_scope": ["m04", "m08", "m09", "m11"], "prohibited": ["m07"]}
+    }
+  ]
+}

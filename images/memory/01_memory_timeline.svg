@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="870" viewBox="0 0 1200 870" style="max-width:100%;height:auto" role="img" aria-labelledby="title description">
+<title id="title">Remembered correctly. Used incorrectly.</title>
+<desc id="description">Four fictional conversation cues evaluated against a solo restaurant request: use the June update, not the superseded January diet, father&#x27;s access needs, or a task-local abstract limit. This diagram is illustrative, not model output.</desc>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#172b44}.small{font-size:17px}.body{font-size:21px}.heading{font-size:26px;font-weight:700}.title{font-size:37px;font-weight:700}.muted{fill:#52657b}</style>
+<rect width="1200" height="100%" fill="#f5f7fb"/>
+<text x="48" y="47" class="small muted">SYNTHETIC CASE STUDY  /  MEMORY &amp; PROVENANCE</text>
+<text x="48" y="101" class="title">Remembered correctly. Used incorrectly.</text>
+<text x="48" y="144" class="body muted">One current request: Find a restaurant for my solo trip.</text>
+<line x1="92" y1="207" x2="92" y2="710" stroke="#a6b4c6" stroke-width="2"/>
+<rect x="48" y="207" width="88" height="52" rx="12" fill="#e7edf5" stroke="#dae2ed"/>
+<text x="92" y="240" class="body" text-anchor="middle">JAN</text>
+<rect x="161" y="185" width="605" height="119" rx="12" fill="#ffffff" stroke="#dae2ed"/>
+<text x="183" y="216" class="small muted">m01  /  source conversation</text>
+<text x="183" y="249" class="body">I&#x27;m vegetarian. Please remember this for restaurant</text>
+<text x="183" y="274" class="body">suggestions.</text>
+<rect x="787" y="185" width="365" height="119" rx="12" fill="#ffffff" stroke="#dae2ed"/>
+<text x="809" y="219" class="body" style="fill:#94620b">SUPERSEDED</text>
+<text x="809" y="251" class="small">Later dietary update replaces</text>
+<text x="809" y="274" class="small">this cue.</text>
+<rect x="48" y="347" width="88" height="52" rx="12" fill="#e7edf5" stroke="#dae2ed"/>
+<text x="92" y="380" class="body" text-anchor="middle">MAR</text>
+<rect x="161" y="325" width="605" height="119" rx="12" fill="#ffffff" stroke="#dae2ed"/>
+<text x="183" y="356" class="small muted">m03  /  source conversation</text>
+<text x="183" y="389" class="body">My father needs step-free access when we visit a</text>
+<text x="183" y="414" class="body">restaurant or hotel.</text>
+<rect x="787" y="325" width="365" height="119" rx="12" fill="#ffffff" stroke="#dae2ed"/>
+<text x="809" y="359" class="body" style="fill:#6b60a8">WRONG SUBJECT</text>
+<text x="809" y="391" class="small">The statement is about the</text>
+<text x="809" y="414" class="small">father.</text>
+<rect x="48" y="487" width="88" height="52" rx="12" fill="#e7edf5" stroke="#dae2ed"/>
+<text x="92" y="520" class="body" text-anchor="middle">JUN</text>
+<rect x="161" y="465" width="605" height="119" rx="12" fill="#ffffff" stroke="#dae2ed"/>
+<text x="183" y="496" class="small muted">m06  /  source conversation</text>
+<text x="183" y="529" class="body">Update my restaurant preferences: I now eat fish,</text>
+<text x="183" y="554" class="body">but not other meat.</text>
+<rect x="787" y="465" width="365" height="119" rx="12" fill="#ffffff" stroke="#dae2ed"/>
+<text x="809" y="499" class="body" style="fill:#147d73">ELIGIBLE</text>
+<text x="809" y="531" class="small">Current dietary cue for this</text>
+<text x="809" y="554" class="small">user.</text>
+<rect x="48" y="627" width="88" height="52" rx="12" fill="#e7edf5" stroke="#dae2ed"/>
+<text x="92" y="660" class="body" text-anchor="middle">SEP</text>
+<rect x="161" y="605" width="605" height="119" rx="12" fill="#ffffff" stroke="#dae2ed"/>
+<text x="183" y="636" class="small muted">m09  /  source conversation</text>
+<text x="183" y="669" class="body">For this conference abstract only, please keep the</text>
+<text x="183" y="694" class="body">abstract under 150 words.</text>
+<rect x="787" y="605" width="365" height="119" rx="12" fill="#ffffff" stroke="#dae2ed"/>
+<text x="809" y="639" class="body" style="fill:#60758b">OUT OF SCOPE</text>
+<text x="809" y="671" class="small">A limit for one abstract, not</text>
+<text x="809" y="694" class="small">this task.</text>
+<rect x="48" y="766" width="1104" height="63" rx="12" fill="#e3f1ed" stroke="#b6d8cf"/>
+<text x="70" y="805" class="heading">Accurate recall does not establish appropriate reuse.</text>
+</svg>

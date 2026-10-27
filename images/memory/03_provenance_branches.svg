@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" style="max-width:100%;height:auto" role="img" aria-labelledby="title description">
+<title id="title">A source link is not enough.</title>
+<desc id="description">Illustrative provenance failure: a statement that the father needs step-free access is transformed into a user profile claim. A corrected branch preserves the subject and excludes the cue from a solo trip. No model generated these transformations.</desc>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#172b44}.small{font-size:17px}.body{font-size:21px}.heading{font-size:26px;font-weight:700}.title{font-size:37px;font-weight:700}.muted{fill:#52657b}</style>
+<rect width="1200" height="100%" fill="#f5f7fb"/>
+<text x="48" y="47" class="small muted">SYNTHETIC CASE STUDY  /  MEMORY &amp; PROVENANCE</text>
+<text x="48" y="101" class="title">A source link is not enough.</text>
+<text x="48" y="144" class="body muted">Same source. Two transformations. Different conclusions.</text>
+<rect x="240" y="178" width="720" height="105" rx="12" fill="#ffffff" stroke="#dae2ed"/>
+<text x="266" y="213" class="small muted">SOURCE m03  /  March conversation</text>
+<text x="266" y="248" class="body">My father needs step-free access when we visit a restaurant</text>
+<text x="266" y="276" class="body">or hotel.</text>
+<line x1="600" y1="283" x2="600" y2="310" stroke="#a6b4c6" stroke-width="2"/>
+<line x1="305" y1="310" x2="895" y2="310" stroke="#a6b4c6" stroke-width="2"/>
+<line x1="305" y1="310" x2="305" y2="342" stroke="#a6b4c6" stroke-width="2"/>
+<line x1="895" y1="310" x2="895" y2="342" stroke="#a6b4c6" stroke-width="2"/>
+<rect x="48" y="342" width="514" height="125" rx="12" fill="#fbebee" stroke="#e7b6be"/>
+<text x="72" y="378" class="heading" style="fill:#bd4655">SUBJECT LOST</text>
+<text x="72" y="416" class="body">Profile: User needs step-free access.</text>
+<rect x="638" y="342" width="514" height="125" rx="12" fill="#e3f1ed" stroke="#b6d8cf"/>
+<text x="662" y="378" class="heading" style="fill:#147d73">SUBJECT PRESERVED</text>
+<text x="662" y="416" class="body">Memory: Father needs step-free access.</text>
+<line x1="305" y1="467" x2="305" y2="505" stroke="#a6b4c6" stroke-width="2"/>
+<line x1="895" y1="467" x2="895" y2="505" stroke="#a6b4c6" stroke-width="2"/>
+<rect x="48" y="505" width="514" height="145" rx="12" fill="#ffffff" stroke="#dae2ed"/>
+<text x="72" y="542" class="body">Solo-trip answer cites m03</text>
+<text x="72" y="580" class="body">The citation exists, but it does not</text>
+<text x="72" y="608" class="body">support a claim about the user.</text>
+<rect x="638" y="505" width="514" height="145" rx="12" fill="#ffffff" stroke="#dae2ed"/>
+<text x="662" y="542" class="body">Solo-trip answer excludes m03</text>
+<text x="662" y="580" class="body">The source remains traceable without</text>
+<text x="662" y="608" class="body">becoming a user preference.</text>
+<rect x="48" y="697" width="1104" height="80" rx="12" fill="#ffffff" stroke="#dae2ed"/>
+<text x="70" y="731" class="heading">Check claim support, not merely whether a citation is present.</text>
+<text x="70" y="759" class="small muted">Illustrative transformation, not measured LLM behavior or proof of causal influence.</text>
+</svg>
