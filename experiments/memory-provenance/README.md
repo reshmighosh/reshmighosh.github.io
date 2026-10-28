@@ -3,14 +3,18 @@
 This is a small, deterministic illustration for the
 [memory and provenance blog post](../../_posts/2026-10-26-memory-evaluations-and-provenance.md).
 It contains **no real user data, LLM calls, model responses,
-or measured user outcomes**. Python 3.9+ and its standard library are sufficient;
-there are no packages to install.
+or measured user outcomes**. The retrieval experiment and its core tests use only
+the Python 3.9+ standard library. The retrieval-budget figure uses Seaborn and
+Matplotlib; the other two diagrams remain standard-library SVGs.
 
 ## Reproduce
 
 From the repository root:
 
 ```sh
+python3 -m venv .venv
+. .venv/bin/activate
+python -m pip install -r experiments/memory-provenance/requirements.txt
 python3 -m unittest discover -s experiments/memory-provenance -p 'test_*.py'
 python3 experiments/memory-provenance/run.py
 ```
@@ -18,7 +22,9 @@ python3 experiments/memory-provenance/run.py
 The runner writes [aggregate results](results/summary.json),
 [all selected cue-request pairs](results/selections.csv), and three SVGs under
 [images/memory](../../images/memory/). It records a SHA-256 hash of the input
-dataset. Results and figures are deterministic; no random seed is needed.
+dataset. Results and figures are deterministic within the same plotting
+environment; SVG export omits the timestamp and uses stable element IDs. No
+random seed is needed.
 
 ## Design and labels
 
@@ -64,7 +70,8 @@ are not calibrated measures of severity or end-user harm.
 
 1. **Timeline:** an explanatory view of four cues from the same history.
 2. **Retrieval budget:** measured stacked counts from this exact experiment,
-   using a shared count axis across the two methods.
+   using Seaborn's weighted, stacked `histplot` with the same count scale for
+   both methods. Weights are the measured category counts, not resampled data.
 3. **Provenance branches:** deliberately constructed good/bad transformations of
    the father's statement, not observed LLM generations.
 

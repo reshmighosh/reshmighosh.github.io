@@ -387,7 +387,7 @@ retained it in the first place.
 
 ![Stacked bars measure selected cue-request pairs at budgets 1, 2, 4, and 8. Lexical retrieval increasingly includes superseded, wrong-subject, out-of-scope, and prohibited cues; the hand-annotated metadata control selects only eligible cues on this fixed dataset.]({{ '/images/memory/02_retrieval_budget.svg' | relative_url }})
 
-*Figure 3. Measured retrieval results, not LLM performance. Bar heights count
+*Figure 3. Measured retrieval results, plotted with Seaborn, not LLM performance. Bar heights count
 selected cue-request pairs across eight requests; both panels use the same
 scale. A budget is a maximum, not a requirement to fill every slot. The metadata
 control's clean selections depend on the supplied annotations.
@@ -429,9 +429,10 @@ preserves privacy. There are no LLM calls, user outcomes, causal-influence
 measurements, or population-level statistical claims in this experiment.
 
 The [dataset and reproduction instructions](https://github.com/reshmighosh/reshmighosh.github.io/tree/master/experiments/memory-provenance)
-include the fixed annotations, standard-library Python runner, focused tests,
+include the fixed annotations, Python runner, focused tests,
 per-selection CSV, and aggregate JSON with an input-data hash. The code has no
-external dependencies.
+external dependencies for retrieval and evaluation; regenerating Figure 3
+requires the pinned Seaborn and Matplotlib plotting dependencies.
 
 ---
 

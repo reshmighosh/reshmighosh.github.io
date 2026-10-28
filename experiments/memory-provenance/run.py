@@ -3,6 +3,7 @@
 
 import csv
 import hashlib
+import io
 import json
 import math
 import re
@@ -11,6 +12,7 @@ from collections import Counter
 from datetime import date
 from html import escape
 from pathlib import Path
+from xml.etree import ElementTree
 
 
 HERE = Path(__file__).resolve().parent
@@ -225,57 +227,128 @@ def timeline(data):
     svg.save(FIGURES / "01_memory_timeline.svg")
 
 
-def retrieval_chart(summary):
-    svg = SVG(
-        1000, "What changes when retrieval gets bigger?",
-        "Measured cue counts across eight synthetic requests at retrieval budgets 1, 2, 4, "
-        "and 8. Two panels compare lexical retrieval with a hand-annotated metadata control. "
-        "Each stacked segment is labeled by category; these are not LLM performance results.",
-    )
-    svg.text(48, 143, "Selected cue-request pairs across 8 requests; up to k positive-score cues per request.", "body muted")
-    legend = [(48, 190, "eligible"), (290, 190, "superseded"), (580, 190, "wrong_subject"),
-              (48, 226, "out_of_scope"), (290, 226, "prohibited")]
-    for x, y, category in legend:
-        svg.box(x, y - 16, 20, 20, COLORS[category], COLORS[category])
-        svg.text(x + 30, y, LABELS[category], "small")
+def retrieval_figure(summary):
+    import seaborn as sns
+    from matplotlib.backends.backend_agg import FigureCanvasAgg
+    from matplotlib.figure import Figure
+    from matplotlib.patches import Patch
+
     max_count = max(row["selected"] for row in summary)
     axis_max = max(10, math.ceil(max_count / 10) * 10)
-    baseline = 735
-    scale = 370 / axis_max
-    for panel, method in enumerate(("lexical", "metadata_control")):
-        left = 95 + panel * 570
-        title = "Lexical relevance only" if panel == 0 else "Hand-annotated metadata control"
-        svg.text(left - 35, 290, title, "heading")
-        svg.text(left - 35, 320, "No subject, time, or reuse checks" if panel == 0 else
-                 "Same ranking; filter before taking top k", "small muted")
-        for tick in range(0, axis_max + 1, 10):
-            y = baseline - tick * scale
-            svg.line(left, y, left + 423, y, "#dce3ed")
-            svg.text(left - 12, y + 6, tick, "small muted", anchor="end")
-        rows = [row for row in summary if row["method"] == method]
-        for index, row in enumerate(rows):
-            x = left + 26 + index * 102
-            top = baseline
-            for category in CATEGORIES:
-                count = row[category]
-                if not count:
-                    continue
-                height = count * scale
-                top -= height
-                svg.parts.append(
-                    f'<rect x="{x}" y="{top}" width="65" height="{height}" fill="{COLORS[category]}"/>'
-                )
-                if height >= 24:
-                    svg.text(x + 32, top + height / 2 + 6, count, "small", fill="#ffffff", anchor="middle")
-            svg.text(x + 32, top - 12, row["selected"], "body", anchor="middle")
-            svg.text(x + 32, baseline + 30, f"k={row['budget']}", "body", anchor="middle")
-            precision = "-" if row["precision"] is None else f"{row['precision']:.0%}"
-            svg.text(x + 32, baseline + 63, precision, "small", anchor="middle")
-        svg.text(left, baseline + 100, "Percent below bars = eligible / selected", "small muted")
-    svg.box(48, 875, 1104, 85)
-    svg.text(70, 906, "A control, not a learned capability", "body")
-    svg.text(70, 935, "Subject, topic, scope, updates, and permissions are supplied by hand. No LLM is run.", "small muted")
-    svg.save(FIGURES / "02_retrieval_budget.svg")
+    theme = {
+        "axes.facecolor": "#f5f7fb", "figure.facecolor": "#f5f7fb",
+        "text.color": "#172b44", "axes.labelcolor": "#172b44",
+        "xtick.color": "#52657b", "ytick.color": "#52657b",
+        "grid.color": "#dce3ed", "font.family": "sans-serif",
+    }
+    with sns.axes_style("whitegrid", rc=theme), sns.plotting_context("notebook"):
+        figure = Figure(figsize=(12, 9.5))
+        FigureCanvasAgg(figure)
+        axes = figure.subplots(1, 2)
+        figure.subplots_adjust(left=0.085, right=0.97, bottom=0.23, top=0.66, wspace=0.18)
+        figure.text(0.06, 0.95, "SYNTHETIC CASE STUDY / MEMORY & PROVENANCE",
+                    fontsize=11, color="#52657b")
+        figure.text(0.06, 0.89, "What changes when retrieval gets bigger?",
+                    fontsize=24, weight="bold")
+        figure.text(0.06, 0.845,
+                    "Selected cue-request pairs across 8 requests; up to k positive-score cues per request.",
+                    fontsize=11, color="#52657b")
+        figure.legend(
+            handles=[Patch(facecolor=COLORS[key], label=LABELS[key]) for key in CATEGORIES],
+            loc="upper left", bbox_to_anchor=(0.06, 0.815), ncol=3, frameon=False,
+        )
+        for panel, method in enumerate(("lexical", "metadata_control")):
+            ax = axes[panel]
+            rows = sorted(
+                (row for row in summary if row["method"] == method),
+                key=lambda row: row["budget"],
+            )
+            points = [
+                (index, row[category], category)
+                for index, row in enumerate(rows) for category in CATEGORIES
+            ]
+            sns.histplot(
+                data={
+                    "budget_position": [point[0] for point in points],
+                    "count": [point[1] for point in points],
+                    "category": [point[2] for point in points],
+                },
+                x="budget_position", weights="count", hue="category",
+                hue_order=list(reversed(CATEGORIES)), palette=COLORS,
+                bins=[index - 0.5 for index in range(len(rows) + 1)],
+                multiple="stack", stat="count", common_norm=False,
+                shrink=0.66, alpha=1, edgecolor="#f5f7fb", linewidth=0.5,
+                legend=False, ax=ax,
+            )
+            for bar in ax.patches:
+                if bar.get_height() >= 3:
+                    ax.text(
+                        bar.get_x() + bar.get_width() / 2,
+                        bar.get_y() + bar.get_height() / 2,
+                        f"{bar.get_height():.0f}", ha="center", va="center",
+                        fontsize=11, color="white",
+                    )
+            tick_labels = []
+            for index, row in enumerate(rows):
+                precision = "-" if row["precision"] is None else f"{row['precision']:.1%}"
+                tick_labels.append(f"k={row['budget']}\n{precision}")
+                ax.text(index, row["selected"] + 0.65, str(row["selected"]),
+                        ha="center", fontsize=12, weight="bold")
+            ax.set(
+                xticks=list(range(len(rows))), xticklabels=tick_labels,
+                xlim=(-0.6, len(rows) - 0.4), ylim=(0, axis_max),
+                yticks=list(range(0, axis_max + 1, 10)),
+                xlabel="Retrieval budget k\nPercent below k = eligible / selected",
+                ylabel="Selected cue-request pairs" if panel == 0 else "",
+            )
+            ax.set_title(
+                "Lexical relevance only" if panel == 0 else "Hand-annotated metadata control",
+                loc="left", fontsize=13, weight="bold", pad=36,
+            )
+            ax.text(
+                0, 1.035,
+                "No subject, time, or reuse checks" if panel == 0 else
+                "Same ranking; filter before taking top k",
+                transform=ax.transAxes, fontsize=10, color="#52657b",
+            )
+            ax.grid(axis="x", visible=False)
+            sns.despine(ax=ax, left=True, bottom=True)
+        figure.text(0.06, 0.10, "A control, not a learned capability",
+                    fontsize=14, weight="bold")
+        figure.text(0.06, 0.065,
+                    "Subject, topic, scope, updates, and permissions are supplied by hand. No LLM is run.",
+                    fontsize=11, color="#52657b")
+    return figure
+
+
+def retrieval_chart(summary):
+    import matplotlib as mpl
+
+    with mpl.rc_context({"svg.fonttype": "none", "svg.hashsalt": "memory-provenance"}):
+        figure = retrieval_figure(summary)
+        buffer = io.BytesIO()
+        figure.savefig(buffer, format="svg", metadata={"Date": None, "Creator": "Seaborn / Matplotlib"})
+        figure.clear()
+    namespace = "http://www.w3.org/2000/svg"
+    ElementTree.register_namespace("", namespace)
+    root = ElementTree.fromstring(buffer.getvalue())
+    root.set("role", "img")
+    root.set("aria-labelledby", "title description")
+    root.set("style", "max-width:100%;height:auto")
+    title = ElementTree.Element(f"{{{namespace}}}title", id="title")
+    title.text = "What changes when retrieval gets bigger?"
+    description = ElementTree.Element(f"{{{namespace}}}desc", id="description")
+    description.text = (
+        "Seaborn stacked histograms of measured cue-request counts across eight synthetic requests "
+        "at budgets 1, 2, 4, and 8. Lexical retrieval selects 8, 15, 24, and 36 pairs; "
+        "7, 8, 10, and 11 are eligible. The hand-annotated metadata control selects "
+        "7, 10, 13, and 13 pairs, all eligible. These are not LLM performance results."
+    )
+    root.insert(0, title)
+    root.insert(1, description)
+    ElementTree.ElementTree(root).write(
+        FIGURES / "02_retrieval_budget.svg", encoding="utf-8", xml_declaration=True,
+    )
 
 
 def provenance():
@@ -327,7 +400,7 @@ def main():
         "rows": summary,
     }, indent=2) + "\n", encoding="utf-8")
     with (output / "selections.csv").open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=[
+        writer = csv.DictWriter(handle, lineterminator="\n", fieldnames=[
             "method", "budget", "query", "rank", "memory", "score", "category",
         ])
         writer.writeheader()
