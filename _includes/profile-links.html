@@ -1,0 +1,44 @@
+<ul class="profile-links">
+  <li>
+    <a href="{{ site.google_scholar_url }}">
+      <img src="https://www.google.com/s2/favicons?domain=scholar.google.com&sz=64" alt="Google Scholar logo" />
+      <span>Google Scholar</span>
+    </a>
+  </li>
+  <li>
+    <a href="{{ site.linkedin_url }}">
+      <img src="https://www.google.com/s2/favicons?domain=linkedin.com&sz=64" alt="LinkedIn logo" />
+      <span>LinkedIn</span>
+    </a>
+  </li>
+  <li>
+    <a href="{{ site.github_profile_url }}">
+      <img src="https://www.google.com/s2/favicons?domain=github.com&sz=64" alt="GitHub logo" />
+      <span>GitHub</span>
+    </a>
+  </li>
+  <li>
+    <a href="{{ site.microsoft_research_url }}">
+      <img src="https://www.google.com/s2/favicons?domain=microsoft.com&sz=64" alt="Microsoft Research logo" />
+      <span>Microsoft Research</span>
+    </a>
+  </li>
+  {% if include.show_contact %}
+    {% if site.twitter_url %}
+    <li>
+      <a href="{{ site.twitter_url }}">
+        <img src="https://www.google.com/s2/favicons?domain=twitter.com&sz=64" alt="" />
+        <span>Twitter</span>
+      </a>
+    </li>
+    {% endif %}
+    {% if site.email %}
+    <li>
+      <a href="mailto:{{ site.email | escape }}">
+        <span class="profile-link-symbol" aria-hidden="true">@</span>
+        <span>Email</span>
+      </a>
+    </li>
+    {% endif %}
+  {% endif %}
+</ul>

@@ -12,9 +12,26 @@
     <![endif]-->
     {% include head-custom.html %}
   </head>
-  <body>
+  <body{% if page.collection == 'posts' %} class="blog-post"{% endif %}>
+    {% if page.collection == 'posts' %}
+    <a class="post-skip-link" href="#post-content">Skip to article</a>
+    {% endif %}
     <div class="wrapper">
-      <header>
+      <header{% if page.collection == 'posts' %} class="post-site-header"{% endif %}>
+        {% if page.collection == 'posts' %}
+        <div class="post-header-top">
+          <a class="post-site-name" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+          <nav class="post-navigation" aria-label="Main navigation">
+            <a href="{{ '/' | relative_url }}">About</a>
+            <a href="{{ '/Blog.html' | relative_url }}">Blog</a>
+            <a href="{{ '/ProfessionalService.html' | relative_url }}">Professional Service</a>
+            <a href="{{ '/Awards.html' | relative_url }}">Awards</a>
+          </nav>
+        </div>
+        <nav aria-label="Profiles and contact">
+          {% include profile-links.html show_contact=true %}
+        </nav>
+        {% else %}
         <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
 
         {% if site.logo %}
@@ -31,38 +48,22 @@
         <p class="view"><a href="{{ site.github.owner_url }}">View My GitHub Profile</a></p>
         {% endif %}
 
-        <ul class="profile-links">
-          <li>
-            <a href="{{ site.google_scholar_url }}">
-              <img src="https://www.google.com/s2/favicons?domain=scholar.google.com&sz=64" alt="Google Scholar logo" />
-              <span>Google Scholar</span>
-            </a>
-          </li>
-          <li>
-            <a href="{{ site.linkedin_url }}">
-              <img src="https://www.google.com/s2/favicons?domain=linkedin.com&sz=64" alt="LinkedIn logo" />
-              <span>LinkedIn</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/reshmighosh">
-              <img src="https://www.google.com/s2/favicons?domain=github.com&sz=64" alt="GitHub logo" />
-              <span>GitHub</span>
-            </a>
-          </li>
-          <li>
-            <a href="{{ site.microsoft_research_url }}">
-              <img src="https://www.google.com/s2/favicons?domain=microsoft.com&sz=64" alt="Microsoft Research logo" />
-              <span>Microsoft Research</span>
-            </a>
-          </li>
-        </ul>
+        {% include profile-links.html %}
+        {% endif %}
       </header>
+      {% if page.collection == 'posts' %}
+      <main class="post-content" id="post-content">
+      {% else %}
       <section>
+      {% endif %}
 
       {{ content }}
 
+      {% if page.collection == 'posts' %}
+      </main>
+      {% else %}
       </section>
+      {% endif %}
       <footer>
         {% if site.github.is_project_page %}
         <p>This project is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
@@ -70,6 +71,9 @@
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
+    {% if page.collection == 'posts' %}
+    <script src="{{ '/assets/js/post-layout.js' | relative_url }}" defer></script>
+    {% endif %}
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
   </body>
 </html>
